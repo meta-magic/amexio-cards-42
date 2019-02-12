@@ -13,11 +13,19 @@ export class SignInComponent implements OnInit {
 @Input() showSignInWindow:boolean
 @Input('login-model') loginModel: LoginModel;
 signInGroup:FormGroup;
-  constructor(private auth_Service:AuthenticationService,public route: Router) { 
+  constructor(private auth_Service:AuthenticationService,public route: Router, private fb: FormBuilder) { 
     this.loginModel=new LoginModel();
   }
 
   ngOnInit() {
+    this.validateSigninform();
+  }
+  validateSigninform(){
+    this.signInGroup = this.fb.group({
+        Phone: ['', [Validators.required]],      
+        Password: ['', [Validators.required]],
+      
+      });
   }
   onSignInClick(){
   console.log('loginmodel',this.loginModel);
