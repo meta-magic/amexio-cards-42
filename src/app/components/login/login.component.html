@@ -1,0 +1,75 @@
+<amexio-card [show]="showLogin" [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'">
+
+  <amexio-body>
+    <amexio-layout-columns [orientation]="'vertical'" [border]="false">
+      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+            <amexio-image [path]="'assets/images/building.png'" height="100px"  width="100px"  [filter]="'round'" [title-position]="'centered'">
+            </amexio-image>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+            <amexio-label size="medium-bold">Your Keys Await</amexio-label>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+            <amexio-label size="small-bold" font-color="gray">
+              Secure, seamless search starts here</amexio-label>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+      </amexio-layout-item>
+    </amexio-layout-columns>
+     <amexio-row>
+        <amexio-column size="5" [fit]="true">
+        </amexio-column>
+      <amexio-column size="2" [fit]="true">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+          <amexio-layout-item [fit]="true">
+            <!-- <amexio-button [block]="true" [icon]="'fa fa-facebook'" [label]="'Facebook'" [type]="'primary'" [tooltip]="'Facebook'"></amexio-button> -->
+          <amexio-login-social [label]="' Facebook'" [api-key]="'320512778592240'" [type]="'facebook'" (onLogin)="onLoginClick($event)">
+</amexio-login-social>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+      </amexio-column>
+      <amexio-column size="5" [fit]="true">
+        </amexio-column>
+     </amexio-row>
+       <amexio-row>
+        <amexio-column size="5" [fit]="true">
+        </amexio-column>
+      <amexio-column size="2" [fit]="true">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+          <amexio-layout-item [fit]="true">
+<!-- <amexio-button [block]="true" [icon]="'fa fa-google'" [label]="'Google'" [type]="'primary'" [tooltip]="'Google'"></amexio-button>  -->
+<amexio-login-social [label]="'Google'" [api-key]="'743009515877-3rfp9u0b2iq95m2o2921kc3hecaamc3e.apps.googleusercontent.com'" [type]="'google'" (onLogin)="onLoginClick($event)">
+</amexio-login-social>
+   </amexio-layout-item>  
+</amexio-layout-columns>
+      </amexio-column>
+      <amexio-column size="5" [fit]="true">
+        </amexio-column>
+     </amexio-row>
+  
+  </amexio-body>
+  <amexio-action>
+    <amexio-row>
+      <amexio-column size="6" [fit]="true">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+          <amexio-layout-item [fit]="true">
+            <amexio-button  [label]="'Sign in'" (onClick)="onSignInClick($event)" [type]="'primary'" [tooltip]="'Sign in'"></amexio-button>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+      </amexio-column>
+      <amexio-column size="6" [fit]="true">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+          <amexio-layout-item [fit]="true">
+            <amexio-button [label]="'Register'" (onClick)="onRegisterClick($event)" [type]="'primary'" [tooltip]="'Register'"></amexio-button>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+      </amexio-column>
+    </amexio-row>
+  </amexio-action>
+</amexio-card>

@@ -1,0 +1,36 @@
+<amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showregisterWindow">
+  <amexio-body>
+    <amexio-layout-columns [orientation]="'vertical'" [border]="false">
+      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+            <amexio-image [path]="'assets/images/building.png'" height="100px"  width="100px"  [filter]="'round'" [title-position]="'centered'">
+            </amexio-image>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+            <amexio-label size="medium-bold">Your Keys Await</amexio-label>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+      </amexio-layout-item>
+    </amexio-layout-columns>
+    <amexio-row>
+      <amexio-column size="12" [fit]="true">
+        <amexio-text-input name="name" field-label="Name" place-holder="Enter Name" [(ngModel)]="userModel.name">
+        </amexio-text-input>
+        <amexio-number-input name="phone" [field-label]="'Phone'" [place-holder]="'Enter phone Number'" [(ngModel)]="userModel.phone">
+        </amexio-number-input>
+        <amexio-password-input [enable-popover]="true" [field-label]="'Password '" name="password" [place-holder]="'Enter Password'"
+          [allow-blank]="false" [error-msg]="'Please enter password'" [min-length]="6" [min-error-msg]="'Minimum 6 char required'"
+          [max-length]="32" [max-error-msg]="'Maximum 32 char allowed'" [icon-feedback]="true" [(ngModel)]="userModel.password">
+        </amexio-password-input>
+      </amexio-column>
+    </amexio-row>
+  </amexio-body>
+  <amexio-action>
+    <amexio-button [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button>
+    <amexio-button [type]="'primary'" (onClick)="onRegister()" label="Register"></amexio-button>
+    <amexio-button [type]="'primary'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+  </amexio-action>
+</amexio-card>

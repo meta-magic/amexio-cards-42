@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+ body{
+    background-image: url("/assets/images/living-room.jpg")!important;
+    background-size: cover!important;
+    min-height: auto !important; 
+    height: 250px !important;
+    position: relative !important;
+    background-position: center!important;   
+     
+}  */
+
+.bg{
+     position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%; 
+    z-index:-1;
+  }
+/* You can add global styles to this file, and also import other style files */
+.localsearch .inputgroup {
+    display: inline-block!important;
+};
+
+.localsearch  .button-default {
+     height: 40px!important;
+}
+
+
+
+.localsearch  .button-primary{
+     height: 40px!important;
+}
+
+.localsearch .input-control {
+    width: 520px!important;
+}
+ 
+.login-window .modal-window-middle{
+     padding: 0px!important;
+
+}  
+/* .modal-window-content{
+   width:auto!important; 
+}  */
+
+/*  .login-window .modal-window-content{
+   width:30%!important; 
+} 
+
+.login-window .window-center{
+       width:30%!important; 
+} */
+
+.full-page {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+}
+.main-class {
+    text-align: center;
+    width: 100%;
+}
+
+.horizontal-position {
+
+    text-align: -webkit-center;
+}
+.ok {
+    box-shadow: none !important;
+    background-color: transparent !important; 
+}
+
+.pic-style {
+
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%; 
+    z-index:-1;
+    background-color:black;
+}
+
+.login {
+    text-align: center;
+    font-size: 2em;
+    font-weight: normal;
+}

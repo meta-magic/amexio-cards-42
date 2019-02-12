@@ -1,0 +1,40 @@
+<!-- <amexio-btn-group [size]="'small'"> -->
+<amexio-button
+    [label]="'Buy'"
+    [type]="'theme-color'"
+    [tooltip]="'toolTip'"
+    [icon]="'icon'"
+    [disabled]="false"
+    [size]="'small'"
+    (onClick)="onBuyClick($event)">
+</amexio-button>
+<amexio-button
+    [label]="'Rent'"
+    [type]="'theme-color'"
+    [tooltip]="'toolTip'"
+    [icon]="'icon'"
+    [disabled]="false"
+    [size]="'small'"
+    (onClick)="onRent()">
+</amexio-button>
+ <!-- </amexio-btn-group> -->
+ <div class="localsearch">
+<amexio-text-input [field-label]="'label'" name ="name"
+[has-label]="false"
+   [place-holder]="'Enter Data'"
+   [(ngModel)]="searchModel.searchData"
+   [icon-feedback]="true">
+</amexio-text-input>
+<amexio-button
+    [label]="'Search'"
+    [type]="'theme-color'"
+    [badge]="badge"
+    [tooltip]="'toolTip'"
+    [icon]="'icon'"
+    [disabled]="false"
+    [size]="'default'"
+    [loading]="false"
+    [block]="false"
+    (onClick)="onSearchButtonClick($event)">
+</amexio-button>
+</div> 

@@ -1,0 +1,18 @@
+<div [ngStyle]="{'padding-top':320+'px'}">
+  <amexio-layout-columns [orientation]="'vertical'" [border]="false">
+      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
+        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+           <amexio-label size="large-bold">
+              Properties for Rent  
+           </amexio-label>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+         <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+          <amexio-layout-item>
+           <app-searchbox [search-model]="searchModel"></app-searchbox>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+      </amexio-layout-item>
+    </amexio-layout-columns>
+</div>
