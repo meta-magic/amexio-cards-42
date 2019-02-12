@@ -1,3 +1,4 @@
+<div [formGroup]="signInGroup">
 <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showSignInWindow">
   <amexio-body>
     <amexio-layout-columns [orientation]="'vertical'" [border]="false">
@@ -33,3 +34,4 @@
     <amexio-button   [size]="'medium'" [type]="'primary'" (onClick)="onCancel()" label="Cancel"></amexio-button>
   </amexio-action>
 </amexio-card>
+</div>

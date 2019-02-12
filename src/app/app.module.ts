@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AmexioWidgetModule } from 'amexio-ng-extensions';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
@@ -57,7 +58,7 @@ const routes: Routes = [
     PropertyDetailsComponent
     ],
   imports: [
-    BrowserModule,FormsModule,RouterModule,AmexioWidgetModule,BrowserAnimationsModule, RouterModule.forRoot(routes)
+    BrowserModule,FormsModule,ReactiveFormsModule,RouterModule,AmexioWidgetModule,BrowserAnimationsModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

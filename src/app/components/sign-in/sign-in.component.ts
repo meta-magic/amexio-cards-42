@@ -2,6 +2,7 @@ import { Component, OnInit ,Input} from '@angular/core';
 import { LoginModel } from "../../models/login.model";
 import { AuthenticationService } from "src/app/service/authentication.service";
 import { Router } from "@angular/router";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,8 +12,10 @@ import { Router } from "@angular/router";
 export class SignInComponent implements OnInit {
 @Input() showSignInWindow:boolean
 @Input('login-model') loginModel: LoginModel;
-
-  constructor(private auth_Service:AuthenticationService,public route: Router) { }
+signInGroup:FormGroup;
+  constructor(private auth_Service:AuthenticationService,public route: Router) { 
+    this.loginModel=new LoginModel();
+  }
 
   ngOnInit() {
   }
@@ -25,7 +28,7 @@ export class SignInComponent implements OnInit {
 }
 
 onBack(){
-this.auth_Service.showOTPWindow=false;
+  this.auth_Service.showOTPWindow=false;
   this.auth_Service.showregisterWindow=false;
   this.auth_Service.showLogin=true;
   this.auth_Service.showSignInWindow=false;

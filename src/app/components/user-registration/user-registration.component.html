@@ -1,3 +1,4 @@
+<div [formGroup]="userRegistrationGroup">
 <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showregisterWindow">
   <amexio-body>
     <amexio-layout-columns [orientation]="'vertical'" [border]="false">
@@ -17,11 +18,11 @@
     </amexio-layout-columns>
     <amexio-row>
       <amexio-column size="12" [fit]="true">
-        <amexio-text-input name="name" field-label="Name" place-holder="Enter Name" [(ngModel)]="userModel.name">
+        <amexio-text-input formControlName="Name" field-label="Name" place-holder="Enter Name" [(ngModel)]="userModel.name">
         </amexio-text-input>
-        <amexio-number-input name="phone" [field-label]="'Phone'" [place-holder]="'Enter phone Number'" [(ngModel)]="userModel.phone">
+        <amexio-number-input  formControlName="Phone"  [field-label]="'Phone'" [place-holder]="'Enter phone Number'" [(ngModel)]="userModel.phone">
         </amexio-number-input>
-        <amexio-password-input [enable-popover]="true" [field-label]="'Password '" name="password" [place-holder]="'Enter Password'"
+        <amexio-password-input   formControlName="Password" [enable-popover]="true" [field-label]="'Password'" [place-holder]="'Enter Password'"
           [allow-blank]="false" [error-msg]="'Please enter password'" [min-length]="6" [min-error-msg]="'Minimum 6 char required'"
           [max-length]="32" [max-error-msg]="'Maximum 32 char allowed'" [icon-feedback]="true" [(ngModel)]="userModel.password">
         </amexio-password-input>
@@ -30,7 +31,8 @@
   </amexio-body>
   <amexio-action>
     <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button>
-    <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onRegister()" label="Register"></amexio-button>
+    <amexio-button [disabled]="!userRegistrationGroup.valid"  [size]="'medium'" [type]="'primary'" (onClick)="onRegister()" label="Register"></amexio-button>
     <amexio-button   [size]="'medium'" [type]="'primary'" (onClick)="onCancel()" label="Cancel"></amexio-button>
   </amexio-action>
 </amexio-card>
+</div>
