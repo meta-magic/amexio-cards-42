@@ -31,5 +31,11 @@ this.auth_Service.showOTPWindow=false;
 onLoginClick(){
   
 }
+onFacebookClick(event:any){
+  console.log(event);
+}
+onGoogleClick(event:any){
+  console.log(event);
+}
 
 }
