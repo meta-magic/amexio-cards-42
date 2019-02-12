@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { LoginModel } from "../../models/login.model";
 import { AuthenticationService } from "src/app/service/authentication.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,7 @@ export class SignInComponent implements OnInit {
 @Input() showSignInWindow:boolean
 @Input('login-model') loginModel: LoginModel;
 
-  constructor(private auth_Service:AuthenticationService) { }
+  constructor(private auth_Service:AuthenticationService,public route: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,8 @@ export class SignInComponent implements OnInit {
   console.log('loginmodel',this.loginModel);
   }
   onCancel(){
- 
+  this.route.navigate(['/app-buy']);
+
 }
 
 onBack(){

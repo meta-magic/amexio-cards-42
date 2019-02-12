@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-otp-verification',
@@ -8,7 +9,7 @@ import { Component, OnInit,Input } from '@angular/core';
 export class OtpVerificationComponent implements OnInit {
 @Input() showOTPWindow:boolean;
 oTP:string='';
-  constructor() { }
+  constructor(public route: Router) { }
 
   ngOnInit() {
   }
@@ -16,6 +17,7 @@ oTP:string='';
 
   }
   onCancel(){
+    this.route.navigate(['/app-buy']);
     
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { AuthenticationService } from "../../service/authentication.service";
 import { UserDetails } from "../../models/user.details.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-user-registration',
@@ -11,7 +12,7 @@ export class UserRegistrationComponent implements OnInit {
   @Input() showregisterWindow:boolean=false;
   @Input('user-model') userModel: UserDetails;
 
-  constructor(private auth_Service:AuthenticationService) { }
+  constructor(private auth_Service:AuthenticationService,public route: Router) { }
 
   ngOnInit() {
   }
@@ -24,7 +25,8 @@ export class UserRegistrationComponent implements OnInit {
   
   }
 onCancel(){
- 
+
+ this.route.navigate(['/app-buy']);
 }
 
 onBack(){
