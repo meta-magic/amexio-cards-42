@@ -1,7 +1,7 @@
 
     <div [ngStyle]="{'padding-top':65+'px'}">  
 <amexio-row>
-  <amexio-column size ="4" *ngFor="let property of propertyDetails">
+  <amexio-column size ="3" *ngFor="let property of propertyDetails">
     
 <amexio-card-ce>
     
@@ -18,19 +18,24 @@
               <td><amexio-image [icon-class]="'fa fa-inr fa-lg'"></amexio-image> &nbsp;<amexio-label size="medium-bold">{{property.price}} </amexio-label></td>
             </tr>
             <tr>
-              <td><amexio-label size="medium-bold">{{property.property}} </amexio-label> </td>
+              <td><amexio-label size="medium-bold">{{property.title}} </amexio-label> </td>
             </tr>
              <tr>
-              <td><amexio-label>{{property.address}}. </amexio-label> </td>
+               
+              <td><amexio-image [icon-class]="'fa fa-map-marker fa-lg'"></amexio-image> &nbsp;<amexio-label>{{property.address}}.</amexio-label> </td>
             </tr>
              <tr>
-              <td><amexio-label size="small">{{property.description}} </amexio-label> </td>
+              <td><amexio-rating-input
+                     [(ngModel)]="property.rating"
+                     [max]="'5'"
+                     [read-only]="true">
+            </amexio-rating-input></td>
+            </tr>
+             <tr>
+              <td><p>{{property.description}} </p> </td>
             </tr>
             
           </table>
-        </amexio-column>
-        <amexio-column size ="2">
-          
         </amexio-column>
       </amexio-row>
       </div>

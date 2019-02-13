@@ -23,12 +23,12 @@ export class SearchboxComponent implements OnInit {
   onSearchButtonClick() {
   console.log('searchModel',this.searchModel);
   if(this.searchModel.searchData=="hadapser"){
-    this.id=1;
+    this.id="1";
 
   }else if(this.searchModel.searchData=="viman nagar"){
-    this.id=2
+    this.id="2";
   }else if(this.searchModel.searchData="tv"){
-    this.id=3
+    this.id="3";
   }
   this.route.navigate(['/app-property-details',this.id])
   }

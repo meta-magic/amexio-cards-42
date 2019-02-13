@@ -16,6 +16,7 @@ import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { RentComponent } from './components/rent/rent.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { PropertyDetailsComponent } from './components/property-details/property-details.component';
+import { BuyPropertyDetailsComponent } from './components/buy-property-details/buy-property-details.component';
 
 const routes: Routes = [
 
@@ -55,7 +56,8 @@ const routes: Routes = [
     SearchboxComponent,
     RentComponent,
     AuthenticationComponent,
-    PropertyDetailsComponent
+    PropertyDetailsComponent,
+    BuyPropertyDetailsComponent
     ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,BrowserAnimationsModule
