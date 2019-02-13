@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navlogo\">\n<amexio-nav [logo]=\"'assets/images/logos/cardslogo.jpg'\" [title]=\"'Cards.com'\"\n [transparent]=\"dtsService.transparentFlag\"  [enable-side-nav-position]=\"false\" (onNavTitleClick)=\"onCardsclick($event)\">\n    <!-- <amexio-nav-item position-left [type]=\"'link'\" [icon]=\"'fa fa-angle-double-up'\" [title]=\"'Cards.com'\" (onNavItemClick)=\"onCardsclick($event)\">\n    </amexio-nav-item> -->\n    <amexio-nav-item position-right [type]=\"'link'\" [icon]=\"'fa fa-user'\" [title]=\"'Login'\" (onNavItemClick)=\"onLoginLinkClick($event)\">\n    </amexio-nav-item>\n</amexio-nav>\n</div>\n<!-- <app-authentication [showWindow]=\"auth_Service.showWindow\"></app-authentication> -->\n<router-outlet></router-outlet>"
+module.exports = "<div class=\"navlogo\">\n<amexio-nav [logo]=\"'assets/images/logos/cardslogo.jpg'\" [title]=\"'Cards.com'\" \n [transparent]=\"dtsService.transparentFlag\"  [enable-side-nav-position]=\"false\" (onNavTitleClick)=\"onCardsclick($event)\">\n    <!-- <amexio-nav-item position-left [type]=\"'link'\" [icon]=\"'fa fa-angle-double-up'\" [title]=\"'Cards.com'\" (onNavItemClick)=\"onCardsclick($event)\">\n    </amexio-nav-item> -->\n    <amexio-nav-item position-right [type]=\"'link'\" [icon]=\"'fa fa-user'\" [title]=\"'Login'\" (onNavItemClick)=\"onLoginLinkClick($event)\">\n    </amexio-nav-item>\n</amexio-nav>\n</div>\n<!-- <app-authentication [showWindow]=\"auth_Service.showWindow\"></app-authentication> -->\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -133,12 +133,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/rent/rent.component */ "./src/app/components/rent/rent.component.ts");
 /* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
 /* harmony import */ var _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/property-details/property-details.component */ "./src/app/components/property-details/property-details.component.ts");
+/* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -198,7 +200,8 @@ var AppModule = /** @class */ (function () {
                 _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_13__["SearchboxComponent"],
                 _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__["RentComponent"],
                 _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__["AuthenticationComponent"],
-                _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__["PropertyDetailsComponent"]
+                _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__["PropertyDetailsComponent"],
+                _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
@@ -285,6 +288,69 @@ var AuthenticationComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_service_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"], _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_4__["DatatransferService"]])
     ], AuthenticationComponent);
     return AuthenticationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/buy-property-details/buy-property-details.component.css":
+/*!************************************************************************************!*\
+  !*** ./src/app/components/buy-property-details/buy-property-details.component.css ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/buy-property-details/buy-property-details.component.html":
+/*!*************************************************************************************!*\
+  !*** ./src/app/components/buy-property-details/buy-property-details.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  buy-property-details works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/buy-property-details/buy-property-details.component.ts":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/buy-property-details/buy-property-details.component.ts ***!
+  \***********************************************************************************/
+/*! exports provided: BuyPropertyDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyPropertyDetailsComponent", function() { return BuyPropertyDetailsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BuyPropertyDetailsComponent = /** @class */ (function () {
+    function BuyPropertyDetailsComponent() {
+    }
+    BuyPropertyDetailsComponent.prototype.ngOnInit = function () {
+    };
+    BuyPropertyDetailsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-buy-property-details',
+            template: __webpack_require__(/*! ./buy-property-details.component.html */ "./src/app/components/buy-property-details/buy-property-details.component.html"),
+            styles: [__webpack_require__(/*! ./buy-property-details.component.css */ "./src/app/components/buy-property-details/buy-property-details.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BuyPropertyDetailsComponent);
+    return BuyPropertyDetailsComponent;
 }());
 
 
@@ -546,7 +612,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"4\" *ngFor=\"let property of propertyDetails\">\n    \n<amexio-card-ce>\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.image\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label>Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n            <tr>\n              <td><amexio-label size=\"medium-bold\">{{property.property}} </amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-label>{{property.address}}. </amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-label size=\"small\">{{property.description}} </amexio-label> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n        <amexio-column size =\"2\">\n          \n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n      <amexio-label>{{property.agentName}} </amexio-label> \n         <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
+module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"3\" *ngFor=\"let property of propertyDetails\">\n    \n<amexio-card-ce>\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.image\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label>Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n            <tr>\n              <td><amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> </td>\n            </tr>\n             <tr>\n               \n              <td><amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\"></amexio-image> &nbsp;<amexio-label>{{property.address}}.</amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-rating-input\n                     [(ngModel)]=\"property.rating\"\n                     [max]=\"'5'\"\n                     [read-only]=\"true\">\n            </amexio-rating-input></td>\n            </tr>\n             <tr>\n              <td><p>{{property.description}} </p> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n      <amexio-label>{{property.agentName}} </amexio-label> \n         <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
 
 /***/ }),
 
@@ -583,108 +649,149 @@ var PropertyDetailsComponent = /** @class */ (function () {
         this.router = router;
         this.dtsService = dtsService;
         this.propertyDetails = [];
+        this.propertyData = [];
         this.dtsService.transparentFlag = false;
-        console.log('properties');
+        this.propertyData = [
+            { "id": "1",
+                "searchData": "Hadapser",
+                "properties": [
+                    {
+                        "address": "south gate,magarapatta",
+                        "price": "80 Lac",
+                        "image": "assets/images/apartment1.jpeg",
+                        "rating": "3",
+                        "property": "2 BHK Apartment",
+                        "description": "It is a magnanimous residency, comprising of well planned homes",
+                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment1.jpeg", "assets/images/apartment1.jpeg"]
+                    },
+                    {
+                        "address": "Handewadi,hadapser",
+                        "price": "25 Lac",
+                        "image": "assets/images/apartment2.jpeg",
+                        "rating": "3",
+                        "property": "1 BHK Apartment",
+                        "description": "It is a magnanimous residency, comprising of well planned homes",
+                        "images": ["assets/images/apartment2.jpeg", "assets/images/apartment1.jpeg"]
+                    },
+                    {
+                        "address": "Bhosale Nagar,hadapser",
+                        "price": "36 Lac",
+                        "image": "assets/images/apartment3.jpeg",
+                        "rating": "2",
+                        "property": "1 BHK Apartment",
+                        "description": "It is indeed a perfect dwelling and a wise investment",
+                        "images": ["assets/images/apartment3.jpeg", "assets/images/apartment3.jpeg"]
+                    },
+                    {
+                        "address": "Sasane Nagar,hadapser",
+                        "price": "50 Lac",
+                        "image": "assets/images/apartment4.jpeg",
+                        "rating": "4",
+                        "property": "2 BHK Apartment",
+                        "description": "It is indeed a perfect dwelling and a wise investment",
+                        "images": ["assets/images/apartment4.jpeg", "assets/images/apartment4.jpeg"]
+                    },
+                    {
+                        "address": "Bhosale Nagar,hadapser",
+                        "price": "65 Lac",
+                        "image": "assets/images/apartment5.jpeg",
+                        "rating": "3",
+                        "property": "2 BHK Apartment",
+                        "description": "It is indeed a perfect dwelling and a wise investment",
+                        "images": ["assets/images/apartment5.jpeg", "assets/images/apartment5.jpeg"]
+                    },
+                    {
+                        "address": "Amanora ,hadapser",
+                        "price": "48 Lac",
+                        "image": "assets/images/apartment6.jpeg",
+                        "rating": "3",
+                        "property": "1 BHK Apartment",
+                        "description": "It is indeed a perfect dwelling and a wise investment",
+                        "images": ["assets/images/apartment5.jpeg", "assets/images/apartment5.jpeg"]
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "searchData": "Viman Nagar",
+                "properties": [
+                    {
+                        "address": "viman nagar",
+                        "price": "80 Lac",
+                        "image": "assets/images/apartment1.jpeg",
+                        "rating": "2",
+                        "title": "2 BHK Apartment",
+                        "description": "It is a magnanimous residency, comprising of well planned homes",
+                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment5.jpeg"]
+                    },
+                    {
+                        "address": "Near Finix Mall,Viman Nagar",
+                        "price": "25 Lac",
+                        "image": "assets/images/apartment2.jpeg",
+                        "rating": "4",
+                        "title": "1 BHK Apartment",
+                        "description": "It is a magnanimous residency, comprising of well planned homes",
+                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment5.jpeg"]
+                    },
+                    {
+                        "address": "Air force campus",
+                        "price": "36 Lac",
+                        "image": "assets/images/apartment3.jpeg",
+                        "rating": "3",
+                        "title": "1 BHK Apartment",
+                        "description": "It is a magnanimous residency, comprising of well planned homes",
+                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment5.jpeg"]
+                    },
+                    {
+                        "address": "Viman nagar",
+                        "price": "80 Lac",
+                        "image": "assets/images/apartment3.jpeg",
+                        "rating": "3",
+                        "title": "2 BHK Apartment",
+                        "description": "It is a magnanimous residency, comprising of well planned homes",
+                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment3.jpeg"]
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "searchData": "tv",
+                "properties": [
+                    {
+                        "address": "Swargate,pune",
+                        "price": "42,000",
+                        "image": "assets/images/LG.jpg",
+                        "rating": "3",
+                        "title": "LG Plasma",
+                        "description": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
+                        "images": ["assets/images/Malaysia.jpeg", "assets/images/Malaysia.jpeg"]
+                    },
+                    {
+                        "address": "Magarpatta city",
+                        "price": "28,000",
+                        "image": "assets/images/Malaysia.jpeg",
+                        "rating": "4",
+                        "title": "Malaysia sealed box LED TV",
+                        "description": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
+                        "images": ["assets/images/lg.jpeg", "assets/images/lg.jpeg"]
+                    },
+                    {
+                        "address": "Pune",
+                        "price": "30,000",
+                        "image": "assets/images/micromax.png",
+                        "rating": "3",
+                        "title": "Micromax 43T8100MHD",
+                        "description": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
+                        "images": ["assets/images/micromax.png", "assets/images/micromax.png"]
+                    }
+                ]
+            }
+        ];
         this.route.params.subscribe(function (params) {
             console.log(params);
             _this.id = params.id;
         });
-        if (this.id == "1") {
-            this.propertyDetails = [
-                {
-                    "address": "south gate,magarapatta",
-                    "price": "80 Lac",
-                    "image": "assets/images/apartment1.jpeg",
-                    "property": "2 BHK Apartment",
-                    "description": "It is a magnanimous residency, comprising of well planned homes"
-                },
-                {
-                    "address": "Handewadi,hadapser",
-                    "price": "25 Lac",
-                    "image": "assets/images/apartment2.jpeg",
-                    "property": "1 BHK Apartment",
-                    "description": "It is a magnanimous residency, comprising of well planned homes"
-                },
-                {
-                    "address": "Bhosale Nagar,hadapser",
-                    "price": "36 Lac",
-                    "image": "assets/images/apartment3.jpeg",
-                    "property": "1 BHK Apartment",
-                    "description": "It is indeed a perfect dwelling and a wise investment"
-                },
-                {
-                    "address": "Sasane Nagar,hadapser",
-                    "price": "50 Lac",
-                    "image": "assets/images/apartment4.jpeg",
-                    "property": "2 BHK Apartment",
-                    "description": "It is indeed a perfect dwelling and a wise investment"
-                },
-                {
-                    "address": "Bhosale Nagar,hadapser",
-                    "price": "65 Lac",
-                    "image": "assets/images/apartment5.jpeg",
-                    "property": "2 BHK Apartment",
-                    "description": "It is indeed a perfect dwelling and a wise investment"
-                },
-                {
-                    "address": "Amanora ,hadapser",
-                    "price": "48 Lac",
-                    "image": "assets/images/apartment6.jpeg",
-                    "property": "1 BHK Apartment",
-                    "description": "It is indeed a perfect dwelling and a wise investment"
-                }
-            ];
-        }
-        else if (this.id == "2") {
-            this.propertyDetails = [
-                {
-                    "address": "viman nagar",
-                    "price": "80 Lac",
-                    "image": "assets/images/apartment1.jpeg",
-                    "property": "2 BHK Apartment",
-                    "description": "It is a magnanimous residency, comprising of well planned homes"
-                },
-                {
-                    "address": "Near Finix Mall,Viman Nagar",
-                    "price": "25 Lac",
-                    "image": "assets/images/apartment2.jpeg",
-                    "property": "1 BHK Apartment",
-                    "description": "It is a magnanimous residency, comprising of well planned homes"
-                },
-                {
-                    "address": "Air force campus",
-                    "price": "36 Lac",
-                    "image": "assets/images/apartment3.jpeg",
-                    "property": "1 BHK Apartment",
-                    "description": "It is a magnanimous residency, comprising of well planned homes"
-                }
-            ];
-        }
-        else if (this.id == "3") {
-            this.propertyDetails = [
-                {
-                    "address": "Swargate,pune",
-                    "price": "42,000",
-                    "image": "assets/images/lg.jpeg",
-                    "property": "LG Plasma",
-                    "description": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper"
-                },
-                {
-                    "address": "Magarpatta city",
-                    "price": "28,000",
-                    "image": "assets/images/Malaysia.jpeg",
-                    "property": "Malaysia sealed box LED TV",
-                    "description": "Malaysia sealed box 55 4k Smart Android LED TV for sale"
-                },
-                {
-                    "address": "Pune",
-                    "price": "30,000",
-                    "image": "assets/images/micromax.png",
-                    "property": "Micromax 43T8100MHD / 43T4500MHD",
-                    "description": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV"
-                }
-            ];
-        }
+        this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; }).properties;
     }
     PropertyDetailsComponent.prototype.ngOnInit = function () {
     };
@@ -832,13 +939,13 @@ var SearchboxComponent = /** @class */ (function () {
     SearchboxComponent.prototype.onSearchButtonClick = function () {
         console.log('searchModel', this.searchModel);
         if (this.searchModel.searchData == "hadapser") {
-            this.id = 1;
+            this.id = "1";
         }
         else if (this.searchModel.searchData == "viman nagar") {
-            this.id = 2;
+            this.id = "2";
         }
         else if (this.searchModel.searchData = "tv") {
-            this.id = 3;
+            this.id = "3";
         }
         this.route.navigate(['/app-property-details', this.id]);
     };
