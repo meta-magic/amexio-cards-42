@@ -1,11 +1,16 @@
 <div [formGroup]="userRegistrationGroup">
 <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showregisterWindow">
   <amexio-body>
+    <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="right">
+          <amexio-layout-item>
+            <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
+          </amexio-layout-item>
+        </amexio-layout-columns>
     <amexio-layout-columns [orientation]="'vertical'" [border]="false">
       <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
         <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
           <amexio-layout-item>
-            <amexio-image [path]="'assets/images/building.png'" height="100px"  width="100px"  [filter]="'round'" [title-position]="'centered'">
+            <amexio-image [path]="'assets/images/building.png'" height="80px"  width="80px"  [filter]="'round'" [title-position]="'centered'">
             </amexio-image>
           </amexio-layout-item>
         </amexio-layout-columns>
@@ -30,9 +35,9 @@
     </amexio-row>
   </amexio-body>
   <amexio-action>
-    <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button>
-    <amexio-button [disabled]="!userRegistrationGroup.valid"  [size]="'medium'" [type]="'primary'" (onClick)="onRegister()" label="Register"></amexio-button>
-    <amexio-button   [size]="'medium'" [type]="'primary'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+    <!-- <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button> -->
+      <amexio-button   [size]="'default'" [type]="'secondary'" [icon]="'fa fa-times'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+    <amexio-button [disabled]="!userRegistrationGroup.valid"  [size]="'default'" [icon]="'fa fa-user-plus'" [type]="'primary'" (onClick)="onRegister()" label="Register"></amexio-button>
   </amexio-action>
 </amexio-card>
 </div>

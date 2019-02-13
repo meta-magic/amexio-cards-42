@@ -21,16 +21,28 @@
         </amexio-layout-columns>
       </amexio-layout-item>
     </amexio-layout-columns>
-    
+<!--     
     <amexio-row>
       <amexio-column [size]="12">
- <amexio-number-input name="otp" [field-label]="'OTP'" [place-holder]="'Enter OTP'" [(ngModel)]="oTP">
-                            </amexio-number-input>
+ <amexio-text-input name="otp" [field-label]="'OTP'" [place-holder]="'Enter OTP'" [(ngModel)]="oTP">
+                            </amexio-text-input>
       </amexio-column>
-    </amexio-row>
+    </amexio-row> -->
+
+        <amexio-layout-columns [border]="false" [orientation]="'vertical'" [alignment]="'center'">
+            <amexio-layout-item>
+                <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+                    <amexio-layout-item>
+                        <amexio-text-input name="otp" [field-label]="'OTP'" [place-holder]="'Enter OTP'" [(ngModel)]="oTP">
+                            </amexio-text-input>
+                    </amexio-layout-item>
+                </amexio-layout-columns>
+            </amexio-layout-item>
+        </amexio-layout-columns>
     </amexio-body>
     <amexio-action>
-         <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onVerify()" label="Verify"></amexio-button>
-         <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+         <amexio-button  [size]="'default'" [type]="'secondary'" [icon]="'fa fa-times'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+         <amexio-button  [size]="'default'" [type]="'primary'" [icon]="'fa fa-check'" (onClick)="onVerify()" label="Verify"></amexio-button>
+         
     </amexio-action>
 </amexio-card>

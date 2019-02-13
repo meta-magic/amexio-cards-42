@@ -1,6 +1,11 @@
 <div [formGroup]="signInGroup">
 <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showSignInWindow">
   <amexio-body>
+     <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="right">
+          <amexio-layout-item>
+            <amexio-image style="cursor: pointer;"  [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
+          </amexio-layout-item>
+        </amexio-layout-columns>
     <amexio-layout-columns [orientation]="'vertical'" [border]="false">
       <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
         <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
@@ -18,8 +23,8 @@
     </amexio-layout-columns>
     <amexio-row>
       <amexio-column [size]="12">
-        <amexio-text-input formControlName="Phone" name="name" field-label="Phone / Email" place-holder="Enter Name" [(ngModel)]="loginModel.phoneemail">
-        </amexio-text-input>
+        <amexio-number-input formControlName="Phone" name="name" field-label="Phone" place-holder="Enter Name" [(ngModel)]="loginModel.phone">
+        </amexio-number-input>
         <amexio-password-input formControlName="Password" [enable-popover]="true" [field-label]="'Password '" name="password" [place-holder]="'Enter Password'"
           [allow-blank]="false" [error-msg]="'Please enter password'" [min-length]="6" [min-error-msg]="'Minimum 6 char required'"
           [max-length]="32" [max-error-msg]="'Maximum 32 char allowed'" [icon-feedback]="true" [(ngModel)]="loginModel.password">
@@ -29,9 +34,9 @@
   </amexio-body>
   <amexio-action>
   
-  <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button>
-    <amexio-button [disabled]="!signInGroup.valid"  [size]="'medium'" [type]="'primary'" (onClick)="onSignInClick()" label="Login"></amexio-button>
-    <amexio-button   [size]="'medium'" [type]="'primary'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+  <!-- <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button> -->
+    <amexio-button   [size]="'default'" [type]="'secondary'" [icon]="'fa fa-times'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+    <amexio-button [disabled]="!signInGroup.valid"  [size]="'default'" [icon]="'fa fa-sign-in'" [type]="'primary'" (onClick)="onSignInClick()" label="Login"></amexio-button>
   </amexio-action>
 </amexio-card>
 </div>

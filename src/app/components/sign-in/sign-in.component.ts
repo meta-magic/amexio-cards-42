@@ -22,7 +22,7 @@ signInGroup:FormGroup;
   }
   validateSigninform(){
     this.signInGroup = this.fb.group({
-        Phone: ['', [Validators.required]],      
+        Phone: ['', [Validators.required, Validators.minLength(10)]],      
         Password: ['', [Validators.required]],
       
       });

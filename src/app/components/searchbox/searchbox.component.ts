@@ -27,6 +27,8 @@ export class SearchboxComponent implements OnInit {
 
   }else if(this.searchModel.searchData=="viman nagar"){
     this.id=2
+  }else if(this.searchModel.searchData="tv"){
+    this.id=3
   }
   this.route.navigate(['/app-property-details',this.id])
   }

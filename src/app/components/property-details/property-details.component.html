@@ -18,10 +18,13 @@
               <td><amexio-image [icon-class]="'fa fa-inr fa-lg'"></amexio-image> &nbsp;<amexio-label size="medium-bold">{{property.price}} </amexio-label></td>
             </tr>
             <tr>
-              <td><amexio-label size="medium-bold">{{property.area}} </amexio-label> </td>
+              <td><amexio-label size="medium-bold">{{property.property}} </amexio-label> </td>
             </tr>
              <tr>
-              <td><amexio-label>{{property.address}} </amexio-label> </td>
+              <td><amexio-label>{{property.address}}. </amexio-label> </td>
+            </tr>
+             <tr>
+              <td><amexio-label size="small">{{property.description}} </amexio-label> </td>
             </tr>
             
           </table>
@@ -34,7 +37,7 @@
     </amexio-body-ce>
     <amexio-action-ce [align]="'space-between'" [border-top]="true">
       <amexio-label>{{property.agentName}} </amexio-label> 
-         <amexio-button [label]="'Contact'" [type]="'red'" [tooltip]="'Contact'">
+         <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Buy Now'" [type]="'primary'" [tooltip]="'Buy Now'">
         </amexio-button>
     </amexio-action-ce>
 </amexio-card-ce>

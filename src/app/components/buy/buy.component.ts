@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from "../login/login.component";
 import { SearchModel } from "../../models/search.model";
+import { DatatransferService } from "../../service/datatransfer.service";
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -8,9 +9,10 @@ import { SearchModel } from "../../models/search.model";
 })
 export class BuyComponent implements OnInit {
   searchModel:SearchModel;
-  constructor() { 
+  constructor(public dtsService:DatatransferService) { 
     this.searchModel=new SearchModel();
     this.searchModel.type='buy';
+    this.dtsService.transparentFlag=true;
   }
 
   ngOnInit() {

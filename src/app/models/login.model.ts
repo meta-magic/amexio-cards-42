@@ -1,6 +1,6 @@
 
 export class LoginModel {
-  phoneemail:string='';
+  phone:string='';
   password:string='';
   constructor() {
   }
