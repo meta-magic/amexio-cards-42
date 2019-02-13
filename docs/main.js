@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<amexio-nav [enable-side-nav-position]=\"false\">\n    <amexio-nav-item position-left [type]=\"'link'\" [icon]=\"'fa fa-angle-double-up'\" [title]=\"'Cards.com'\" (onNavItemClick)=\"onCardsclick($event)\">\n    </amexio-nav-item>\n    <amexio-nav-item position-right [type]=\"'link'\" [icon]=\"'fa fa-user'\" [title]=\"'Login'\" (onNavItemClick)=\"onLoginLinkClick($event)\">\n    </amexio-nav-item>\n</amexio-nav>\n<!-- <app-authentication [showWindow]=\"auth_Service.showWindow\"></app-authentication> -->\n<router-outlet></router-outlet>"
+module.exports = "<div class=\"navlogo\">\n<amexio-nav [logo]=\"'assets/images/logos/cardslogo.jpg'\" [title]=\"'Cards.com'\"\n [transparent]=\"dtsService.transparentFlag\"  [enable-side-nav-position]=\"false\" (onNavTitleClick)=\"onCardsclick($event)\">\n    <!-- <amexio-nav-item position-left [type]=\"'link'\" [icon]=\"'fa fa-angle-double-up'\" [title]=\"'Cards.com'\" (onNavItemClick)=\"onCardsclick($event)\">\n    </amexio-nav-item> -->\n    <amexio-nav-item position-right [type]=\"'link'\" [icon]=\"'fa fa-user'\" [title]=\"'Login'\" (onNavItemClick)=\"onLoginLinkClick($event)\">\n    </amexio-nav-item>\n</amexio-nav>\n</div>\n<!-- <app-authentication [showWindow]=\"auth_Service.showWindow\"></app-authentication> -->\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -58,6 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _service_authentication_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service/authentication.service */ "./src/app/service/authentication.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -70,10 +71,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(auth_Service, route) {
+    function AppComponent(auth_Service, route, dtsService) {
         this.auth_Service = auth_Service;
         this.route = route;
+        this.dtsService = dtsService;
     }
     AppComponent.prototype.ngOnInit = function () {
     };
@@ -82,7 +85,7 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.onLoginLinkClick = function () {
         //  this.auth_Service.showWindow=true;
-        this.route.navigate(['/login']);
+        this.route.navigate(['login']);
         this.auth_Service.showLogin = true;
         this.auth_Service.showOTPWindow = false;
         this.auth_Service.showregisterWindow = false;
@@ -94,7 +97,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [_service_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__["DatatransferService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -198,7 +201,7 @@ var AppModule = /** @class */ (function () {
                 _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__["PropertyDetailsComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes)
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -1192,6 +1195,43 @@ var AuthenticationService = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], AuthenticationService);
     return AuthenticationService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/datatransfer.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/service/datatransfer.service.ts ***!
+  \*************************************************/
+/*! exports provided: DatatransferService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DatatransferService", function() { return DatatransferService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DatatransferService = /** @class */ (function () {
+    function DatatransferService() {
+    }
+    DatatransferService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], DatatransferService);
+    return DatatransferService;
 }());
 
 
