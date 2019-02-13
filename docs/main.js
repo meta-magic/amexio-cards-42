@@ -250,6 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_authentication_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../service/authentication.service */ "./src/app/service/authentication.service.ts");
 /* harmony import */ var _models_user_details_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/user.details.model */ "./src/app/models/user.details.model.ts");
 /* harmony import */ var _models_login_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/login.model */ "./src/app/models/login.model.ts");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -263,11 +264,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AuthenticationComponent = /** @class */ (function () {
-    function AuthenticationComponent(auth_Service) {
+    function AuthenticationComponent(auth_Service, dtsService) {
         this.auth_Service = auth_Service;
+        this.dtsService = dtsService;
         this.userModel = new _models_user_details_model__WEBPACK_IMPORTED_MODULE_2__["UserDetails"]();
         this.loginModel = new _models_login_model__WEBPACK_IMPORTED_MODULE_3__["LoginModel"]();
+        this.dtsService.transparentFlag = false;
     }
     AuthenticationComponent.prototype.ngOnInit = function () {
         this.auth_Service.showLogin = true;
@@ -278,7 +282,7 @@ var AuthenticationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./authentication.component.html */ "./src/app/components/authentication/authentication.component.html"),
             styles: [__webpack_require__(/*! ./authentication.component.css */ "./src/app/components/authentication/authentication.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"]])
+        __metadata("design:paramtypes", [_service_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"], _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_4__["DatatransferService"]])
     ], AuthenticationComponent);
     return AuthenticationComponent;
 }());
@@ -321,6 +325,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyComponent", function() { return BuyComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -332,10 +337,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var BuyComponent = /** @class */ (function () {
-    function BuyComponent() {
+    function BuyComponent(dtsService) {
+        this.dtsService = dtsService;
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_1__["SearchModel"]();
         this.searchModel.type = 'buy';
+        this.dtsService.transparentFlag = true;
     }
     BuyComponent.prototype.ngOnInit = function () {
     };
@@ -345,7 +353,7 @@ var BuyComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./buy.component.html */ "./src/app/components/buy/buy.component.html"),
             styles: [__webpack_require__(/*! ./buy.component.css */ "./src/app/components/buy/buy.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
     ], BuyComponent);
     return BuyComponent;
 }());
@@ -372,7 +380,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<amexio-card [show]=\"showLogin\" [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'center'\">\n\n  <amexio-body>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"medium-bold\">Your Keys Await</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"small-bold\" font-color=\"gray\">\n              Secure, seamless search starts here</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n     <amexio-row>\n        <amexio-column size=\"5\" [fit]=\"true\">\n        </amexio-column>\n      <amexio-column size=\"2\" [fit]=\"true\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item [fit]=\"true\">\n            <!-- <amexio-button [block]=\"true\" [icon]=\"'fa fa-facebook'\" [label]=\"'Facebook'\" [type]=\"'primary'\" [tooltip]=\"'Facebook'\"></amexio-button> -->\n          <amexio-login-social [label]=\"' Facebook'\" [api-key]=\"'320512778592240'\" [type]=\"'facebook'\" (onLogin)=\"onFacebookClick($event)\">\n</amexio-login-social>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-column>\n      <amexio-column size=\"5\" [fit]=\"true\">\n        </amexio-column>\n     </amexio-row>\n       <amexio-row>\n        <amexio-column size=\"5\" [fit]=\"true\">\n        </amexio-column>\n      <amexio-column size=\"2\" [fit]=\"true\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item [fit]=\"true\">\n<!-- <amexio-button [block]=\"true\" [icon]=\"'fa fa-google'\" [label]=\"'Google'\" [type]=\"'primary'\" [tooltip]=\"'Google'\"></amexio-button>  -->\n<amexio-login-social [label]=\"'Google'\" [api-key]=\"'743009515877-3rfp9u0b2iq95m2o2921kc3hecaamc3e.apps.googleusercontent.com'\" [type]=\"'google'\" (onLogin)=\"onGoogleClick($event)\">\n</amexio-login-social>\n   </amexio-layout-item>  \n</amexio-layout-columns>\n      </amexio-column>\n      <amexio-column size=\"5\" [fit]=\"true\">\n        </amexio-column>\n     </amexio-row>\n  \n  </amexio-body>\n  <amexio-action>\n    <amexio-row>\n      <amexio-column size=\"6\" [fit]=\"true\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item [fit]=\"true\">\n            <amexio-button  [size]=\"'medium'\" [label]=\"'Sign in'\" (onClick)=\"onSignInClick($event)\" [type]=\"'primary'\" [tooltip]=\"'Sign in'\"></amexio-button>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-column>\n      <amexio-column size=\"6\" [fit]=\"true\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item [fit]=\"true\">\n            <amexio-button [size]=\"'medium'\" [label]=\"'Register'\" (onClick)=\"onRegisterClick($event)\" [type]=\"'primary'\" [tooltip]=\"'Register'\"></amexio-button>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-column>\n    </amexio-row>\n  </amexio-action>\n</amexio-card>"
+module.exports = "<amexio-card [show]=\"showLogin\" [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'center'\">\n\n  <amexio-body>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"medium-bold\">Your Keys Await</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"small-bold\" font-color=\"gray\">\n              Secure, seamless search starts here</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n     <amexio-row>\n       <amexio-column size=\"12\">\n      <amexio-layout-columns [border]=\"false\" [fit]=\"true\" [alignment]=\"'space-between'\"\n                              [orientation]=\"'horizontal'\">\n                              <amexio-layout-item>\n                                <amexio-login-social [style-type]=\"'circle'\" [api-key]=\"'743009515877-3rfp9u0b2iq95m2o2921kc3hecaamc3e.apps.googleusercontent.com'\"\n                                  [type]=\"'google'\"  (onLogin)=\"onGoogleClick($event)\">\n                                </amexio-login-social>\n                              </amexio-layout-item>\n                              <amexio-layout-item>\n                                <amexio-login-social [style-type]=\"'circle'\" [api-key]=\"'320512778592240'\" [type]=\"'facebook'\" (onLogin)=\"onFacebookClick($event)\">\n                                </amexio-login-social>\n                              </amexio-layout-item>\n                              <amexio-layout-item>\n                                <amexio-login-social [style-type]=\"'circle'\" [api-key]=\"'81wzvqnx8wtvmg'\" [type]=\"'linkedin'\" (onLogin)=\"onLinkedinClick($event)\">\n                                </amexio-login-social>\n                              </amexio-layout-item>\n                            </amexio-layout-columns>\n       </amexio-column>\n     </amexio-row>\n  \n  </amexio-body>\n  <amexio-action>\n    <amexio-row>\n      <amexio-column size=\"6\" [fit]=\"true\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item [fit]=\"true\">\n            <amexio-button  [size]=\"'default'\" [icon]=\"'fa fa-sign-in'\" [label]=\"'Sign in'\" (onClick)=\"onSignInClick($event)\" [type]=\"'primary'\" [tooltip]=\"'Sign in'\"></amexio-button>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-column>\n      <amexio-column size=\"6\" [fit]=\"true\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item [fit]=\"true\">\n            <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-user-plus'\" [label]=\"'Register'\" (onClick)=\"onRegisterClick($event)\" [type]=\"'primary'\" [tooltip]=\"'Register'\"></amexio-button>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-column>\n    </amexio-row>\n  </amexio-action>\n</amexio-card>"
 
 /***/ }),
 
@@ -462,7 +470,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n\n\n<amexio-card\n  [header]=\"false\"\n  [header-align]=\"'left'\"\n  [footer]=\"true\"\n  [footer-align]=\"'center'\"\n  [show]=\"showOTPWindow\">\n\n    <amexio-body>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n    \n    <amexio-row>\n      <amexio-column [size]=\"12\">\n <amexio-number-input name=\"otp\" [field-label]=\"'OTP'\" [place-holder]=\"'Enter OTP'\" [(ngModel)]=\"oTP\">\n                            </amexio-number-input>\n      </amexio-column>\n    </amexio-row>\n    </amexio-body>\n    <amexio-action>\n         <amexio-button  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onVerify()\" label=\"Verify\"></amexio-button>\n         <amexio-button  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onCancel()\" label=\"Cancel\"></amexio-button>\n    </amexio-action>\n</amexio-card>"
+module.exports = "\n\n\n\n\n<amexio-card\n  [header]=\"false\"\n  [header-align]=\"'left'\"\n  [footer]=\"true\"\n  [footer-align]=\"'center'\"\n  [show]=\"showOTPWindow\">\n\n    <amexio-body>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n<!--     \n    <amexio-row>\n      <amexio-column [size]=\"12\">\n <amexio-text-input name=\"otp\" [field-label]=\"'OTP'\" [place-holder]=\"'Enter OTP'\" [(ngModel)]=\"oTP\">\n                            </amexio-text-input>\n      </amexio-column>\n    </amexio-row> -->\n\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'vertical'\" [alignment]=\"'center'\">\n            <amexio-layout-item>\n                <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n                    <amexio-layout-item>\n                        <amexio-text-input name=\"otp\" [field-label]=\"'OTP'\" [place-holder]=\"'Enter OTP'\" [(ngModel)]=\"oTP\">\n                            </amexio-text-input>\n                    </amexio-layout-item>\n                </amexio-layout-columns>\n            </amexio-layout-item>\n        </amexio-layout-columns>\n    </amexio-body>\n    <amexio-action>\n         <amexio-button  [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-times'\" (onClick)=\"onCancel()\" label=\"Cancel\"></amexio-button>\n         <amexio-button  [size]=\"'default'\" [type]=\"'primary'\" [icon]=\"'fa fa-check'\" (onClick)=\"onVerify()\" label=\"Verify\"></amexio-button>\n         \n    </amexio-action>\n</amexio-card>"
 
 /***/ }),
 
@@ -538,7 +546,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"4\" *ngFor=\"let property of propertyDetails\">\n    \n<amexio-card-ce>\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.image\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label>Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n            <tr>\n              <td><amexio-label size=\"medium-bold\">{{property.area}} </amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-label>{{property.address}} </amexio-label> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n        <amexio-column size =\"2\">\n          \n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n      <amexio-label>{{property.agentName}} </amexio-label> \n         <amexio-button [label]=\"'Contact'\" [type]=\"'red'\" [tooltip]=\"'Contact'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
+module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"4\" *ngFor=\"let property of propertyDetails\">\n    \n<amexio-card-ce>\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.image\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label>Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n            <tr>\n              <td><amexio-label size=\"medium-bold\">{{property.property}} </amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-label>{{property.address}}. </amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-label size=\"small\">{{property.description}} </amexio-label> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n        <amexio-column size =\"2\">\n          \n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n      <amexio-label>{{property.agentName}} </amexio-label> \n         <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
 
 /***/ }),
 
@@ -554,6 +562,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PropertyDetailsComponent", function() { return PropertyDetailsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -566,12 +575,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PropertyDetailsComponent = /** @class */ (function () {
-    function PropertyDetailsComponent(route, router) {
+    function PropertyDetailsComponent(route, router, dtsService) {
         var _this = this;
         this.route = route;
         this.router = router;
+        this.dtsService = dtsService;
         this.propertyDetails = [];
+        this.dtsService.transparentFlag = false;
         console.log('properties');
         this.route.params.subscribe(function (params) {
             console.log(params);
@@ -583,68 +595,93 @@ var PropertyDetailsComponent = /** @class */ (function () {
                     "address": "south gate,magarapatta",
                     "price": "80 Lac",
                     "image": "assets/images/apartment1.jpeg",
-                    "area": "2 BHK Apartment",
-                    "agentName": "Sahil Patil"
+                    "property": "2 BHK Apartment",
+                    "description": "It is a magnanimous residency, comprising of well planned homes"
                 },
                 {
                     "address": "Handewadi,hadapser",
                     "price": "25 Lac",
                     "image": "assets/images/apartment2.jpeg",
-                    "area": "1 BHK Apartment",
-                    "agentName": "Pravin Patil"
+                    "property": "1 BHK Apartment",
+                    "description": "It is a magnanimous residency, comprising of well planned homes"
                 },
                 {
                     "address": "Bhosale Nagar,hadapser",
                     "price": "36 Lac",
                     "image": "assets/images/apartment3.jpeg",
-                    "area": "1 BHK Apartment",
-                    "agentName": "Sachin Patil"
+                    "property": "1 BHK Apartment",
+                    "description": "It is indeed a perfect dwelling and a wise investment"
                 },
                 {
                     "address": "Sasane Nagar,hadapser",
                     "price": "50 Lac",
                     "image": "assets/images/apartment4.jpeg",
-                    "area": "2 BHK Apartment",
-                    "agentName": "Mayur Mane"
+                    "property": "2 BHK Apartment",
+                    "description": "It is indeed a perfect dwelling and a wise investment"
                 },
                 {
                     "address": "Bhosale Nagar,hadapser",
                     "price": "65 Lac",
                     "image": "assets/images/apartment5.jpeg",
-                    "area": "2 BHK Apartment",
-                    "agentName": "Sachin Patil"
+                    "property": "2 BHK Apartment",
+                    "description": "It is indeed a perfect dwelling and a wise investment"
                 },
                 {
                     "address": "Amanora ,hadapser",
                     "price": "48 Lac",
                     "image": "assets/images/apartment6.jpeg",
-                    "area": "1 BHK Apartment",
-                    "agentName": "Sagar Kore"
+                    "property": "1 BHK Apartment",
+                    "description": "It is indeed a perfect dwelling and a wise investment"
                 }
             ];
         }
-        else if (this.id = "2") {
+        else if (this.id == "2") {
             this.propertyDetails = [
                 {
                     "address": "viman nagar",
                     "price": "80 Lac",
                     "image": "assets/images/apartment1.jpeg",
-                    "area": "2 BHK Apartment",
-                    "agentName": "Sahil Jadhav"
+                    "property": "2 BHK Apartment",
+                    "description": "It is a magnanimous residency, comprising of well planned homes"
                 },
                 {
                     "address": "Near Finix Mall,Viman Nagar",
                     "price": "25 Lac",
                     "image": "assets/images/apartment2.jpeg",
-                    "area": "1 BHK Apartment",
-                    "agentName": "Pravin Patil"
+                    "property": "1 BHK Apartment",
+                    "description": "It is a magnanimous residency, comprising of well planned homes"
                 },
                 {
                     "address": "Air force campus",
                     "price": "36 Lac",
                     "image": "assets/images/apartment3.jpeg",
-                    "area": "1 BHK Apartment",
-                    "agentName": "Sachin Patil"
+                    "property": "1 BHK Apartment",
+                    "description": "It is a magnanimous residency, comprising of well planned homes"
+                }
+            ];
+        }
+        else if (this.id == "3") {
+            this.propertyDetails = [
+                {
+                    "address": "Swargate,pune",
+                    "price": "42,000",
+                    "image": "assets/images/lg.jpeg",
+                    "property": "LG Plasma",
+                    "description": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper"
+                },
+                {
+                    "address": "Magarpatta city",
+                    "price": "28,000",
+                    "image": "assets/images/Malaysia.jpeg",
+                    "property": "Malaysia sealed box LED TV",
+                    "description": "Malaysia sealed box 55 4k Smart Android LED TV for sale"
+                },
+                {
+                    "address": "Pune",
+                    "price": "30,000",
+                    "image": "assets/images/micromax.png",
+                    "property": "Micromax 43T8100MHD / 43T4500MHD",
+                    "description": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV"
                 }
             ];
         }
@@ -658,7 +695,8 @@ var PropertyDetailsComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./property-details.component.css */ "./src/app/components/property-details/property-details.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
     ], PropertyDetailsComponent);
     return PropertyDetailsComponent;
 }());
@@ -799,6 +837,9 @@ var SearchboxComponent = /** @class */ (function () {
         else if (this.searchModel.searchData == "viman nagar") {
             this.id = 2;
         }
+        else if (this.searchModel.searchData = "tv") {
+            this.id = 3;
+        }
         this.route.navigate(['/app-property-details', this.id]);
     };
     SearchboxComponent.prototype.onRent = function () {
@@ -905,7 +946,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [formGroup]=\"signInGroup\">\n<amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'center'\" [show]=\"showSignInWindow\">\n  <amexio-body>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"medium-bold\">Login to your Account</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n    <amexio-row>\n      <amexio-column [size]=\"12\">\n        <amexio-text-input formControlName=\"Phone\" name=\"name\" field-label=\"Phone / Email\" place-holder=\"Enter Name\" [(ngModel)]=\"loginModel.phoneemail\">\n        </amexio-text-input>\n        <amexio-password-input formControlName=\"Password\" [enable-popover]=\"true\" [field-label]=\"'Password '\" name=\"password\" [place-holder]=\"'Enter Password'\"\n          [allow-blank]=\"false\" [error-msg]=\"'Please enter password'\" [min-length]=\"6\" [min-error-msg]=\"'Minimum 6 char required'\"\n          [max-length]=\"32\" [max-error-msg]=\"'Maximum 32 char allowed'\" [icon-feedback]=\"true\" [(ngModel)]=\"loginModel.password\">\n        </amexio-password-input>\n      </amexio-column>\n    </amexio-row>\n  </amexio-body>\n  <amexio-action>\n  \n  <amexio-button  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onBack()\" label=\"Back\"></amexio-button>\n    <amexio-button [disabled]=\"!signInGroup.valid\"  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onSignInClick()\" label=\"Login\"></amexio-button>\n    <amexio-button   [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onCancel()\" label=\"Cancel\"></amexio-button>\n  </amexio-action>\n</amexio-card>\n</div>"
+module.exports = "<div [formGroup]=\"signInGroup\">\n<amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'center'\" [show]=\"showSignInWindow\">\n  <amexio-body>\n     <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"right\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\"  [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"medium-bold\">Login to your Account</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n    <amexio-row>\n      <amexio-column [size]=\"12\">\n        <amexio-number-input formControlName=\"Phone\" name=\"name\" field-label=\"Phone\" place-holder=\"Enter Name\" [(ngModel)]=\"loginModel.phone\">\n        </amexio-number-input>\n        <amexio-password-input formControlName=\"Password\" [enable-popover]=\"true\" [field-label]=\"'Password '\" name=\"password\" [place-holder]=\"'Enter Password'\"\n          [allow-blank]=\"false\" [error-msg]=\"'Please enter password'\" [min-length]=\"6\" [min-error-msg]=\"'Minimum 6 char required'\"\n          [max-length]=\"32\" [max-error-msg]=\"'Maximum 32 char allowed'\" [icon-feedback]=\"true\" [(ngModel)]=\"loginModel.password\">\n        </amexio-password-input>\n      </amexio-column>\n    </amexio-row>\n  </amexio-body>\n  <amexio-action>\n  \n  <!-- <amexio-button  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onBack()\" label=\"Back\"></amexio-button> -->\n    <amexio-button   [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-times'\" (onClick)=\"onCancel()\" label=\"Cancel\"></amexio-button>\n    <amexio-button [disabled]=\"!signInGroup.valid\"  [size]=\"'default'\" [icon]=\"'fa fa-sign-in'\" [type]=\"'primary'\" (onClick)=\"onSignInClick()\" label=\"Login\"></amexio-button>\n  </amexio-action>\n</amexio-card>\n</div>"
 
 /***/ }),
 
@@ -950,7 +991,7 @@ var SignInComponent = /** @class */ (function () {
     };
     SignInComponent.prototype.validateSigninform = function () {
         this.signInGroup = this.fb.group({
-            Phone: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
+            Phone: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(10)]],
             Password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
         });
     };
@@ -1007,7 +1048,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [formGroup]=\"userRegistrationGroup\">\n<amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'center'\" [show]=\"showregisterWindow\">\n  <amexio-body>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"100px\"  width=\"100px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"medium-bold\">Your Keys Await</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n    <amexio-row>\n      <amexio-column size=\"12\" [fit]=\"true\">\n        <amexio-text-input formControlName=\"Name\" field-label=\"Name\" place-holder=\"Enter Name\" [(ngModel)]=\"userModel.name\">\n        </amexio-text-input>\n        <amexio-number-input  formControlName=\"Phone\"  [field-label]=\"'Phone'\" [place-holder]=\"'Enter phone Number'\" [(ngModel)]=\"userModel.phone\">\n        </amexio-number-input>\n        <amexio-password-input   formControlName=\"Password\" [enable-popover]=\"true\" [field-label]=\"'Password'\" [place-holder]=\"'Enter Password'\"\n          [allow-blank]=\"false\" [error-msg]=\"'Please enter password'\" [min-length]=\"6\" [min-error-msg]=\"'Minimum 6 char required'\"\n          [max-length]=\"32\" [max-error-msg]=\"'Maximum 32 char allowed'\" [icon-feedback]=\"true\" [(ngModel)]=\"userModel.password\">\n        </amexio-password-input>\n      </amexio-column>\n    </amexio-row>\n  </amexio-body>\n  <amexio-action>\n    <amexio-button  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onBack()\" label=\"Back\"></amexio-button>\n    <amexio-button [disabled]=\"!userRegistrationGroup.valid\"  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onRegister()\" label=\"Register\"></amexio-button>\n    <amexio-button   [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onCancel()\" label=\"Cancel\"></amexio-button>\n  </amexio-action>\n</amexio-card>\n</div>"
+module.exports = "<div [formGroup]=\"userRegistrationGroup\">\n<amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'center'\" [show]=\"showregisterWindow\">\n  <amexio-body>\n    <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"right\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\" [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n    <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-image [path]=\"'assets/images/building.png'\" height=\"80px\"  width=\"80px\"  [filter]=\"'round'\" [title-position]=\"'centered'\">\n            </amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n            <amexio-label size=\"medium-bold\">Your Keys Await</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n    <amexio-row>\n      <amexio-column size=\"12\" [fit]=\"true\">\n        <amexio-text-input formControlName=\"Name\" field-label=\"Name\" place-holder=\"Enter Name\" [(ngModel)]=\"userModel.name\">\n        </amexio-text-input>\n        <amexio-number-input  formControlName=\"Phone\"  [field-label]=\"'Phone'\" [place-holder]=\"'Enter phone Number'\" [(ngModel)]=\"userModel.phone\">\n        </amexio-number-input>\n        <amexio-password-input   formControlName=\"Password\" [enable-popover]=\"true\" [field-label]=\"'Password'\" [place-holder]=\"'Enter Password'\"\n          [allow-blank]=\"false\" [error-msg]=\"'Please enter password'\" [min-length]=\"6\" [min-error-msg]=\"'Minimum 6 char required'\"\n          [max-length]=\"32\" [max-error-msg]=\"'Maximum 32 char allowed'\" [icon-feedback]=\"true\" [(ngModel)]=\"userModel.password\">\n        </amexio-password-input>\n      </amexio-column>\n    </amexio-row>\n  </amexio-body>\n  <amexio-action>\n    <!-- <amexio-button  [size]=\"'medium'\" [type]=\"'primary'\" (onClick)=\"onBack()\" label=\"Back\"></amexio-button> -->\n      <amexio-button   [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-times'\" (onClick)=\"onCancel()\" label=\"Cancel\"></amexio-button>\n    <amexio-button [disabled]=\"!userRegistrationGroup.valid\"  [size]=\"'default'\" [icon]=\"'fa fa-user-plus'\" [type]=\"'primary'\" (onClick)=\"onRegister()\" label=\"Register\"></amexio-button>\n  </amexio-action>\n</amexio-card>\n</div>"
 
 /***/ }),
 
@@ -1109,7 +1150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModel", function() { return LoginModel; });
 var LoginModel = /** @class */ (function () {
     function LoginModel() {
-        this.phoneemail = '';
+        this.phone = '';
         this.password = '';
     }
     return LoginModel;
