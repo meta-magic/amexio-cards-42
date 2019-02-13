@@ -1,8 +1,11 @@
-<amexio-nav [enable-side-nav-position]="false">
-    <amexio-nav-item position-left [type]="'link'" [icon]="'fa fa-angle-double-up'" [title]="'Cards.com'" (onNavItemClick)="onCardsclick($event)">
-    </amexio-nav-item>
+<div class="navlogo">
+<amexio-nav [logo]="'assets/images/logos/cardslogo.jpg'" [title]="'Cards.com'"
+ [transparent]="dtsService.transparentFlag"  [enable-side-nav-position]="false" (onNavTitleClick)="onCardsclick($event)">
+    <!-- <amexio-nav-item position-left [type]="'link'" [icon]="'fa fa-angle-double-up'" [title]="'Cards.com'" (onNavItemClick)="onCardsclick($event)">
+    </amexio-nav-item> -->
     <amexio-nav-item position-right [type]="'link'" [icon]="'fa fa-user'" [title]="'Login'" (onNavItemClick)="onLoginLinkClick($event)">
     </amexio-nav-item>
 </amexio-nav>
+</div>
 <!-- <app-authentication [showWindow]="auth_Service.showWindow"></app-authentication> -->
 <router-outlet></router-outlet>

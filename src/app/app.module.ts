@@ -58,7 +58,7 @@ const routes: Routes = [
     PropertyDetailsComponent
     ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule,RouterModule,AmexioWidgetModule,BrowserAnimationsModule, RouterModule.forRoot(routes)
+    BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

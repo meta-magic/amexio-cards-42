@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from "./service/authentication.service";
 import {Router} from "@angular/router";
+import { DatatransferService  } from "./service/datatransfer.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,16 +9,19 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
 showWindow:boolean;
-  constructor(public auth_Service:AuthenticationService,public route:Router) { }
+  constructor(public auth_Service:AuthenticationService,public route:Router,public dtsService:DatatransferService) {
+    
+   }
 
   ngOnInit() {
+    
   }
   onCardsclick(){
     this.route.navigate(['/app-buy']);
   }
   onLoginLinkClick(){
 //  this.auth_Service.showWindow=true;
-this.route.navigate(['/login']);
+this.route.navigate(['login']);
  this.auth_Service.showLogin=true;
  this.auth_Service.showOTPWindow=false;
  this.auth_Service.showregisterWindow=false;
