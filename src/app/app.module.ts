@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AmexioWidgetModule } from 'amexio-ng-extensions';
+import { AmexioWidgetModule, AmexioLayoutModule, AmexioPaneModule, } from 'amexio-ng-extensions';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path:'login',
     component:AuthenticationComponent
+  },
+  {
+    path:'app-buy-property-details',
+    component:BuyPropertyDetailsComponent
   }
 ];
 @NgModule({
@@ -60,7 +64,7 @@ const routes: Routes = [
     BuyPropertyDetailsComponent
     ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,BrowserAnimationsModule
+    BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,AmexioLayoutModule, AmexioPaneModule,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

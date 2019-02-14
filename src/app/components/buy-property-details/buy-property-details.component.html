@@ -1,3 +1,82 @@
-<p>
-  buy-property-details works!
-</p>
+<amexio-row>
+  <amexio-column size="12" style="padding-top:5%">
+    <amexio-card [header]="false" [footer]="false">
+      <!-- <amexio-header>
+    Details
+  </amexio-header> -->
+      <amexio-body>
+        <amexio-row>
+          <amexio-column size="7" [fit]="fit">
+            <amexio-card
+              [header]="false"
+              [header-align]="'left'"
+              [footer]="false"
+              height="300">
+                <amexio-body>
+                   <div style="cursor: pointer">
+              <!-- <amexio-row>
+                <amexio-column [size]="12"> -->
+                  <table>
+                    <tr>
+                      <td>
+                        <p>
+                          <amexio-label size="medium-bold">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>
+                          <amexio-image [icon-class]="'fa fa-map-marker fa-lg'" (onClick)="getLocation(properyDetails)"></amexio-image> &nbsp;
+                          <amexio-label>{{properyDetails.address}}.</amexio-label>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <amexio-image [icon-class]="'fa fa-inr fa-lg'"></amexio-image> &nbsp;
+                        <amexio-label size="medium-bold">{{properyDetails.price}} </amexio-label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <amexio-rating-input [(ngModel)]="properyDetails.rating" [max]="'5'" [read-only]="true">
+                        </amexio-rating-input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>{{properyDetails.description}} </p>
+                      </td>
+                    </tr>
+
+                  </table>
+                <!-- </amexio-column>
+              </amexio-row> -->
+            </div>
+            <amexio-fieldset [collapsible]="false" [title]="'Details'">
+            
+                 <ul *ngFor="let details of properyDetails.details"><li>{{details}}</li></ul>
+            </amexio-fieldset>
+                </amexio-body>
+            </amexio-card>
+                     </amexio-column>
+          <amexio-column size="5" [fit]="true">
+            <amexio-carousel [data]="properyDetails.images" mode="multiple" shuffle-interval="2000">
+              <ng-template let-photos amexioTemplate="item">
+                <amexio-image [width]="'300px'" [height]="'250px'" path="{{photos}}">
+                </amexio-image>
+              </ng-template>
+            </amexio-carousel>
+            <br><amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+          <amexio-layout-item>
+           <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Buy Now'" [type]="'primary'" [tooltip]="'Buy Now'">
+        </amexio-button>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+            
+          </amexio-column>
+          <amexio-column [size]=12>
+            <amexio-google-map [initial-zoom-level]="12" [height]="'500px'" [initial-lat]="18.512840" [initial-lng]="73.926220" [data]="data"
+              (onMarkerClick)="onMarkerClick($event)" [google-map-key]="'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'">
+            </amexio-google-map>
+          </amexio-column>
+        </amexio-row>
+      </amexio-body>
+    </amexio-card>
+  </amexio-column>
+</amexio-row>

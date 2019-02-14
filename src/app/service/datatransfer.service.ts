@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DatatransferService {
 transparentFlag:boolean;
 navItemcolor:string;
+propertyDetails:any[];
   constructor() {
     
    }

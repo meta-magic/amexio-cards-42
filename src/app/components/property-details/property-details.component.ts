@@ -17,142 +17,274 @@ export class PropertyDetailsComponent implements OnInit {
               public dtsService:DatatransferService) {
     this.dtsService.transparentFlag=false; 
     this.propertyData=[
-  { "id":"1",
+  {
+    "id": "1",
     "searchData": "Hadapser",
     "properties": [
       {
         "address": "south gate,magarapatta",
-        "price": "80 Lac",
+        "price": "80 - 90 Lac",
         "image": "assets/images/apartment1.jpeg",
-        "rating":"3",
-        "property": "2 BHK Apartment",
-        "description":"It is a magnanimous residency, comprising of well planned homes",
-        "images":["assets/images/apartment1.jpeg","assets/images/apartment1.jpeg","assets/images/apartment1.jpeg"]
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "1,150 Sq.ftBy Kwality Vrindavan Heights",
+        "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
+        "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 1,150 Sq.ft","7th floor","2 Balcony","2 Bathroom"],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/balcony1.jpeg",
+          "assets/images/kitchen2.jpeg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
       },
       {
         "address": "Handewadi,hadapser",
-        "price": "25 Lac",
+        "price": "25 - 30 Lac",
         "image": "assets/images/apartment2.jpeg",
-        "rating":"3",
-        "property": "1 BHK Apartment",
-        "description":"It is a magnanimous residency, comprising of well planned homes",
-        "images":["assets/images/apartment2.jpeg","assets/images/apartment1.jpeg"]
+        "rating": "3",
+        "title": "1 BHK Apartment",
+        "subtitle": "By Gardenia Residency",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "1BHK Flat avaliable for Sale in Handewadi,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+         "details": ["Built-Up Area 550 Sq.ft","7th floor","2 Balcony","1 Bathroom"],
+        "images": [
+          "assets/images/apartment2.jpeg",
+          "assets/images/kitchen1.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.486010",
+          "longitude": "73.931730"
+        }
       },
       {
         "address": "Bhosale Nagar,hadapser",
-        "price": "36 Lac",
+        "price": "36 - 45 Lac",
         "image": "assets/images/apartment3.jpeg",
-        "rating":"2",        
-        "property": "1 BHK Apartment",
-        "description":"It is indeed a perfect dwelling and a wise investment",
-        "images":["assets/images/apartment3.jpeg","assets/images/apartment3.jpeg"]
+        "title": "1 BHK Apartment",
+        "subtitle": "By Royal Enrich",
+        "rating": "3",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "1BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 550 Sq.ft","2th floor","2 Balcony","2 Bathroom"],
+        "images": [
+          "assets/images/apartment3.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.505660",
+          "longitude": "73.928350"
+        }
       },
       {
         "address": "Sasane Nagar,hadapser",
-        "price": "50 Lac",
+        "price": "50 - 55 Lac",
         "image": "assets/images/apartment4.jpeg",
-        "rating":"4",
-        "property": "2 BHK Apartment",
-        "description":"It is indeed a perfect dwelling and a wise investment",
-        "images":["assets/images/apartment4.jpeg","assets/images/apartment4.jpeg"]
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "By Sprinkle Enrich",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "2BHK Flat avaliable for Sale in Sasane Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 1150 Sq.ft","4th floor","2 Balcony","2 Bathroom"],
+        "images": [
+          "assets/images/apartment4.jpeg",
+          "assets/images/kitchen1.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.493470",
+          "longitude": "73.932910"
+        }
       },
       {
         "address": "Bhosale Nagar,hadapser",
-        "price": "65 Lac",
+        "price": "65 - 70 Lac",
         "image": "assets/images/apartment5.jpeg",
-        "rating":"3",
-        "property": "2 BHK Apartment",
-        "description":"It is indeed a perfect dwelling and a wise investment",
-        "images":["assets/images/apartment5.jpeg","assets/images/apartment5.jpeg"]
-        
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "By Royal Society",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "2BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 1150 Sq.ft","8th floor","3 Balcony","2 Bathroom"],
+        "images": [
+          "assets/images/apartment5.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.505660",
+          "longitude": "73.928350"
+        }
       },
       {
         "address": "Amanora ,hadapser",
-        "price": "48 Lac",
+        "price": "48 - 55 Lac",
         "image": "assets/images/apartment6.jpeg",
-        "rating":"3",
-        "property": "1 BHK Apartment",
-        "description":"It is indeed a perfect dwelling and a wise investment",
-        "images":["assets/images/apartment5.jpeg","assets/images/apartment5.jpeg"]
+        "rating": "3",
+        "title": "1 BHK Apartment",
+        "subtitle": "By Cosmos Apartment",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "1BHK Flat avaliable for Sale in Amanora ,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 550 Sq.ft","6th floor","1 Balcony","2 Bathroom"],
+        "images": [
+          "assets/images/apartment5.jpeg",
+          "assets/images/kitchen1.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.518960",
+          "longitude": "73.943060"
+        }
       }
-
     ]
   },
-    { 
-    "id":"2",
+  {
+    "id": "2",
     "searchData": "Viman Nagar",
     "properties": [
-        {
+      {
         "address": "viman nagar",
-        "price": "80 Lac",
+        "price": "80 - 85 Lac",
         "image": "assets/images/apartment1.jpeg",
-        "rating":"2",
+        "rating": "3",
         "title": "2 BHK Apartment",
-        "description":"It is a magnanimous residency, comprising of well planned homes",
-        "images":["assets/images/apartment1.jpeg","assets/images/apartment5.jpeg"]
+        "subtitle": "",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/apartment5.jpeg"
+        ],
+        "location": {
+          "latitude": "18.568860",
+          "longitude": "73.919550"
+        }
       },
       {
-        "address": "Near Finix Mall,Viman Nagar",
-        "price": "25 Lac",
+        "address": "Near phoenix mall ,viman nagar",
+        "price": "25 - 35 Lac",
         "image": "assets/images/apartment2.jpeg",
-        "rating":"4",
+        "rating": "3",
         "title": "1 BHK Apartment",
-        "description":"It is a magnanimous residency, comprising of well planned homes",
-        "images":["assets/images/apartment1.jpeg","assets/images/apartment5.jpeg"]
-       
+        "subtitle": "",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/apartment5.jpeg"
+        ],
+        "location": {
+          "latitude": "18.560760",
+          "longitude": "73.917560"
+        }
       },
       {
         "address": "Air force campus",
-        "price": "36 Lac",
+        "price": "36 - 45 Lac",
         "image": "assets/images/apartment3.jpeg",
-        "rating":"3",
+        "rating": "3",
         "title": "1 BHK Apartment",
-        "description":"It is a magnanimous residency, comprising of well planned homes",
-        "images":["assets/images/apartment1.jpeg","assets/images/apartment5.jpeg"]
+        "subtitle": "",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/apartment5.jpeg"
+        ],
+        "location": {
+          "latitude": "18.5713",
+          "longitude": "73.9198"
+        }
       },
       {
         "address": "Viman nagar",
-        "price": "80 Lac",
+        "price": "80 - 90 Lac",
         "image": "assets/images/apartment3.jpeg",
-        "rating":"3",
+        "rating": "3",
         "title": "2 BHK Apartment",
-        "description":"It is a magnanimous residency, comprising of well planned homes",
-        "images":["assets/images/apartment1.jpeg","assets/images/apartment3.jpeg"]
+        "subtitle": "",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/apartment3.jpeg"
+        ],
+        "location": {
+         "latitude": "18.568860",
+          "longitude": "73.919550"
+        }
       }
-
     ]
   },
-  { 
-    "id":"3",
+  {
+    "id": "3",
     "searchData": "tv",
     "properties": [
       {
         "address": "Swargate,pune",
         "price": "42,000",
         "image": "assets/images/LG.jpg",
-        "rating":"3",
+        "rating": "3",
         "title": "LG Plasma",
-        "description":"LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
-        "images":["assets/images/Malaysia.jpeg","assets/images/Malaysia.jpeg"]
+        "subtitle": "",
+        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/LG.jpg",
+          "assets/images/Malaysia.jpeg"
+        ],
+        "location": {
+          "latitude": "18.496310",
+          "longitude": "73.856210"
+        }
       },
       {
         "address": "Magarpatta city",
         "price": "28,000",
         "image": "assets/images/Malaysia.jpeg",
-        "rating":"4",
+        "rating": "3",
         "title": "Malaysia sealed box LED TV",
-        "description":"Malaysia sealed box 55 4k Smart Android LED TV for sale",
-        "images":["assets/images/lg.jpeg","assets/images/lg.jpeg"]
-       
+        "subtitle": "",
+        "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/Malaysia.jpeg",
+          "assets/images/LG.jpg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
       },
       {
         "address": "Pune",
         "price": "30,000",
         "image": "assets/images/micromax.png",
-        "rating":"3",
+        "rating": "3",
         "title": "Micromax 43T8100MHD",
-        "description":"Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
-         "images":["assets/images/micromax.png","assets/images/micromax.png"]
+        "subtitle": "",
+        "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/micromax.png",
+          "assets/images/micromax.png"
+        ],
+        "location": {
+          "latitude": "18.520760",
+          "longitude": "73.855408"
+        }
       }
     ]
   }
@@ -161,11 +293,17 @@ export class PropertyDetailsComponent implements OnInit {
       console.log(params);
       this.id=params.id;
     });
-    this.propertyDetails=this.propertyData.find(x => x.id === this.id).properties;
+    this.propertyDetails=this.propertyData.find(x => x.id === this.id);
     
   }
 
   ngOnInit() {
   }
+  getPropertyDetails(property:any){
+    this.dtsService.propertyDetails=property;
+ this.router.navigate(['/app-buy-property-details']);
+  }
+  getLocation(property){
 
+  }
 }
