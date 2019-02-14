@@ -182,6 +182,10 @@ var routes = [
     {
         path: 'login',
         component: _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__["AuthenticationComponent"]
+    },
+    {
+        path: 'app-buy-property-details',
+        component: _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -204,7 +208,7 @@ var AppModule = /** @class */ (function () {
                 _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioLayoutModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioPaneModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -312,7 +316,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  buy-property-details works!\n</p>\n"
+module.exports = "<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <!-- <amexio-header>\n    Details\n  </amexio-header> -->\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"7\" [fit]=\"fit\">\n            <amexio-card\n              [header]=\"false\"\n              [header-align]=\"'left'\"\n              [footer]=\"false\"\n              height=\"300\">\n                <amexio-body>\n                   <div style=\"cursor: pointer\">\n              <!-- <amexio-row>\n                <amexio-column [size]=\"12\"> -->\n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n                <!-- </amexio-column>\n              </amexio-row> -->\n            </div>\n            <amexio-fieldset [collapsible]=\"false\" [title]=\"'Details'\">\n            \n                 <ul *ngFor=\"let details of properyDetails.details\"><li>{{details}}</li></ul>\n            </amexio-fieldset>\n                </amexio-body>\n            </amexio-card>\n                     </amexio-column>\n          <amexio-column size=\"5\" [fit]=\"true\">\n            <amexio-carousel [data]=\"properyDetails.images\" mode=\"multiple\" shuffle-interval=\"2000\">\n              <ng-template let-photos amexioTemplate=\"item\">\n                <amexio-image [width]=\"'300px'\" [height]=\"'250px'\" path=\"{{photos}}\">\n                </amexio-image>\n              </ng-template>\n            </amexio-carousel>\n            <br><amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item>\n           <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n            \n          </amexio-column>\n          <amexio-column [size]=12>\n            <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n              (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n            </amexio-google-map>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>"
 
 /***/ }),
 
@@ -327,6 +331,8 @@ module.exports = "<p>\n  buy-property-details works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyPropertyDetailsComponent", function() { return BuyPropertyDetailsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
+/* harmony import */ var amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! amexio-ng-extensions */ "./node_modules/amexio-ng-extensions/amexio-ng-extensions.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -337,10 +343,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var BuyPropertyDetailsComponent = /** @class */ (function () {
-    function BuyPropertyDetailsComponent() {
+    function BuyPropertyDetailsComponent(dtsService) {
+        this.dtsService = dtsService;
+        this.properyDetails = [];
+        this.data = [];
+        //     this.data.push(new GoogleMapOverlays(18.512840, 73.926220, 'south gate,magarapatta',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.486010, 73.931730, 'Handewadi,hadapsar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.505660, 73.928350, 'Bhosale Nagar,hadapsar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.493470, 73.932910, 'Sasane Nagar,hadapsar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.505660, 73.928350, 'Bhosale Nagar,hadapsar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.518960, 73.943060, 'Amanora ,hadapsar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.568860, 73.919550, 'viman nagar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.560760, 73.917560 ,'near phoenix mall ,viman nagar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.5713, 73.9198, 'Air Force Campus, Viman Nagar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.568860, 73.919550, 'viman nagar',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.496310, 73.856210, 'Swargate,pune',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.512840, 73.926220, 'magarpatta city',true,null,{city:'pune'}))
+        // this.data.push(new GoogleMapOverlays(18.520760, 73.855408, 'pune',true,null,{city:'pune'}))
     }
     BuyPropertyDetailsComponent.prototype.ngOnInit = function () {
+        this.properyDetails = this.dtsService.propertyDetails;
+        this.data.push(new amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__["GoogleMapOverlays"](Number(this.properyDetails.location.latitude), Number(this.properyDetails.location.longitude), this.properyDetails.address, true, null, { city: 'pune' }));
+    };
+    BuyPropertyDetailsComponent.prototype.onMarkerClick = function ($event) {
     };
     BuyPropertyDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -348,7 +376,7 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./buy-property-details.component.html */ "./src/app/components/buy-property-details/buy-property-details.component.html"),
             styles: [__webpack_require__(/*! ./buy-property-details.component.css */ "./src/app/components/buy-property-details/buy-property-details.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__["DatatransferService"]])
     ], BuyPropertyDetailsComponent);
     return BuyPropertyDetailsComponent;
 }());
@@ -612,7 +640,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"3\" *ngFor=\"let property of propertyDetails\">\n    \n<amexio-card-ce>\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.image\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label>Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n            <tr>\n              <td><amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> </td>\n            </tr>\n             <tr>\n               \n              <td><amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\"></amexio-image> &nbsp;<amexio-label>{{property.address}}.</amexio-label> </td>\n            </tr>\n             <tr>\n              <td><amexio-rating-input\n                     [(ngModel)]=\"property.rating\"\n                     [max]=\"'5'\"\n                     [read-only]=\"true\">\n            </amexio-rating-input></td>\n            </tr>\n             <tr>\n              <td><p>{{property.description}} </p> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n      <amexio-label>{{property.agentName}} </amexio-label> \n         <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
+module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"3\" *ngFor=\"let property of propertyDetails.properties\">\n    \n<amexio-card-ce (click)=\"getPropertyDetails(property)\" >\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.images[0]\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label (onClick)=\"getPropertyDetails(property)\">Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><p><amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> <br>{{property.subtitle}} <br>\n              <amexio-image  [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(property)\"></amexio-image> &nbsp;<amexio-label>{{property.address}}.</amexio-label></p>\n               </td>\n            </tr>\n                <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n             <tr>\n              <td><amexio-rating-input\n                     [(ngModel)]=\"property.rating\"\n                     [max]=\"'5'\"\n                     [read-only]=\"true\">\n            </amexio-rating-input></td>\n            </tr>\n             <tr>\n              <td><p>{{property.shortDescription}} </p> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n         <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
 
 /***/ }),
 
@@ -652,62 +680,129 @@ var PropertyDetailsComponent = /** @class */ (function () {
         this.propertyData = [];
         this.dtsService.transparentFlag = false;
         this.propertyData = [
-            { "id": "1",
+            {
+                "id": "1",
                 "searchData": "Hadapser",
                 "properties": [
                     {
                         "address": "south gate,magarapatta",
-                        "price": "80 Lac",
+                        "price": "80 - 90 Lac",
                         "image": "assets/images/apartment1.jpeg",
                         "rating": "3",
-                        "property": "2 BHK Apartment",
-                        "description": "It is a magnanimous residency, comprising of well planned homes",
-                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment1.jpeg", "assets/images/apartment1.jpeg"]
+                        "title": "2 BHK Apartment",
+                        "subtitle": "1,150 Sq.ftBy Kwality Vrindavan Heights",
+                        "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
+                        "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 1,150 Sq.ft", "7th floor", "2 Balcony", "2 Bathroom"],
+                        "images": [
+                            "assets/images/apartment1.jpeg",
+                            "assets/images/balcony1.jpeg",
+                            "assets/images/kitchen2.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.512840",
+                            "longitude": "73.926220"
+                        }
                     },
                     {
                         "address": "Handewadi,hadapser",
-                        "price": "25 Lac",
+                        "price": "25 - 30 Lac",
                         "image": "assets/images/apartment2.jpeg",
                         "rating": "3",
-                        "property": "1 BHK Apartment",
-                        "description": "It is a magnanimous residency, comprising of well planned homes",
-                        "images": ["assets/images/apartment2.jpeg", "assets/images/apartment1.jpeg"]
+                        "title": "1 BHK Apartment",
+                        "subtitle": "By Gardenia Residency",
+                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+                        "description": "1BHK Flat avaliable for Sale in Handewadi,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 550 Sq.ft", "7th floor", "2 Balcony", "1 Bathroom"],
+                        "images": [
+                            "assets/images/apartment2.jpeg",
+                            "assets/images/kitchen1.jpeg",
+                            "assets/images/livingroom1.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.486010",
+                            "longitude": "73.931730"
+                        }
                     },
                     {
                         "address": "Bhosale Nagar,hadapser",
-                        "price": "36 Lac",
+                        "price": "36 - 45 Lac",
                         "image": "assets/images/apartment3.jpeg",
-                        "rating": "2",
-                        "property": "1 BHK Apartment",
-                        "description": "It is indeed a perfect dwelling and a wise investment",
-                        "images": ["assets/images/apartment3.jpeg", "assets/images/apartment3.jpeg"]
+                        "title": "1 BHK Apartment",
+                        "subtitle": "By Royal Enrich",
+                        "rating": "3",
+                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+                        "description": "1BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 550 Sq.ft", "2th floor", "2 Balcony", "2 Bathroom"],
+                        "images": [
+                            "assets/images/apartment3.jpeg",
+                            "assets/images/kitchen2.jpeg",
+                            "assets/images/livingroom1.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.505660",
+                            "longitude": "73.928350"
+                        }
                     },
                     {
                         "address": "Sasane Nagar,hadapser",
-                        "price": "50 Lac",
+                        "price": "50 - 55 Lac",
                         "image": "assets/images/apartment4.jpeg",
-                        "rating": "4",
-                        "property": "2 BHK Apartment",
-                        "description": "It is indeed a perfect dwelling and a wise investment",
-                        "images": ["assets/images/apartment4.jpeg", "assets/images/apartment4.jpeg"]
+                        "rating": "3",
+                        "title": "2 BHK Apartment",
+                        "subtitle": "By Sprinkle Enrich",
+                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+                        "description": "2BHK Flat avaliable for Sale in Sasane Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 1150 Sq.ft", "4th floor", "2 Balcony", "2 Bathroom"],
+                        "images": [
+                            "assets/images/apartment4.jpeg",
+                            "assets/images/kitchen1.jpeg",
+                            "assets/images/livingroom1.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.493470",
+                            "longitude": "73.932910"
+                        }
                     },
                     {
                         "address": "Bhosale Nagar,hadapser",
-                        "price": "65 Lac",
+                        "price": "65 - 70 Lac",
                         "image": "assets/images/apartment5.jpeg",
                         "rating": "3",
-                        "property": "2 BHK Apartment",
-                        "description": "It is indeed a perfect dwelling and a wise investment",
-                        "images": ["assets/images/apartment5.jpeg", "assets/images/apartment5.jpeg"]
+                        "title": "2 BHK Apartment",
+                        "subtitle": "By Royal Society",
+                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+                        "description": "2BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 1150 Sq.ft", "8th floor", "3 Balcony", "2 Bathroom"],
+                        "images": [
+                            "assets/images/apartment5.jpeg",
+                            "assets/images/kitchen2.jpeg",
+                            "assets/images/livingroom1.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.505660",
+                            "longitude": "73.928350"
+                        }
                     },
                     {
                         "address": "Amanora ,hadapser",
-                        "price": "48 Lac",
+                        "price": "48 - 55 Lac",
                         "image": "assets/images/apartment6.jpeg",
                         "rating": "3",
-                        "property": "1 BHK Apartment",
-                        "description": "It is indeed a perfect dwelling and a wise investment",
-                        "images": ["assets/images/apartment5.jpeg", "assets/images/apartment5.jpeg"]
+                        "title": "1 BHK Apartment",
+                        "subtitle": "By Cosmos Apartment",
+                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+                        "description": "1BHK Flat avaliable for Sale in Amanora ,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
+                        "images": [
+                            "assets/images/apartment5.jpeg",
+                            "assets/images/kitchen1.jpeg",
+                            "assets/images/livingroom1.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.518960",
+                            "longitude": "73.943060"
+                        }
                     }
                 ]
             },
@@ -717,39 +812,79 @@ var PropertyDetailsComponent = /** @class */ (function () {
                 "properties": [
                     {
                         "address": "viman nagar",
-                        "price": "80 Lac",
+                        "price": "80 - 85 Lac",
                         "image": "assets/images/apartment1.jpeg",
-                        "rating": "2",
+                        "rating": "3",
                         "title": "2 BHK Apartment",
-                        "description": "It is a magnanimous residency, comprising of well planned homes",
-                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment5.jpeg"]
+                        "subtitle": "",
+                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/apartment1.jpeg",
+                            "assets/images/apartment5.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.568860",
+                            "longitude": "73.919550"
+                        }
                     },
                     {
-                        "address": "Near Finix Mall,Viman Nagar",
-                        "price": "25 Lac",
+                        "address": "Near phoenix mall ,viman nagar",
+                        "price": "25 - 35 Lac",
                         "image": "assets/images/apartment2.jpeg",
-                        "rating": "4",
+                        "rating": "3",
                         "title": "1 BHK Apartment",
-                        "description": "It is a magnanimous residency, comprising of well planned homes",
-                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment5.jpeg"]
+                        "subtitle": "",
+                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/apartment1.jpeg",
+                            "assets/images/apartment5.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.560760",
+                            "longitude": "73.917560"
+                        }
                     },
                     {
                         "address": "Air force campus",
-                        "price": "36 Lac",
+                        "price": "36 - 45 Lac",
                         "image": "assets/images/apartment3.jpeg",
                         "rating": "3",
                         "title": "1 BHK Apartment",
-                        "description": "It is a magnanimous residency, comprising of well planned homes",
-                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment5.jpeg"]
+                        "subtitle": "",
+                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/apartment1.jpeg",
+                            "assets/images/apartment5.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.5713",
+                            "longitude": "73.9198"
+                        }
                     },
                     {
                         "address": "Viman nagar",
-                        "price": "80 Lac",
+                        "price": "80 - 90 Lac",
                         "image": "assets/images/apartment3.jpeg",
                         "rating": "3",
                         "title": "2 BHK Apartment",
-                        "description": "It is a magnanimous residency, comprising of well planned homes",
-                        "images": ["assets/images/apartment1.jpeg", "assets/images/apartment3.jpeg"]
+                        "subtitle": "",
+                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/apartment1.jpeg",
+                            "assets/images/apartment3.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.568860",
+                            "longitude": "73.919550"
+                        }
                     }
                 ]
             },
@@ -763,17 +898,37 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/LG.jpg",
                         "rating": "3",
                         "title": "LG Plasma",
-                        "description": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
-                        "images": ["assets/images/Malaysia.jpeg", "assets/images/Malaysia.jpeg"]
+                        "subtitle": "",
+                        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/LG.jpg",
+                            "assets/images/Malaysia.jpeg"
+                        ],
+                        "location": {
+                            "latitude": "18.496310",
+                            "longitude": "73.856210"
+                        }
                     },
                     {
                         "address": "Magarpatta city",
                         "price": "28,000",
                         "image": "assets/images/Malaysia.jpeg",
-                        "rating": "4",
+                        "rating": "3",
                         "title": "Malaysia sealed box LED TV",
-                        "description": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
-                        "images": ["assets/images/lg.jpeg", "assets/images/lg.jpeg"]
+                        "subtitle": "",
+                        "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/Malaysia.jpeg",
+                            "assets/images/LG.jpg"
+                        ],
+                        "location": {
+                            "latitude": "18.512840",
+                            "longitude": "73.926220"
+                        }
                     },
                     {
                         "address": "Pune",
@@ -781,8 +936,18 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/micromax.png",
                         "rating": "3",
                         "title": "Micromax 43T8100MHD",
-                        "description": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
-                        "images": ["assets/images/micromax.png", "assets/images/micromax.png"]
+                        "subtitle": "",
+                        "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
+                        "description": "",
+                        "details": [],
+                        "images": [
+                            "assets/images/micromax.png",
+                            "assets/images/micromax.png"
+                        ],
+                        "location": {
+                            "latitude": "18.520760",
+                            "longitude": "73.855408"
+                        }
                     }
                 ]
             }
@@ -791,9 +956,15 @@ var PropertyDetailsComponent = /** @class */ (function () {
             console.log(params);
             _this.id = params.id;
         });
-        this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; }).properties;
+        this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; });
     }
     PropertyDetailsComponent.prototype.ngOnInit = function () {
+    };
+    PropertyDetailsComponent.prototype.getPropertyDetails = function (property) {
+        this.dtsService.propertyDetails = property;
+        this.router.navigate(['/app-buy-property-details']);
+    };
+    PropertyDetailsComponent.prototype.getLocation = function (property) {
     };
     PropertyDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
