@@ -1,7 +1,9 @@
 <div>
   <img class="pic-style">
   <amexio-row>
-    <amexio-column size="12" style="padding-top:7%">
+    <amexio-column size="3">
+    </amexio-column>
+    <amexio-column size="6" style="padding-top:7%">
       <amexio-layout-columns class="horizontal-position" [orientation]="'horizontal'" [border]="false" [alignment]="'center'">
         <amexio-layout-item>
           <amexio-layout-columns [fit]="true" [border]="false" [orientation]="'vertical'" [alignment]="'center'">
@@ -24,9 +26,10 @@
                           <amexio-column size="12" [fit]="true">
                             <amexio-text-input [field-label]="'Pay'" name="name" [place-holder]="'Pay'" [(ngModel)]="payment.price">
                             </amexio-text-input>
-                            <amexio-radio-group [field-label]="'Payement methods'" name="methods" [display-field]="'name'" [value-field]="'id'" [horizontal]="false"
+                            <amexio-radio-group [field-label]="'Payement methods'" name="methods" [display-field]="'name'" [value-field]="'id'" [horizontal]="true"
                               [data]="paymentMethods">
                             </amexio-radio-group>
+                            <br>
                             <!-- <amexio-radio-group [field-label]="'Standard Payement methods'" name="methods" [display-field]="'name'" [value-field]="'id'"
                               [horizontal]="true" [data]="standardPaymentMethods">
                             </amexio-radio-group> -->
@@ -46,5 +49,7 @@
         </amexio-layout-item>
       </amexio-layout-columns>
     </amexio-column>
+    <amexio-column size="3">
+      </amexio-column>
   </amexio-row>
 </div>
