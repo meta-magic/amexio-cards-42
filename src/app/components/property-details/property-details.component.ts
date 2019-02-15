@@ -306,6 +306,7 @@ export class PropertyDetailsComponent implements OnInit {
   ngOnInit() {
   }
   getPropertyDetails(property:any){
+    property.id=this.id;
     this.dtsService.propertyDetails=property;
  this.router.navigate(['/app-buy-property-details']);
   }
