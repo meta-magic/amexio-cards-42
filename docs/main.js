@@ -466,19 +466,6 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
         this.data = [];
         this.createLayouts();
         this._gridlayoutService.createLayout(this.gridDesktop);
-        //     this.data.push(new GoogleMapOverlays(18.512840, 73.926220, 'south gate,magarapatta',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.486010, 73.931730, 'Handewadi,hadapsar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.505660, 73.928350, 'Bhosale Nagar,hadapsar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.493470, 73.932910, 'Sasane Nagar,hadapsar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.505660, 73.928350, 'Bhosale Nagar,hadapsar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.518960, 73.943060, 'Amanora ,hadapsar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.568860, 73.919550, 'viman nagar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.560760, 73.917560 ,'near phoenix mall ,viman nagar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.5713, 73.9198, 'Air Force Campus, Viman Nagar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.568860, 73.919550, 'viman nagar',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.496310, 73.856210, 'Swargate,pune',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.512840, 73.926220, 'magarpatta city',true,null,{city:'pune'}))
-        // this.data.push(new GoogleMapOverlays(18.520760, 73.855408, 'pune',true,null,{city:'pune'}))
     }
     BuyPropertyDetailsComponent.prototype.ngOnInit = function () {
         this.properyDetails = this.dtsService.propertyDetails;
@@ -502,7 +489,7 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
         this.mainImagePath = event;
     };
     BuyPropertyDetailsComponent.prototype.onBack = function () {
-        // this.route.navigate(['/app-property-details']);
+        this.route.navigate(['/app-property-details', this.properyDetails.id]);
     };
     BuyPropertyDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1101,6 +1088,7 @@ var PropertyDetailsComponent = /** @class */ (function () {
     PropertyDetailsComponent.prototype.ngOnInit = function () {
     };
     PropertyDetailsComponent.prototype.getPropertyDetails = function (property) {
+        property.id = this.id;
         this.dtsService.propertyDetails = property;
         this.router.navigate(['/app-buy-property-details']);
     };
