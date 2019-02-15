@@ -21,7 +21,6 @@ export class SearchboxComponent implements OnInit {
     this.route.navigate(['/app-buy']);
   }
   onSearchButtonClick() {
-  console.log('searchModel',this.searchModel);
   if(this.searchModel.searchData=="hadapser"){
     this.id="1";
 

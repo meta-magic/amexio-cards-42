@@ -45,7 +45,6 @@ onBuyNowClick(property:any){
 
    }
     onImageClick(event:any){
-   console.log('imageclick',event);
    this.mainImagePath=event;
     }
 

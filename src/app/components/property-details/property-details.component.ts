@@ -27,7 +27,7 @@ export class PropertyDetailsComponent implements OnInit {
         "image": "assets/images/apartment1.jpeg",
         "rating": "3",
         "title": "2 BHK Apartment",
-        "subtitle": "1,150 Sq.ftBy Kwality Vrindavan Heights",
+        "subtitle": "1,150 Sq.ft By Kwality Vrindavan Heights",
         "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
         "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
         "details": ["Built-Up Area 1,150 Sq.ft","7th floor","2 Balcony","2 Bathroom"],
@@ -296,7 +296,6 @@ export class PropertyDetailsComponent implements OnInit {
   }
 ];
      this.route.params.subscribe(params => {
-      console.log(params);
       this.id=params.id;
     });
     this.propertyDetails=this.propertyData.find(x => x.id === this.id);

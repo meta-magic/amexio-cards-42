@@ -28,7 +28,6 @@ signInGroup:FormGroup;
       });
   }
   onSignInClick(){
-  console.log('loginmodel',this.loginModel);
   }
   onCancel(){
   this.route.navigate(['/app-buy']);

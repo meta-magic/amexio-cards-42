@@ -31,7 +31,6 @@ export class UserRegistrationComponent implements OnInit {
       });
     }
   onRegister(){
-    console.log('userModel',this.userModel);
    this.auth_Service.showOTPWindow=true;
   this.auth_Service.showregisterWindow=false;
   this.auth_Service.showLogin=false;
