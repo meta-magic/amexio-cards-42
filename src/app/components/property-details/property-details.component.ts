@@ -235,13 +235,14 @@ export class PropertyDetailsComponent implements OnInit {
         "image": "assets/images/LG.jpg",
         "rating": "3",
         "title": "LG Plasma",
-        "subtitle": "",
+        "subtitle": "Smart Android LED TV",
         "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
-        "description": "",
-        "details": [],
+        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
+        "details": [" Best sound and sound clarity","Social Media Enabled, facebook/whatsapp and other apps.","3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put","1 year standard manufacturer warranty"],
         "images": [
           "assets/images/LG.jpg",
-          "assets/images/Malaysia.jpeg"
+          "assets/images/LG1.jpg",
+          "assets/images/LG2.jpg"
         ],
         "location": {
           "latitude": "18.496310",
@@ -253,14 +254,15 @@ export class PropertyDetailsComponent implements OnInit {
         "price": "28,000",
         "image": "assets/images/Malaysia.jpeg",
         "rating": "3",
-        "title": "Malaysia sealed box LED TV",
-        "subtitle": "",
+        "title": "Malaysia sealed box",
+        "subtitle": "55 4k Smart Android LED TV ",
         "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
-        "description": "",
+        "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
         "details": [],
         "images": [
           "assets/images/Malaysia.jpeg",
-          "assets/images/LG.jpg"
+          "assets/images/malaysia1.jpeg",
+          "assets/images/LG2.jpg"
         ],
         "location": {
           "latitude": "18.512840",
@@ -279,7 +281,8 @@ export class PropertyDetailsComponent implements OnInit {
         "details": [],
         "images": [
           "assets/images/micromax.png",
-          "assets/images/micromax.png"
+          "assets/images/malaysia1.jpeg",
+          "assets/images/LG2.jpg"
         ],
         "location": {
           "latitude": "18.520760",
