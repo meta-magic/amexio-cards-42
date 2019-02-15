@@ -134,12 +134,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
 /* harmony import */ var _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/property-details/property-details.component */ "./src/app/components/property-details/property-details.component.ts");
 /* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
+/* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -186,6 +188,9 @@ var routes = [
     {
         path: 'app-buy-property-details',
         component: _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"]
+    }, {
+        path: 'app-buy-now-card',
+        component: _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__["BuyNowCardComponent"]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -205,7 +210,8 @@ var AppModule = /** @class */ (function () {
                 _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__["RentComponent"],
                 _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__["AuthenticationComponent"],
                 _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__["PropertyDetailsComponent"],
-                _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"]
+                _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"],
+                _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__["BuyNowCardComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioLayoutModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioPaneModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
@@ -298,6 +304,109 @@ var AuthenticationComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/buy-now-card/buy-now-card.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/components/buy-now-card/buy-now-card.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/buy-now-card/buy-now-card.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/buy-now-card/buy-now-card.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <img class=\"pic-style\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:7%\">\n      <amexio-layout-columns class=\"horizontal-position\" [orientation]=\"'horizontal'\" [border]=\"false\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <amexio-layout-columns [fit]=\"true\" [border]=\"false\" [orientation]=\"'vertical'\" [alignment]=\"'center'\">\n            <amexio-layout-item>\n              <div class=\"main-class\">\n                <amexio-row>\n                  <amexio-column size=\"12\" [fit]=\"true\">\n                    <amexio-card [footer]=\"true\" [footer-align]=\"'center'\">\n                      <amexio-body>\n                        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"right\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\" [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n                        <amexio-badge [absolute]=\"true\" [background]=\"'black'\" [color]=\"'white'\" [top]=\"'0px'\" [right]=\"'0px'\">\n                          <amexio-label size=\"medium-bold\">Buy Now</amexio-label>\n                        </amexio-badge>\n                        <br>\n                        <amexio-row>\n                          <amexio-column size=\"12\" [fit]=\"true\">\n                            <amexio-text-input [field-label]=\"'Pay'\" name=\"name\" [place-holder]=\"'Pay'\" [(ngModel)]=\"payment.price\">\n                            </amexio-text-input>\n                            <amexio-radio-group [field-label]=\"'Payement methods'\" name=\"methods\" [display-field]=\"'name'\" [value-field]=\"'id'\" [horizontal]=\"false\"\n                              [data]=\"paymentMethods\">\n                            </amexio-radio-group>\n                            <!-- <amexio-radio-group [field-label]=\"'Standard Payement methods'\" name=\"methods\" [display-field]=\"'name'\" [value-field]=\"'id'\"\n                              [horizontal]=\"true\" [data]=\"standardPaymentMethods\">\n                            </amexio-radio-group> -->\n                          </amexio-column>\n                        </amexio-row>\n                      </amexio-body>\n                      <amexio-action>\n                      <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Pay'\" [type]=\"'primary'\" [tooltip]=\"'Pay'\">\n          </amexio-button>\n                      </amexio-action>\n                    </amexio-card>\n                  </amexio-column>\n                </amexio-row>\n              </div>\n            </amexio-layout-item>\n          </amexio-layout-columns>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-column>\n  </amexio-row>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/buy-now-card/buy-now-card.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/buy-now-card/buy-now-card.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: BuyNowCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyNowCardComponent", function() { return BuyNowCardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var BuyNowCardComponent = /** @class */ (function () {
+    function BuyNowCardComponent(route, dtsService) {
+        this.route = route;
+        this.dtsService = dtsService;
+        this.paymentMethods = [];
+        this.standardPaymentMethods = [];
+        this.paymentMethods = [
+            {
+                "id": "1",
+                "name": "Google Pay"
+            },
+            {
+                "id": "2",
+                "name": "Paypal"
+            },
+            {
+                "id": "3",
+                "name": "Apple Pay"
+            },
+            {
+                "id": "4",
+                "name": "Credit / Debit Cards"
+            }, {
+                "id": "5",
+                "name": "Net Banking"
+            }
+        ];
+        this.standardPaymentMethods = [{
+                "id": "1",
+                "name": "Credit / Debit Cards"
+            }, {
+                "id": "2",
+                "name": "Net Banking"
+            }];
+    }
+    BuyNowCardComponent.prototype.ngOnInit = function () {
+        this.payment = this.dtsService.propertyDetails;
+    };
+    BuyNowCardComponent.prototype.onBack = function () {
+        this.route.navigate(['/app-buy-property-details']);
+    };
+    BuyNowCardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-buy-now-card',
+            template: __webpack_require__(/*! ./buy-now-card.component.html */ "./src/app/components/buy-now-card/buy-now-card.component.html"),
+            styles: [__webpack_require__(/*! ./buy-now-card.component.css */ "./src/app/components/buy-now-card/buy-now-card.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
+    ], BuyNowCardComponent);
+    return BuyNowCardComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/buy-property-details/buy-property-details.component.css":
 /*!************************************************************************************!*\
   !*** ./src/app/components/buy-property-details/buy-property-details.component.css ***!
@@ -316,7 +425,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <!-- <amexio-header>\n    Details\n  </amexio-header> -->\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"7\" [fit]=\"fit\">\n            <amexio-card\n              [header]=\"false\"\n              [header-align]=\"'left'\"\n              [footer]=\"false\"\n              height=\"300\">\n                <amexio-body>\n                   <div style=\"cursor: pointer\">\n              <!-- <amexio-row>\n                <amexio-column [size]=\"12\"> -->\n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n                <!-- </amexio-column>\n              </amexio-row> -->\n            </div>\n            <amexio-fieldset [collapsible]=\"false\" [title]=\"'Details'\">\n            \n                 <ul *ngFor=\"let details of properyDetails.details\"><li>{{details}}</li></ul>\n            </amexio-fieldset>\n                </amexio-body>\n            </amexio-card>\n                     </amexio-column>\n          <amexio-column size=\"5\" [fit]=\"true\">\n            <amexio-carousel [data]=\"properyDetails.images\" mode=\"multiple\" shuffle-interval=\"2000\">\n              <ng-template let-photos amexioTemplate=\"item\">\n                <amexio-image [width]=\"'300px'\" [height]=\"'250px'\" path=\"{{photos}}\">\n                </amexio-image>\n              </ng-template>\n            </amexio-carousel>\n            <br><amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item>\n           <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n            \n          </amexio-column>\n          <amexio-column [size]=12>\n            <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n              (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n            </amexio-google-map>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>"
+module.exports = "<!-- <amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"1\" [fit]=\"true\">\n            <amexio-layout-columns [fit]=\"true\" [border]=\"true\" [orientation]=\"'vertical'\" [alignment]=\"'start'\">\n              <amexio-layout-item *ngFor=\"let photos of properyDetails.images\">\n                <amexio-image [width]=\"'80px'\" [height]=\"'80px'\" path=\"{{photos}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n          </amexio-column>\n          <amexio-column size=\"5\">\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-image [width]=\"'400px'\" [height]=\"'360px'\" path=\"{{properyDetails.images[0]}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-arrow-left fa-lg'\" [label]=\"'Back'\" [type]=\"'secondary'\" [tooltip]=\"'Back'\"\n                  (onClick)=\"onBack()\">\n                </amexio-button>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\" (onClick)=\"onBuyNowClick(properyDetails)\">\n                </amexio-button>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n              (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n            </amexio-google-map>\n          </amexio-column>\n          <amexio-column size=\"6\" [fit]=\"fit\">\n               <div style=\"cursor: pointer\">\n             \n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n               \n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row> -->\n<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"12\" [fit]=\"true\">\n            <amexio-layout-grid [layout]=\"'Home'\">\n              <amexio-grid-item [name]=\"'gridicon'\">\n                <amexio-image *ngFor=\"let photos of properyDetails.images\" [width]=\"'90px'\" [height]=\"'80px'\" path=\"{{photos}}\" (onClick)=\"onImageClick(photos)\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridimage'\">\n                <amexio-image [width]=\"'420px'\" [height]=\"'420px'\" path=\"{{mainImagePath}}\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'griddescription'\">\n                <div style=\"cursor: pointer\">\n\n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n\n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridmap'\">\n                <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n                  (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n                </amexio-google-map>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridbutton'\">\n                <amexio-row>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-arrow-left'\" [label]=\"'Back to list'\" [type]=\"'secondary'\" [tooltip]=\"'Back'\"\n                      (onClick)=\"onBack()\">\n                    </amexio-button>\n                  </amexio-column>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\"\n                      (onClick)=\"onBuyNowClick(properyDetails)\">\n                    </amexio-button>\n                  </amexio-column>\n                </amexio-row>\n              </amexio-grid-item>\n            </amexio-layout-grid>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>"
 
 /***/ }),
 
@@ -333,6 +442,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 /* harmony import */ var amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! amexio-ng-extensions */ "./node_modules/amexio-ng-extensions/amexio-ng-extensions.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -345,11 +455,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var BuyPropertyDetailsComponent = /** @class */ (function () {
-    function BuyPropertyDetailsComponent(dtsService) {
+    function BuyPropertyDetailsComponent(dtsService, route, _gridlayoutService) {
         this.dtsService = dtsService;
+        this.route = route;
+        this._gridlayoutService = _gridlayoutService;
         this.properyDetails = [];
         this.data = [];
+        this.createLayouts();
+        this._gridlayoutService.createLayout(this.gridDesktop);
         //     this.data.push(new GoogleMapOverlays(18.512840, 73.926220, 'south gate,magarapatta',true,null,{city:'pune'}))
         // this.data.push(new GoogleMapOverlays(18.486010, 73.931730, 'Handewadi,hadapsar',true,null,{city:'pune'}))
         // this.data.push(new GoogleMapOverlays(18.505660, 73.928350, 'Bhosale Nagar,hadapsar',true,null,{city:'pune'}))
@@ -366,9 +482,27 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
     }
     BuyPropertyDetailsComponent.prototype.ngOnInit = function () {
         this.properyDetails = this.dtsService.propertyDetails;
+        this.mainImagePath = this.properyDetails.images[0];
         this.data.push(new amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__["GoogleMapOverlays"](Number(this.properyDetails.location.latitude), Number(this.properyDetails.location.longitude), this.properyDetails.address, true, null, { city: 'pune' }));
     };
     BuyPropertyDetailsComponent.prototype.onMarkerClick = function ($event) {
+    };
+    BuyPropertyDetailsComponent.prototype.onBuyNowClick = function (property) {
+        this.dtsService.propertyDetails = property;
+        this.route.navigate(['/app-buy-now-card']);
+    };
+    BuyPropertyDetailsComponent.prototype.createLayouts = function () {
+        this.gridDesktop = new amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__["GridConfig"]('Home', amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__["GridConstants"].Desktop)
+            .addlayout(["gridicon", "gridimage", "gridimage", "gridimage", "gridimage", "griddescription", "griddescription", "griddescription", "griddescription", "griddescription"])
+            .addlayout(["gridbutton", "gridbutton", "gridbutton", "gridbutton", "gridbutton", "griddescription", "griddescription", "griddescription", "griddescription", "griddescription"])
+            .addlayout(["gridmap", "gridmap", "gridmap", "gridmap", "gridmap", "griddescription", "griddescription", "griddescription", "griddescription", "griddescription"]);
+    };
+    BuyPropertyDetailsComponent.prototype.onImageClick = function (event) {
+        console.log('imageclick', event);
+        this.mainImagePath = event;
+    };
+    BuyPropertyDetailsComponent.prototype.onBack = function () {
+        // this.route.navigate(['/app-property-details']);
     };
     BuyPropertyDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -376,7 +510,7 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./buy-property-details.component.html */ "./src/app/components/buy-property-details/buy-property-details.component.html"),
             styles: [__webpack_require__(/*! ./buy-property-details.component.css */ "./src/app/components/buy-property-details/buy-property-details.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__["DatatransferService"]])
+        __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__["DatatransferService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__["AmexioGridLayoutService"]])
     ], BuyPropertyDetailsComponent);
     return BuyPropertyDetailsComponent;
 }());
@@ -716,7 +850,7 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "details": ["Built-Up Area 550 Sq.ft", "7th floor", "2 Balcony", "1 Bathroom"],
                         "images": [
                             "assets/images/apartment2.jpeg",
-                            "assets/images/kitchen1.jpeg",
+                            "assets/images/kitchen2.jpeg",
                             "assets/images/livingroom1.jpeg"
                         ],
                         "location": {
@@ -756,7 +890,7 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "details": ["Built-Up Area 1150 Sq.ft", "4th floor", "2 Balcony", "2 Bathroom"],
                         "images": [
                             "assets/images/apartment4.jpeg",
-                            "assets/images/kitchen1.jpeg",
+                            "assets/images/kitchen2.jpeg",
                             "assets/images/livingroom1.jpeg"
                         ],
                         "location": {
@@ -796,7 +930,7 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
                         "images": [
                             "assets/images/apartment5.jpeg",
-                            "assets/images/kitchen1.jpeg",
+                            "assets/images/kitchen2.jpeg",
                             "assets/images/livingroom1.jpeg"
                         ],
                         "location": {
@@ -816,13 +950,14 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/apartment1.jpeg",
                         "rating": "3",
                         "title": "2 BHK Apartment",
-                        "subtitle": "",
+                        "subtitle": "By kumar builders",
                         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "",
-                        "details": [],
+                        "description": "2BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 1100 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
                         "images": [
                             "assets/images/apartment1.jpeg",
-                            "assets/images/apartment5.jpeg"
+                            "assets/images/kitchen2.jpeg",
+                            "assets/images/livingroom1.jpeg"
                         ],
                         "location": {
                             "latitude": "18.568860",
@@ -835,13 +970,14 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/apartment2.jpeg",
                         "rating": "3",
                         "title": "1 BHK Apartment",
-                        "subtitle": "",
+                        "subtitle": "By shreley society.",
                         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "",
-                        "details": [],
+                        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
                         "images": [
-                            "assets/images/apartment1.jpeg",
-                            "assets/images/apartment5.jpeg"
+                            "assets/images/apartment2.jpeg",
+                            "assets/images/kitchen2.jpeg",
+                            "assets/images/livingroom1.jpeg"
                         ],
                         "location": {
                             "latitude": "18.560760",
@@ -856,11 +992,12 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "title": "1 BHK Apartment",
                         "subtitle": "",
                         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "",
-                        "details": [],
+                        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+                        "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
                         "images": [
                             "assets/images/apartment1.jpeg",
-                            "assets/images/apartment5.jpeg"
+                            "assets/images/kitchen2.jpeg",
+                            "assets/images/livingroom1.jpeg"
                         ],
                         "location": {
                             "latitude": "18.5713",
@@ -921,7 +1058,7 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "subtitle": "55 4k Smart Android LED TV ",
                         "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
                         "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
-                        "details": [],
+                        "details": [" Best sound and sound clarity", "Social Media Enabled, facebook/whatsapp and other apps.", "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put", "1 year standard manufacturer warranty"],
                         "images": [
                             "assets/images/Malaysia.jpeg",
                             "assets/images/malaysia1.jpeg",
@@ -938,10 +1075,10 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/micromax.png",
                         "rating": "3",
                         "title": "Micromax 43T8100MHD",
-                        "subtitle": "",
+                        "subtitle": "43 inch HD Ready TV",
                         "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
-                        "description": "",
-                        "details": [],
+                        "description": "Brand new Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV with 1 year warranty card ",
+                        "details": [" Best sound and sound clarity", "Social Media Enabled, facebook/whatsapp and other apps.", "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put", "1 year standard manufacturer warranty"],
                         "images": [
                             "assets/images/micromax.png",
                             "assets/images/malaysia1.jpeg",
