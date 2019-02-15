@@ -485,7 +485,6 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
             .addlayout(["gridmap", "gridmap", "gridmap", "gridmap", "gridmap", "griddescription", "griddescription", "griddescription", "griddescription", "griddescription"]);
     };
     BuyPropertyDetailsComponent.prototype.onImageClick = function (event) {
-        console.log('imageclick', event);
         this.mainImagePath = event;
     };
     BuyPropertyDetailsComponent.prototype.onBack = function () {
@@ -643,10 +642,8 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.onLoginClick = function () {
     };
     LoginComponent.prototype.onFacebookClick = function (event) {
-        console.log(event);
     };
     LoginComponent.prototype.onGoogleClick = function (event) {
-        console.log(event);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -811,7 +808,7 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/apartment1.jpeg",
                         "rating": "3",
                         "title": "2 BHK Apartment",
-                        "subtitle": "1,150 Sq.ftBy Kwality Vrindavan Heights",
+                        "subtitle": "1,150 Sq.ft By Kwality Vrindavan Heights",
                         "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
                         "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
                         "details": ["Built-Up Area 1,150 Sq.ft", "7th floor", "2 Balcony", "2 Bathroom"],
@@ -1080,7 +1077,6 @@ var PropertyDetailsComponent = /** @class */ (function () {
             }
         ];
         this.route.params.subscribe(function (params) {
-            console.log(params);
             _this.id = params.id;
         });
         this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; });
@@ -1236,7 +1232,6 @@ var SearchboxComponent = /** @class */ (function () {
         this.route.navigate(['/app-buy']);
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
-        console.log('searchModel', this.searchModel);
         if (this.searchModel.searchData == "hadapser") {
             this.id = "1";
         }
@@ -1402,7 +1397,6 @@ var SignInComponent = /** @class */ (function () {
         });
     };
     SignInComponent.prototype.onSignInClick = function () {
-        console.log('loginmodel', this.loginModel);
     };
     SignInComponent.prototype.onCancel = function () {
         this.route.navigate(['/app-buy']);
@@ -1506,7 +1500,6 @@ var UserRegistrationComponent = /** @class */ (function () {
         });
     };
     UserRegistrationComponent.prototype.onRegister = function () {
-        console.log('userModel', this.userModel);
         this.auth_Service.showOTPWindow = true;
         this.auth_Service.showregisterWindow = false;
         this.auth_Service.showLogin = false;
