@@ -640,7 +640,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div [ngStyle]=\"{'padding-top':65+'px'}\">  \n<amexio-row>\n  <amexio-column size =\"3\" *ngFor=\"let property of propertyDetails.properties\">\n    \n<amexio-card-ce (click)=\"getPropertyDetails(property)\" >\n    \n    <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.images[0]\"></amexio-image>\n    <amexio-body-ce>\n        <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label (onClick)=\"getPropertyDetails(property)\">Photos</amexio-label>\n        </amexio-badge>\n         <div style=\"cursor: pointer\">\n         <amexio-row >\n        <amexio-column [size]=\"12\">\n          <table>\n            <tr>\n              <td><p><amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> <br>{{property.subtitle}} <br>\n              <amexio-image  [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(property)\"></amexio-image> &nbsp;<amexio-label>{{property.address}}.</amexio-label></p>\n               </td>\n            </tr>\n                <tr>\n              <td><amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;<amexio-label size=\"medium-bold\">{{property.price}} </amexio-label></td>\n            </tr>\n             <tr>\n              <td><amexio-rating-input\n                     [(ngModel)]=\"property.rating\"\n                     [max]=\"'5'\"\n                     [read-only]=\"true\">\n            </amexio-rating-input></td>\n            </tr>\n             <tr>\n              <td><p>{{property.shortDescription}} </p> </td>\n            </tr>\n            \n          </table>\n        </amexio-column>\n      </amexio-row>\n      </div>\n    </amexio-body-ce>\n    <amexio-action-ce [align]=\"'space-between'\" [border-top]=\"true\">\n         <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n        </amexio-button>\n    </amexio-action-ce>\n</amexio-card-ce>\n  \n  </amexio-column>\n  \n</amexio-row>\n          \n  </div> \n\n"
+module.exports = "<div [ngStyle]=\"{'padding-top':65+'px'}\">\n  <amexio-row>\n    <amexio-column size=\"3\" *ngFor=\"let property of propertyDetails.properties\">\n\n      <amexio-card-ce (click)=\"getPropertyDetails(property)\">\n\n        <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.images[0]\"></amexio-image>\n        <amexio-body-ce>\n          <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label (onClick)=\"getPropertyDetails(property)\">Photos</amexio-label>\n          </amexio-badge>\n          <div style=\"cursor: pointer\">\n            <amexio-row>\n              <amexio-column [size]=\"12\">\n                <table>\n                  <tr>\n                    <td>\n                      <p>\n                        <amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> <br>{{property.subtitle}} <br>\n                        <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(property)\"></amexio-image> &nbsp;\n                        <amexio-label>{{property.address}}.</amexio-label>\n                      </p>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                      <amexio-label size=\"medium-bold\">{{property.price}} </amexio-label>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <amexio-rating-input [(ngModel)]=\"property.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                      </amexio-rating-input>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <p>{{property.shortDescription}} </p>\n                    </td>\n                  </tr>\n\n                </table>\n              </amexio-column>\n            </amexio-row>\n          </div>\n        </amexio-body-ce>\n        <amexio-action-ce [align]=\"'end'\" [border-top]=\"true\">\n          <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n          </amexio-button>\n        </amexio-action-ce>\n      </amexio-card-ce>\n\n    </amexio-column>\n\n  </amexio-row>\n\n</div>"
 
 /***/ }),
 
@@ -898,13 +898,14 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "image": "assets/images/LG.jpg",
                         "rating": "3",
                         "title": "LG Plasma",
-                        "subtitle": "",
+                        "subtitle": "Smart Android LED TV",
                         "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
-                        "description": "",
-                        "details": [],
+                        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
+                        "details": [" Best sound and sound clarity", "Social Media Enabled, facebook/whatsapp and other apps.", "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put", "1 year standard manufacturer warranty"],
                         "images": [
                             "assets/images/LG.jpg",
-                            "assets/images/Malaysia.jpeg"
+                            "assets/images/LG1.jpg",
+                            "assets/images/LG2.jpg"
                         ],
                         "location": {
                             "latitude": "18.496310",
@@ -916,14 +917,15 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "price": "28,000",
                         "image": "assets/images/Malaysia.jpeg",
                         "rating": "3",
-                        "title": "Malaysia sealed box LED TV",
-                        "subtitle": "",
+                        "title": "Malaysia sealed box",
+                        "subtitle": "55 4k Smart Android LED TV ",
                         "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
-                        "description": "",
+                        "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
                         "details": [],
                         "images": [
                             "assets/images/Malaysia.jpeg",
-                            "assets/images/LG.jpg"
+                            "assets/images/malaysia1.jpeg",
+                            "assets/images/LG2.jpg"
                         ],
                         "location": {
                             "latitude": "18.512840",
@@ -942,7 +944,8 @@ var PropertyDetailsComponent = /** @class */ (function () {
                         "details": [],
                         "images": [
                             "assets/images/micromax.png",
-                            "assets/images/micromax.png"
+                            "assets/images/malaysia1.jpeg",
+                            "assets/images/LG2.jpg"
                         ],
                         "location": {
                             "latitude": "18.520760",
