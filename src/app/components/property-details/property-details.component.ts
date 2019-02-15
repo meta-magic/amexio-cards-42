@@ -53,7 +53,7 @@ export class PropertyDetailsComponent implements OnInit {
          "details": ["Built-Up Area 550 Sq.ft","7th floor","2 Balcony","1 Bathroom"],
         "images": [
           "assets/images/apartment2.jpeg",
-          "assets/images/kitchen1.jpeg",
+          "assets/images/kitchen2.jpeg",
           "assets/images/livingroom1.jpeg"
         ],
         "location": {
@@ -93,7 +93,7 @@ export class PropertyDetailsComponent implements OnInit {
         "details": ["Built-Up Area 1150 Sq.ft","4th floor","2 Balcony","2 Bathroom"],
         "images": [
           "assets/images/apartment4.jpeg",
-          "assets/images/kitchen1.jpeg",
+          "assets/images/kitchen2.jpeg",
           "assets/images/livingroom1.jpeg"
         ],
         "location": {
@@ -133,7 +133,7 @@ export class PropertyDetailsComponent implements OnInit {
         "details": ["Built-Up Area 550 Sq.ft","6th floor","1 Balcony","2 Bathroom"],
         "images": [
           "assets/images/apartment5.jpeg",
-          "assets/images/kitchen1.jpeg",
+          "assets/images/kitchen2.jpeg",
           "assets/images/livingroom1.jpeg"
         ],
         "location": {
@@ -153,13 +153,14 @@ export class PropertyDetailsComponent implements OnInit {
         "image": "assets/images/apartment1.jpeg",
         "rating": "3",
         "title": "2 BHK Apartment",
-        "subtitle": "",
+        "subtitle": "By kumar builders",
         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-        "description": "",
-        "details": [],
+        "description": "2BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 1100 Sq.ft","6th floor","1 Balcony","2 Bathroom"],
         "images": [
           "assets/images/apartment1.jpeg",
-          "assets/images/apartment5.jpeg"
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
         ],
         "location": {
           "latitude": "18.568860",
@@ -172,13 +173,14 @@ export class PropertyDetailsComponent implements OnInit {
         "image": "assets/images/apartment2.jpeg",
         "rating": "3",
         "title": "1 BHK Apartment",
-        "subtitle": "",
+        "subtitle": "By shreley society.",
         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-        "description": "",
-        "details": [],
+        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 550 Sq.ft","6th floor","1 Balcony","2 Bathroom"],
         "images": [
-          "assets/images/apartment1.jpeg",
-          "assets/images/apartment5.jpeg"
+          "assets/images/apartment2.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
         ],
         "location": {
           "latitude": "18.560760",
@@ -193,12 +195,13 @@ export class PropertyDetailsComponent implements OnInit {
         "title": "1 BHK Apartment",
         "subtitle": "",
         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-        "description": "",
-        "details": [],
+        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": ["Built-Up Area 550 Sq.ft","6th floor","1 Balcony","2 Bathroom"],
         "images": [
           "assets/images/apartment1.jpeg",
-          "assets/images/apartment5.jpeg"
-        ],
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"    
+            ],
         "location": {
           "latitude": "18.5713",
           "longitude": "73.9198"
@@ -258,7 +261,7 @@ export class PropertyDetailsComponent implements OnInit {
         "subtitle": "55 4k Smart Android LED TV ",
         "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
         "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
-        "details": [],
+        "details": [" Best sound and sound clarity","Social Media Enabled, facebook/whatsapp and other apps.","3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put","1 year standard manufacturer warranty"],
         "images": [
           "assets/images/Malaysia.jpeg",
           "assets/images/malaysia1.jpeg",
@@ -275,10 +278,10 @@ export class PropertyDetailsComponent implements OnInit {
         "image": "assets/images/micromax.png",
         "rating": "3",
         "title": "Micromax 43T8100MHD",
-        "subtitle": "",
+        "subtitle": "43 inch HD Ready TV",
         "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
-        "description": "",
-        "details": [],
+        "description": "Brand new Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV with 1 year warranty card ",
+        "details": [" Best sound and sound clarity","Social Media Enabled, facebook/whatsapp and other apps.","3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put","1 year standard manufacturer warranty"],
         "images": [
           "assets/images/micromax.png",
           "assets/images/malaysia1.jpeg",

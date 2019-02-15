@@ -1,0 +1,50 @@
+<div>
+  <img class="pic-style">
+  <amexio-row>
+    <amexio-column size="12" style="padding-top:7%">
+      <amexio-layout-columns class="horizontal-position" [orientation]="'horizontal'" [border]="false" [alignment]="'center'">
+        <amexio-layout-item>
+          <amexio-layout-columns [fit]="true" [border]="false" [orientation]="'vertical'" [alignment]="'center'">
+            <amexio-layout-item>
+              <div class="main-class">
+                <amexio-row>
+                  <amexio-column size="12" [fit]="true">
+                    <amexio-card [footer]="true" [footer-align]="'center'">
+                      <amexio-body>
+                        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="right">
+          <amexio-layout-item>
+            <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
+          </amexio-layout-item>
+        </amexio-layout-columns>
+                        <amexio-badge [absolute]="true" [background]="'black'" [color]="'white'" [top]="'0px'" [right]="'0px'">
+                          <amexio-label size="medium-bold">Buy Now</amexio-label>
+                        </amexio-badge>
+                        <br>
+                        <amexio-row>
+                          <amexio-column size="12" [fit]="true">
+                            <amexio-text-input [field-label]="'Pay'" name="name" [place-holder]="'Pay'" [(ngModel)]="payment.price">
+                            </amexio-text-input>
+                            <amexio-radio-group [field-label]="'Payement methods'" name="methods" [display-field]="'name'" [value-field]="'id'" [horizontal]="false"
+                              [data]="paymentMethods">
+                            </amexio-radio-group>
+                            <!-- <amexio-radio-group [field-label]="'Standard Payement methods'" name="methods" [display-field]="'name'" [value-field]="'id'"
+                              [horizontal]="true" [data]="standardPaymentMethods">
+                            </amexio-radio-group> -->
+                          </amexio-column>
+                        </amexio-row>
+                      </amexio-body>
+                      <amexio-action>
+                      <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Pay'" [type]="'primary'" [tooltip]="'Pay'">
+          </amexio-button>
+                      </amexio-action>
+                    </amexio-card>
+                  </amexio-column>
+                </amexio-row>
+              </div>
+            </amexio-layout-item>
+          </amexio-layout-columns>
+        </amexio-layout-item>
+      </amexio-layout-columns>
+    </amexio-column>
+  </amexio-row>
+</div>

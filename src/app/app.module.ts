@@ -17,6 +17,7 @@ import { RentComponent } from './components/rent/rent.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { PropertyDetailsComponent } from './components/property-details/property-details.component';
 import { BuyPropertyDetailsComponent } from './components/buy-property-details/buy-property-details.component';
+import { BuyNowCardComponent } from './components/buy-now-card/buy-now-card.component';
 
 const routes: Routes = [
 
@@ -46,6 +47,9 @@ const routes: Routes = [
   {
     path:'app-buy-property-details',
     component:BuyPropertyDetailsComponent
+  },{
+    path:'app-buy-now-card',
+    component:BuyNowCardComponent
   }
 ];
 @NgModule({
@@ -61,7 +65,8 @@ const routes: Routes = [
     RentComponent,
     AuthenticationComponent,
     PropertyDetailsComponent,
-    BuyPropertyDetailsComponent
+    BuyPropertyDetailsComponent,
+    BuyNowCardComponent
     ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,AmexioLayoutModule, AmexioPaneModule,BrowserAnimationsModule
