@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/searchbox/searchbox.component */ "./src/app/components/searchbox/searchbox.component.ts");
 /* harmony import */ var _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/rent/rent.component */ "./src/app/components/rent/rent.component.ts");
 /* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
-/* harmony import */ var _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/property-details/property-details.component */ "./src/app/components/property-details/property-details.component.ts");
+/* harmony import */ var _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/property-list/property-list.component */ "./src/app/components/property-list/property-list.component.ts");
 /* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
 /* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -179,7 +179,7 @@ var routes = [
     },
     {
         path: 'app-property-details/:id',
-        component: _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__["PropertyDetailsComponent"]
+        component: _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__["PropertyListComponent"]
     },
     {
         path: 'login',
@@ -209,7 +209,7 @@ var AppModule = /** @class */ (function () {
                 _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_13__["SearchboxComponent"],
                 _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__["RentComponent"],
                 _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__["AuthenticationComponent"],
-                _components_property_details_property_details_component__WEBPACK_IMPORTED_MODULE_16__["PropertyDetailsComponent"],
+                _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__["PropertyListComponent"],
                 _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"],
                 _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__["BuyNowCardComponent"]
             ],
@@ -740,10 +740,10 @@ var OtpVerificationComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/property-details/property-details.component.css":
-/*!****************************************************************************!*\
-  !*** ./src/app/components/property-details/property-details.component.css ***!
-  \****************************************************************************/
+/***/ "./src/app/components/property-list/property-list.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/property-list/property-list.component.css ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -751,10 +751,10 @@ module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/components/property-details/property-details.component.html":
-/*!*****************************************************************************!*\
-  !*** ./src/app/components/property-details/property-details.component.html ***!
-  \*****************************************************************************/
+/***/ "./src/app/components/property-list/property-list.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/property-list/property-list.component.html ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -762,16 +762,16 @@ module.exports = "<div [ngStyle]=\"{'padding-top':65+'px'}\">\n  <amexio-row>\n 
 
 /***/ }),
 
-/***/ "./src/app/components/property-details/property-details.component.ts":
-/*!***************************************************************************!*\
-  !*** ./src/app/components/property-details/property-details.component.ts ***!
-  \***************************************************************************/
-/*! exports provided: PropertyDetailsComponent */
+/***/ "./src/app/components/property-list/property-list.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/property-list/property-list.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: PropertyListComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PropertyDetailsComponent", function() { return PropertyDetailsComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PropertyListComponent", function() { return PropertyListComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
@@ -788,8 +788,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var PropertyDetailsComponent = /** @class */ (function () {
-    function PropertyDetailsComponent(route, router, dtsService) {
+var PropertyListComponent = /** @class */ (function () {
+    function PropertyListComponent(route, router, dtsService) {
         var _this = this;
         this.route = route;
         this.router = router;
@@ -1081,26 +1081,26 @@ var PropertyDetailsComponent = /** @class */ (function () {
         });
         this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; });
     }
-    PropertyDetailsComponent.prototype.ngOnInit = function () {
+    PropertyListComponent.prototype.ngOnInit = function () {
     };
-    PropertyDetailsComponent.prototype.getPropertyDetails = function (property) {
+    PropertyListComponent.prototype.getPropertyDetails = function (property) {
         property.id = this.id;
         this.dtsService.propertyDetails = property;
         this.router.navigate(['/app-buy-property-details']);
     };
-    PropertyDetailsComponent.prototype.getLocation = function (property) {
+    PropertyListComponent.prototype.getLocation = function (property) {
     };
-    PropertyDetailsComponent = __decorate([
+    PropertyListComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-property-details',
-            template: __webpack_require__(/*! ./property-details.component.html */ "./src/app/components/property-details/property-details.component.html"),
-            styles: [__webpack_require__(/*! ./property-details.component.css */ "./src/app/components/property-details/property-details.component.css")]
+            template: __webpack_require__(/*! ./property-list.component.html */ "./src/app/components/property-list/property-list.component.html"),
+            styles: [__webpack_require__(/*! ./property-list.component.css */ "./src/app/components/property-list/property-list.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
-    ], PropertyDetailsComponent);
-    return PropertyDetailsComponent;
+    ], PropertyListComponent);
+    return PropertyListComponent;
 }());
 
 
