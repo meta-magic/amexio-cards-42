@@ -28,7 +28,8 @@
       <amexio-column size="12" [fit]="true">
         <amexio-text-input formControlName="Name" field-label="Name" place-holder="Enter Name" [(ngModel)]="userModel.name">
         </amexio-text-input>
-        <amexio-number-input  formControlName="Phone"  [field-label]="'Phone'" [place-holder]="'Enter phone Number'" [(ngModel)]="userModel.phone">
+        <amexio-number-input  formControlName="Phone"  [field-label]="'Phone'" [place-holder]="'Enter phone Number'" [(ngModel)]="userModel.phone"
+        [enable-popover]="true" [error-msg]="'Please enter valid phone number'">
         </amexio-number-input>
         <amexio-password-input   formControlName="Password" [enable-popover]="true" [field-label]="'Password'" [place-holder]="'Enter Password'"
           [allow-blank]="false" [error-msg]="'Please enter password'" [min-length]="6" [min-error-msg]="'Minimum 6 char required'"

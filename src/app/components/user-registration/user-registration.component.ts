@@ -25,7 +25,7 @@ export class UserRegistrationComponent implements OnInit {
   valiadteUserRegistrationForm() {
       this.userRegistrationGroup = this.fb.group({
         Name: ['', [Validators.required]],      
-        Phone: ['', [Validators.required, Validators.minLength(10)]],
+        Phone: ['', [Validators.required,Validators.min(1111111111),Validators.max(9999999999)]],
         Password: ['', [Validators.required]]
       
       });
