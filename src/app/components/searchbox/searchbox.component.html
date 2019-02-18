@@ -5,7 +5,7 @@
     [tooltip]="'toolTip'"
     [icon]="'icon'"
     [disabled]="false"
-    [size]="'small'"
+     [size]="'default'"
     (onClick)="onBuyClick($event)">
 </amexio-button>
 <amexio-button
@@ -14,16 +14,27 @@
     [tooltip]="'toolTip'"
     [icon]="'icon'"
     [disabled]="true"
-    [size]="'small'"
-    (onClick)="onRent()">
+    [size]="'default'"
+    (onClick)="onSell()">
 </amexio-button>
  <!-- </amexio-btn-group> -->
  <div class="localsearch">
+     <amexio-dropdown 
+                 [place-holder]="'Choose'"
+                 name="name"
+                 [field-label]="''"
+                 [data]="categories"
+                 [display-field]="'name'"
+                 [value-field]="'id'"
+                 [enable-sort]="true"
+                 [sort]="'asc'" style="border-right:1px solid grey;">
+</amexio-dropdown>
+
 <amexio-text-input [field-label]="'label'" name ="name"
 [has-label]="false"
    [place-holder]="'Enter Data'"
    [(ngModel)]="searchModel.searchData"
-   [icon-feedback]="true">
+   [icon-feedback]="true" class="localsearchtext">
 </amexio-text-input>
 <amexio-button
     [label]="'Search'"
@@ -38,3 +49,5 @@
     (onClick)="onSearchButtonClick($event)">
 </amexio-button>
 </div> 
+<amexio-dialogue [(show)]="warningdialogue" [material-design]="true" [message]="warningMsg" [title]="'Error'" [message-type]="'error'" [type]="'alert'">
+</amexio-dialogue>

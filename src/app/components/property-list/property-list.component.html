@@ -1,15 +1,13 @@
 <div [ngStyle]="{'padding-top':65+'px'}">
   <amexio-row>
     <amexio-column size="3" *ngFor="let property of propertyDetails.properties">
-
       <amexio-card-ce (click)="getPropertyDetails(property)">
-
         <amexio-image width="100%" height="180px" [path]="property.images[0]"></amexio-image>
         <amexio-body-ce>
           <amexio-badge [absolute]="true" [background]="'#e74c3c'" [color]="'white'" [top]="'-44px'" [left]="'0px'">
             <amexio-label (onClick)="getPropertyDetails(property)">Photos</amexio-label>
           </amexio-badge>
-          <div style="cursor: pointer">
+          <!-- <div style="cursor: pointer">
             <amexio-row>
               <amexio-column [size]="12">
                 <table>
@@ -43,7 +41,8 @@
                 </table>
               </amexio-column>
             </amexio-row>
-          </div>
+          </div> -->
+          <app-details-card [data]="property" [isListCard]="true"></app-details-card>
         </amexio-body-ce>
         <amexio-action-ce [align]="'end'" [border-top]="true">
           <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Buy Now'" [type]="'primary'" [tooltip]="'Buy Now'">

@@ -312,4 +312,5 @@ export class PropertyListComponent implements OnInit {
   getLocation(property){
 
   }
+  
 }

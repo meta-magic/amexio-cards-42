@@ -18,6 +18,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { PropertyListComponent } from './components/property-list/property-list.component';
 import { BuyPropertyDetailsComponent } from './components/buy-property-details/buy-property-details.component';
 import { BuyNowCardComponent } from './components/buy-now-card/buy-now-card.component';
+import { DetailsCardComponent } from './components/details-card/details-card.component';
 
 const routes: Routes = [
 
@@ -66,7 +67,8 @@ const routes: Routes = [
     AuthenticationComponent,
     PropertyListComponent,
     BuyPropertyDetailsComponent,
-    BuyNowCardComponent
+    BuyNowCardComponent,
+    DetailsCardComponent
     ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,AmexioLayoutModule, AmexioPaneModule,BrowserAnimationsModule

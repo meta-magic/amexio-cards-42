@@ -1,0 +1,36 @@
+<div style="cursor: pointer">
+            <amexio-row>
+              <amexio-column [size]="12">
+                <table>
+                  <tr>
+                    <td>
+                      <p>
+                        <amexio-label size="medium-bold">{{data.title}} </amexio-label> <br>{{data.subtitle}} <br>
+                        <amexio-image [icon-class]="'fa fa-map-marker fa-lg'" (onClick)="getLocation(data)"></amexio-image> &nbsp;
+                        <amexio-label>{{data.address}}.</amexio-label>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <amexio-image [icon-class]="'fa fa-inr fa-lg'"></amexio-image> &nbsp;
+                      <amexio-label size="medium-bold">{{data.price}} </amexio-label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <amexio-rating-input [(ngModel)]="data.rating" [max]="'5'" [read-only]="true">
+                      </amexio-rating-input>
+                    </td>
+                  </tr>
+                  <ng-container *ngIf="isListCard">
+                  <tr>
+                    <td>
+                      <p>{{data.shortDescription}} </p>
+                    </td>
+                  </tr>
+                  </ng-container>
+                </table>
+              </amexio-column>
+            </amexio-row>
+          </div>

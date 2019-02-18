@@ -1,35 +1,25 @@
- <div>
+<div>
   <img class="pic-style">
   <amexio-row>
-
     <amexio-column size="12" style="padding-top:6%">
-
       <amexio-layout-columns class="horizontal-position" [orientation]="'horizontal'" [border]="false" [alignment]="'center'">
         <amexio-layout-item>
-
           <amexio-layout-columns [fit]="true" [border]="false" [orientation]="'vertical'" [alignment]="'center'">
             <amexio-layout-item>
-
               <!-- <div class="main-class"> -->
-                <amexio-row>
-                  <amexio-column size="12" [fit]="true">
-                   <app-login [showLogin]="auth_Service.showLogin"></app-login>
-    <app-user-registration [user-model]="userModel" [showregisterWindow]="auth_Service.showregisterWindow"></app-user-registration>
-    <app-sign-in [login-model]="loginModel" [showSignInWindow]="auth_Service.showSignInWindow"></app-sign-in>
-    <app-otp-verification [showOTPWindow]="auth_Service.showOTPWindow"></app-otp-verification>
-
-                  </amexio-column>
-
-                </amexio-row>
+              <amexio-row>
+                <amexio-column size="12" [fit]="true">
+                  <app-login [showLogin]="auth_Service.showLogin"></app-login>
+                  <app-user-registration [user-model]="userModel" [showregisterWindow]="auth_Service.showregisterWindow"></app-user-registration>
+                  <app-sign-in [login-model]="loginModel" [showSignInWindow]="auth_Service.showSignInWindow"></app-sign-in>
+                  <app-otp-verification [showOTPWindow]="auth_Service.showOTPWindow"></app-otp-verification>
+                </amexio-column>
+              </amexio-row>
               <!-- </div> -->
-   </amexio-layout-item>
+            </amexio-layout-item>
           </amexio-layout-columns>
         </amexio-layout-item>
       </amexio-layout-columns>
-
-
-
     </amexio-column>
   </amexio-row>
-
 </div>

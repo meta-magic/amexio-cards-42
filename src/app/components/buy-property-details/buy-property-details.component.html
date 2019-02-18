@@ -91,30 +91,10 @@
                 </amexio-image>
               </amexio-grid-item>
               <amexio-grid-item [name]="'griddescription'">
+                <app-details-card [data]="properyDetails" [isListCard]="false"></app-details-card>
                 <div style="cursor: pointer">
 
                   <table>
-                    <tr>
-                      <td>
-                        <p>
-                          <amexio-label size="medium-bold">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>
-                          <amexio-image [icon-class]="'fa fa-map-marker fa-lg'" (onClick)="getLocation(properyDetails)"></amexio-image> &nbsp;
-                          <amexio-label>{{properyDetails.address}}.</amexio-label>
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <amexio-image [icon-class]="'fa fa-inr fa-lg'"></amexio-image> &nbsp;
-                        <amexio-label size="medium-bold">{{properyDetails.price}} </amexio-label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <amexio-rating-input [(ngModel)]="properyDetails.rating" [max]="'5'" [read-only]="true">
-                        </amexio-rating-input>
-                      </td>
-                    </tr>
                     <tr>
                       <td>
                         <p>{{properyDetails.description}} </p>
@@ -138,8 +118,8 @@
                 <amexio-row>
                   <amexio-column size="6" [fit]="true">
 
-                    <amexio-button [block]="true" [size]="'default'" [icon]="'fa fa-arrow-left'" [label]="'Back to list'" [type]="'secondary'" [tooltip]="'Back'"
-                      (onClick)="onBack()">
+                    <amexio-button [block]="true" [size]="'default'" [icon]="'fa fa-arrow-left'" [label]="'Back to list'" [type]="'secondary'"
+                      [tooltip]="'Back'" (onClick)="onBack()">
                     </amexio-button>
                   </amexio-column>
                   <amexio-column size="6" [fit]="true">
