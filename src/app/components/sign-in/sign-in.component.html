@@ -1,26 +1,26 @@
 <div [formGroup]="signInGroup">
 <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showSignInWindow">
   <amexio-body>
+     <amexio-row>
+      <amexio-column size="12">
      <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="right">
           <amexio-layout-item>
             <amexio-image style="cursor: pointer;"  [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
           </amexio-layout-item>
         </amexio-layout-columns>
-    <amexio-layout-columns [orientation]="'vertical'" [border]="false">
-      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
-        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+   <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
           <amexio-layout-item>
-            <amexio-image [path]="'assets/images/building.png'" height="100px"  width="100px"  [filter]="'round'" [title-position]="'centered'">
+            <amexio-image [path]="'assets/images/building.png'" height="100px" width="100px" [filter]="'round'" [title-position]="'centered'">
             </amexio-image>
           </amexio-layout-item>
         </amexio-layout-columns>
-        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+        <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
           <amexio-layout-item>
             <amexio-label size="medium-bold">Login to your Account</amexio-label>
           </amexio-layout-item>
         </amexio-layout-columns>
-      </amexio-layout-item>
-    </amexio-layout-columns>
+      </amexio-column>  
+     </amexio-row>
     <amexio-row>
       <amexio-column [size]="12">
         <amexio-number-input formControlName="Phone" name="name" field-label="Phone" place-holder="Enter Name" [(ngModel)]="loginModel.phone">

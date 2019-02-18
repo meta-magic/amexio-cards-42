@@ -28,6 +28,7 @@ signInGroup:FormGroup;
       });
   }
   onSignInClick(){
+     this.route.navigate(['/app-buy']);
   }
   onCancel(){
   this.route.navigate(['/app-buy']);

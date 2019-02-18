@@ -1,26 +1,29 @@
 <div [formGroup]="userRegistrationGroup">
 <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showregisterWindow">
   <amexio-body>
+     <amexio-row>
+      <amexio-column size="12">
     <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="right">
           <amexio-layout-item>
             <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
           </amexio-layout-item>
         </amexio-layout-columns>
-    <amexio-layout-columns [orientation]="'vertical'" [border]="false">
-      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
-        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+     
+        <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
           <amexio-layout-item>
-            <amexio-image [path]="'assets/images/building.png'" height="80px"  width="80px"  [filter]="'round'" [title-position]="'centered'">
+            <amexio-image [path]="'assets/images/building.png'" height="100px" width="100px" [filter]="'round'" [title-position]="'centered'">
             </amexio-image>
           </amexio-layout-item>
         </amexio-layout-columns>
-        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
+        <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
           <amexio-layout-item>
             <amexio-label size="medium-bold">Your Keys Await</amexio-label>
           </amexio-layout-item>
         </amexio-layout-columns>
-      </amexio-layout-item>
-    </amexio-layout-columns>
+      </amexio-column>
+     </amexio-row>
+      <!-- </amexio-layout-item>
+    </amexio-layout-columns> -->
     <amexio-row>
       <amexio-column size="12" [fit]="true">
         <amexio-text-input formControlName="Name" field-label="Name" place-holder="Enter Name" [(ngModel)]="userModel.name">

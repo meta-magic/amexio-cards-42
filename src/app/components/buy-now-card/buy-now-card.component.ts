@@ -48,4 +48,7 @@ export class BuyNowCardComponent implements OnInit {
   onBack(){
     this.route.navigate(['/app-buy-property-details']);
   }
+  onPayClick(){
+    
+  }
 }

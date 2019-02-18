@@ -1,48 +1,27 @@
-
-
-
-
-
-<amexio-card
-  [header]="false"
-  [header-align]="'left'"
-  [footer]="true"
-  [footer-align]="'center'"
-  [show]="showOTPWindow">
-
+<amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showOTPWindow">
     <amexio-body>
-    <amexio-layout-columns [orientation]="'vertical'" [border]="false">
-      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
-        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
-          <amexio-layout-item>
-            <amexio-image [path]="'assets/images/building.png'" height="100px"  width="100px"  [filter]="'round'" [title-position]="'centered'">
-            </amexio-image>
-          </amexio-layout-item>
-        </amexio-layout-columns>
-      </amexio-layout-item>
-    </amexio-layout-columns>
-<!--     
-    <amexio-row>
-      <amexio-column [size]="12">
- <amexio-text-input name="otp" [field-label]="'OTP'" [place-holder]="'Enter OTP'" [(ngModel)]="oTP">
-                            </amexio-text-input>
-      </amexio-column>
-    </amexio-row> -->
-
-        <amexio-layout-columns [border]="false" [orientation]="'vertical'" [alignment]="'center'">
-            <amexio-layout-item>
-                <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+        <amexio-row>
+            <amexio-column size ="12"
+                            [fit]="true">
+                <amexio-layout-columns  [border]="false" 
+         [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
                     <amexio-layout-item>
-                        <amexio-text-input name="otp" [field-label]="'OTP'" [place-holder]="'Enter OTP'" [(ngModel)]="oTP">
-                            </amexio-text-input>
+                        <amexio-image [path]="'assets/images/building.png'" height="100px" width="100px" [filter]="'round'" [title-position]="'centered'">
+                        </amexio-image>
                     </amexio-layout-item>
                 </amexio-layout-columns>
-            </amexio-layout-item>
-        </amexio-layout-columns>
+            </amexio-column>
+        </amexio-row>
+        <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true"
+                [alignment]="'start'" [orientation]="'vertical'">
+                <amexio-layout-item>
+                     <amexio-text-input name="otp" [field-label]="'OTP'" [place-holder]="'Enter OTP'" [(ngModel)]="oTP">
+                        </amexio-text-input>
+                </amexio-layout-item>
+              </amexio-layout-columns>
     </amexio-body>
     <amexio-action>
-         <amexio-button  [size]="'default'" [type]="'secondary'" [icon]="'fa fa-times'" (onClick)="onCancel()" label="Cancel"></amexio-button>
-         <amexio-button  [size]="'default'" [type]="'primary'" [icon]="'fa fa-check'" (onClick)="onVerify()" label="Verify"></amexio-button>
-         
+        <amexio-button [size]="'default'" [type]="'secondary'" [icon]="'fa fa-times'" (onClick)="onCancel()" label="Cancel"></amexio-button>
+        <amexio-button [size]="'default'" [type]="'primary'" [icon]="'fa fa-check'" (onClick)="onVerify()" label="Verify"></amexio-button>
     </amexio-action>
 </amexio-card>
