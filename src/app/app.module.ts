@@ -15,7 +15,7 @@ import { OtpVerificationComponent } from './components/otp-verification/otp-veri
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { RentComponent } from './components/rent/rent.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
-import { PropertyDetailsComponent } from './components/property-details/property-details.component';
+import { PropertyListComponent } from './components/property-list/property-list.component';
 import { BuyPropertyDetailsComponent } from './components/buy-property-details/buy-property-details.component';
 import { BuyNowCardComponent } from './components/buy-now-card/buy-now-card.component';
 
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path:'app-property-details/:id',
-    component:PropertyDetailsComponent
+    component:PropertyListComponent
   },
   {
     path:'login',
@@ -64,7 +64,7 @@ const routes: Routes = [
     SearchboxComponent,
     RentComponent,
     AuthenticationComponent,
-    PropertyDetailsComponent,
+    PropertyListComponent,
     BuyPropertyDetailsComponent,
     BuyNowCardComponent
     ],

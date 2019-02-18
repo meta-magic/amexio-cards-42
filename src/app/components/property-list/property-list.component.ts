@@ -5,10 +5,10 @@ import { DatatransferService  } from "../../service/datatransfer.service";
 
 @Component({
   selector: 'app-property-details',
-  templateUrl: './property-details.component.html',
-  styleUrls: ['./property-details.component.css']
+  templateUrl: './property-list.component.html',
+  styleUrls: ['./property-list.component.css']
 })
-export class PropertyDetailsComponent implements OnInit {
+export class PropertyListComponent implements OnInit {
  propertyDetails:any[]=[];
  id:any;
  propertyData:any[]=[];
