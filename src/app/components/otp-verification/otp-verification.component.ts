@@ -14,7 +14,7 @@ oTP:string='';
   ngOnInit() {
   }
   onVerify(){
-
+this.route.navigate(['/app-buy']);
   }
   onCancel(){
     this.route.navigate(['/app-buy']);
