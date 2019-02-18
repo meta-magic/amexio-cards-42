@@ -283,8 +283,8 @@ export class PropertyListComponent implements OnInit {
         "description": "Brand new Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV with 1 year warranty card ",
         "details": [" Best sound and sound clarity","Social Media Enabled, facebook/whatsapp and other apps.","3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put","1 year standard manufacturer warranty"],
         "images": [
-          "assets/images/micromax.png",
           "assets/images/malaysia1.jpeg",
+          "assets/images/Malaysia.jpeg",
           "assets/images/LG2.jpg"
         ],
         "location": {
