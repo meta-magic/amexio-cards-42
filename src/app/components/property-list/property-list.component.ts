@@ -239,7 +239,7 @@ export class PropertyListComponent implements OnInit {
         "rating": "3",
         "title": "LG Plasma",
         "subtitle": "Smart Android LED TV",
-        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper",
+        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper for sale",
         "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
         "details": [" Best sound and sound clarity","Social Media Enabled, facebook/whatsapp and other apps.","3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put","1 year standard manufacturer warranty"],
         "images": [

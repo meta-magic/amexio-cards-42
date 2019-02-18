@@ -10,14 +10,16 @@
             <amexio-layout-item>
               <div class="main-class">
                 <amexio-row>
-                  <amexio-column size="12" [fit]="true">
+                  <amexio-column size="1">
+                  </amexio-column>
+                  <amexio-column size="10" [fit]="true">
                     <amexio-card [footer]="true" [footer-align]="'center'">
                       <amexio-body>
                         <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="right">
-          <amexio-layout-item>
-            <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
-          </amexio-layout-item>
-        </amexio-layout-columns>
+                          <amexio-layout-item>
+                            <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
+                          </amexio-layout-item>
+                        </amexio-layout-columns>
                         <amexio-badge [absolute]="true" [background]="'black'" [color]="'white'" [top]="'0px'" [right]="'0px'">
                           <amexio-label size="medium-bold">Buy Now</amexio-label>
                         </amexio-badge>
@@ -37,10 +39,12 @@
                         </amexio-row>
                       </amexio-body>
                       <amexio-action>
-                      <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Pay'" [type]="'primary'" [tooltip]="'Pay'">
-          </amexio-button>
+                        <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Pay'" [type]="'primary'" [tooltip]="'Pay'">
+                        </amexio-button>
                       </amexio-action>
                     </amexio-card>
+                  </amexio-column>
+                  <amexio-column size="1">
                   </amexio-column>
                 </amexio-row>
               </div>
@@ -50,6 +54,6 @@
       </amexio-layout-columns>
     </amexio-column>
     <amexio-column size="3">
-      </amexio-column>
+    </amexio-column>
   </amexio-row>
 </div>
