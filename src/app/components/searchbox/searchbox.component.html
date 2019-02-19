@@ -1,11 +1,11 @@
-<!-- <amexio-btn-group [size]="'small'"> -->
+ <amexio-btn-group [size]="'default'" class="localsearch"> 
 <amexio-button
     [label]="'Buy'"
     [type]="'theme-color'"
     [tooltip]="'toolTip'"
     [icon]="'icon'"
     [disabled]="false"
-     [size]="'default'"
+     [bg-color]="'#660c00'" 
     (onClick)="onBuyClick($event)">
 </amexio-button>
 <amexio-button
@@ -13,11 +13,10 @@
     [type]="'theme-color'"
     [tooltip]="'toolTip'"
     [icon]="'icon'"
-    [disabled]="true"
-    [size]="'default'"
+    [disabled]="false"
     (onClick)="onSell()">
 </amexio-button>
- <!-- </amexio-btn-group> -->
+  </amexio-btn-group> 
  <div class="localsearch">
      <amexio-dropdown 
                  [place-holder]="'Choose'"
@@ -27,7 +26,7 @@
                  [display-field]="'name'"
                  [value-field]="'id'"
                  [enable-sort]="true"
-                 [sort]="'asc'" style="border-right:1px solid grey;">
+                 [sort]="'asc'" >
 </amexio-dropdown>
 
 <amexio-text-input [field-label]="'label'" name ="name"
