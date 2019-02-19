@@ -862,6 +862,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 /* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
+/* harmony import */ var src_app_service_shared_http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/shared/http.service */ "./src/app/service/shared/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -876,310 +877,45 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PropertyListComponent = /** @class */ (function () {
-    function PropertyListComponent(route, router, dtsService) {
+    function PropertyListComponent(route, router, dtsService, httpService) {
         this.route = route;
         this.router = router;
         this.dtsService = dtsService;
+        this.httpService = httpService;
         this.propertyDetails = [];
         this.propertyData = [];
         debugger;
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_3__["SearchModel"]();
         this.dtsService.transparentFlag = false;
-        this.dtsService.category = this.searchModel.category;
         this.dtsService.searchType = 'buy';
-        console.log('category', this.dtsService.category);
-        this.propertyData = [
-            {
-                "id": "1",
-                "searchData": "Hadapser",
-                "properties": [
-                    {
-                        "address": "south gate,magarapatta",
-                        "price": "80 - 90 Lac",
-                        "image": "assets/images/apartment1.jpeg",
-                        "rating": "3",
-                        "title": "2 BHK Apartment",
-                        "subtitle": "1,150 Sq.ft By Kwality Vrindavan Heights",
-                        "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
-                        "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 1,150 Sq.ft", "7th floor", "2 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment1.jpeg",
-                            "assets/images/balcony1.jpeg",
-                            "assets/images/kitchen2.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.512840",
-                            "longitude": "73.926220"
-                        }
-                    },
-                    {
-                        "address": "Handewadi,hadapser",
-                        "price": "25 - 30 Lac",
-                        "image": "assets/images/apartment2.jpeg",
-                        "rating": "3",
-                        "title": "1 BHK Apartment",
-                        "subtitle": "By Gardenia Residency",
-                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "1BHK Flat avaliable for Sale in Handewadi,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 550 Sq.ft", "7th floor", "2 Balcony", "1 Bathroom"],
-                        "images": [
-                            "assets/images/apartment2.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.486010",
-                            "longitude": "73.931730"
-                        }
-                    },
-                    {
-                        "address": "Bhosale Nagar,hadapser",
-                        "price": "36 - 45 Lac",
-                        "image": "assets/images/apartment3.jpeg",
-                        "title": "1 BHK Apartment",
-                        "subtitle": "By Royal Enrich",
-                        "rating": "3",
-                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
-                        "description": "1BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 550 Sq.ft", "2th floor", "2 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment3.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.505660",
-                            "longitude": "73.928350"
-                        }
-                    },
-                    {
-                        "address": "Sasane Nagar,hadapser",
-                        "price": "50 - 55 Lac",
-                        "image": "assets/images/apartment4.jpeg",
-                        "rating": "3",
-                        "title": "2 BHK Apartment",
-                        "subtitle": "By Sprinkle Enrich",
-                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
-                        "description": "2BHK Flat avaliable for Sale in Sasane Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 1150 Sq.ft", "4th floor", "2 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment4.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.493470",
-                            "longitude": "73.932910"
-                        }
-                    },
-                    {
-                        "address": "Bhosale Nagar,hadapser",
-                        "price": "65 - 70 Lac",
-                        "image": "assets/images/apartment5.jpeg",
-                        "rating": "3",
-                        "title": "2 BHK Apartment",
-                        "subtitle": "By Royal Society",
-                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
-                        "description": "2BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 1150 Sq.ft", "8th floor", "3 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment5.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.505660",
-                            "longitude": "73.928350"
-                        }
-                    },
-                    {
-                        "address": "Amanora ,hadapser",
-                        "price": "48 - 55 Lac",
-                        "image": "assets/images/apartment6.jpeg",
-                        "rating": "3",
-                        "title": "1 BHK Apartment",
-                        "subtitle": "By Cosmos Apartment",
-                        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
-                        "description": "1BHK Flat avaliable for Sale in Amanora ,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment5.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.518960",
-                            "longitude": "73.943060"
-                        }
-                    }
-                ]
-            },
-            {
-                "id": "2",
-                "searchData": "Viman Nagar",
-                "properties": [
-                    {
-                        "address": "viman nagar",
-                        "price": "80 - 85 Lac",
-                        "image": "assets/images/apartment1.jpeg",
-                        "rating": "3",
-                        "title": "2 BHK Apartment",
-                        "subtitle": "By kumar builders",
-                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "2BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 1100 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment1.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.568860",
-                            "longitude": "73.919550"
-                        }
-                    },
-                    {
-                        "address": "Near phoenix mall ,viman nagar",
-                        "price": "25 - 35 Lac",
-                        "image": "assets/images/apartment2.jpeg",
-                        "rating": "3",
-                        "title": "1 BHK Apartment",
-                        "subtitle": "By shreley society.",
-                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment2.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.560760",
-                            "longitude": "73.917560"
-                        }
-                    },
-                    {
-                        "address": "Air force campus",
-                        "price": "36 - 45 Lac",
-                        "image": "assets/images/apartment3.jpeg",
-                        "rating": "3",
-                        "title": "1 BHK Apartment",
-                        "subtitle": "",
-                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
-                        "details": ["Built-Up Area 550 Sq.ft", "6th floor", "1 Balcony", "2 Bathroom"],
-                        "images": [
-                            "assets/images/apartment1.jpeg",
-                            "assets/images/kitchen2.jpeg",
-                            "assets/images/livingroom1.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.5713",
-                            "longitude": "73.9198"
-                        }
-                    },
-                    {
-                        "address": "Viman nagar",
-                        "price": "80 - 90 Lac",
-                        "image": "assets/images/apartment3.jpeg",
-                        "rating": "3",
-                        "title": "2 BHK Apartment",
-                        "subtitle": "",
-                        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-                        "description": "",
-                        "details": [],
-                        "images": [
-                            "assets/images/apartment1.jpeg",
-                            "assets/images/apartment3.jpeg"
-                        ],
-                        "location": {
-                            "latitude": "18.568860",
-                            "longitude": "73.919550"
-                        }
-                    }
-                ]
-            },
-            {
-                "id": "3",
-                "searchData": "tv",
-                "properties": [
-                    {
-                        "address": "Swargate,pune",
-                        "price": "42,000",
-                        "image": "assets/images/LG.jpg",
-                        "rating": "3",
-                        "title": "LG Plasma",
-                        "subtitle": "Smart Android LED TV",
-                        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper for sale",
-                        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
-                        "details": [" Best sound and sound clarity", "Social Media Enabled, facebook/whatsapp and other apps.", "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put", "1 year standard manufacturer warranty"],
-                        "images": [
-                            "assets/images/LG.jpg",
-                            "assets/images/LG1.jpg",
-                            "assets/images/LG2.jpg"
-                        ],
-                        "location": {
-                            "latitude": "18.496310",
-                            "longitude": "73.856210"
-                        }
-                    },
-                    {
-                        "address": "Magarpatta city",
-                        "price": "28,000",
-                        "image": "assets/images/Malaysia.jpeg",
-                        "rating": "3",
-                        "title": "Malaysia sealed box",
-                        "subtitle": "55 4k Smart Android LED TV ",
-                        "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
-                        "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
-                        "details": [" Best sound and sound clarity", "Social Media Enabled, facebook/whatsapp and other apps.", "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put", "1 year standard manufacturer warranty"],
-                        "images": [
-                            "assets/images/Malaysia.jpeg",
-                            "assets/images/malaysia1.jpeg",
-                            "assets/images/LG2.jpg"
-                        ],
-                        "location": {
-                            "latitude": "18.512840",
-                            "longitude": "73.926220"
-                        }
-                    },
-                    {
-                        "address": "Pune",
-                        "price": "30,000",
-                        "image": "assets/images/micromax.png",
-                        "rating": "3",
-                        "title": "Micromax 43T8100MHD",
-                        "subtitle": "43 inch HD Ready TV",
-                        "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
-                        "description": "Brand new Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV with 1 year warranty card ",
-                        "details": [" Best sound and sound clarity", "Social Media Enabled, facebook/whatsapp and other apps.", "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put", "1 year standard manufacturer warranty"],
-                        "images": [
-                            "assets/images/malaysia1.jpeg",
-                            "assets/images/Malaysia.jpeg",
-                            "assets/images/LG2.jpg"
-                        ],
-                        "location": {
-                            "latitude": "18.520760",
-                            "longitude": "73.855408"
-                        }
-                    }
-                ]
-            }
-        ];
+        this.propertyData = [];
     }
     PropertyListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        debugger;
         this.route.params.subscribe(function (params) {
-            _this.id = params.id;
+            _this.searchKey = params.searchData;
+            _this.category = params.category;
             _this.getData(); // reset and set based on new parameter this time
         });
     };
     PropertyListComponent.prototype.getData = function () {
         var _this = this;
-        this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; });
+        debugger;
+        if (this.category == "apartment") {
+            this.httpService.fetchdata("assets/json/apartment.json").subscribe(function (resp) {
+                _this.propertyDetails = resp.find(function (x) { return x.searchKey === _this.searchKey; });
+                console.log('propertylist', _this.propertyData);
+            });
+            // this.propertyDetails = this.propertyData.find(x => x.searchKey === this.searchKey);
+        }
+        else if (this.category == "tv") {
+            this.httpService.fetchdata("assets/json/tv.json").subscribe(function (resp) {
+                _this.propertyDetails = resp.find(function (x) { return x.searchKey === _this.searchKey; });
+            });
+            // this.propertyDetails = this.propertyData.find(x => x.searchKey === this.searchKey);
+        }
     };
     PropertyListComponent.prototype.getPropertyDetails = function (property) {
         property.id = this.id;
@@ -1197,7 +933,8 @@ var PropertyListComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
+            _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"],
+            src_app_service_shared_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"]])
     ], PropertyListComponent);
     return PropertyListComponent;
 }());
@@ -1389,6 +1126,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
 /* harmony import */ var src_app_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
+/* harmony import */ var src_app_service_shared_http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/shared/http.service */ "./src/app/service/shared/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1402,20 +1140,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SearchboxComponent = /** @class */ (function () {
-    function SearchboxComponent(route, dtsService) {
+    function SearchboxComponent(route, dtsService, httpService) {
         this.route = route;
         this.dtsService = dtsService;
+        this.httpService = httpService;
         this.warningdialogue = false;
         this.categories = [];
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_2__["SearchModel"]();
         this.warningMsg = '';
         this.categories = [{
-                id: "1",
+                id: "tv",
                 name: "TV"
             },
             {
-                id: "2",
+                id: "apartment",
                 name: "Apartment"
             }];
     }
@@ -1425,18 +1165,8 @@ var SearchboxComponent = /** @class */ (function () {
     SearchboxComponent.prototype.onSearchButtonClick = function () {
         debugger;
         if (this.searchModel.type == 'buy') {
-            if (this.searchModel.searchData === "hadapser") {
-                this.id = "1";
-            }
-            else if (this.searchModel.searchData === "viman nagar") {
-                this.id = "2";
-            }
-            else if (this.searchModel.searchData === "tv") {
-                this.id = "3";
-            }
-            ;
-            if (this.id) {
-                this.route.navigate(['/app-property-details', this.id, this.searchModel.category]);
+            if (this.searchModel.searchData && this.searchModel.category) {
+                this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
             }
             else {
                 this.warningMsg = 'Data not found';
@@ -1457,7 +1187,7 @@ var SearchboxComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./searchbox.component.html */ "./src/app/components/searchbox/searchbox.component.html"),
             styles: [__webpack_require__(/*! ./searchbox.component.css */ "./src/app/components/searchbox/searchbox.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__["DatatransferService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__["DatatransferService"], src_app_service_shared_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"]])
     ], SearchboxComponent);
     return SearchboxComponent;
 }());
@@ -1907,6 +1637,73 @@ var DatatransferService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], DatatransferService);
     return DatatransferService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/shared/http.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/service/shared/http.service.ts ***!
+  \************************************************/
+/*! exports provided: HttpService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpService", function() { return HttpService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HttpService = /** @class */ (function () {
+    function HttpService(http) {
+        this.http = http;
+    }
+    //     fetch(serviceUrl: string, methodType: string): Observable<any> {
+    //         const headers = new HttpHeaders().append('Content-Type', 'application/json;charset=UTF-8');
+    //         if (methodType === 'post') {
+    //             return this.http.post(SERVICE_URL.BASE_APP_URL + serviceUrl, { headers });
+    //         } else if (methodType === 'get') {
+    //             return this.http.get(SERVICE_URL.BASE_APP_URL + serviceUrl , { headers });
+    //         }
+    //     }
+    //     post(serviceUrl: string, methodType: string, requestJson: any): Observable<any> {
+    //         const headers = new HttpHeaders().append('Content-Type', 'application/json;charset=UTF-8');
+    //         if (methodType === 'post') {
+    //             return this.http.post(SERVICE_URL.BASE_APP_URL + serviceUrl, requestJson, { headers });
+    //         } else if (methodType === 'get') {
+    //             return this.http.get(SERVICE_URL.BASE_APP_URL + serviceUrl, { headers });
+    //         }
+    //     }
+    //   fetchLocalData(serviceUrl: string, methodType: string): Observable<any> {
+    //     const headers = new HttpHeaders().append('Content-Type', 'application/json;charset=UTF-8');
+    //     if (methodType === 'post') {
+    //       return this.http.post( serviceUrl, { headers });
+    //     } else if (methodType === 'get') {
+    //       return this.http.get(serviceUrl , { headers });
+    //     }
+    //   }
+    HttpService.prototype.fetchdata = function (url) {
+        return this.http.get(url);
+    };
+    HttpService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], HttpService);
+    return HttpService;
 }());
 
 
