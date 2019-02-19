@@ -136,12 +136,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
 /* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
 /* harmony import */ var _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/details-card/details-card.component */ "./src/app/components/details-card/details-card.component.ts");
+/* harmony import */ var _components_search_search_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/search/search.component */ "./src/app/components/search/search.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -180,7 +182,7 @@ var routes = [
         component: _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__["RentComponent"]
     },
     {
-        path: 'app-property-details/:id',
+        path: 'app-property-details/:id/:category',
         component: _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__["PropertyListComponent"]
     },
     {
@@ -214,7 +216,8 @@ var AppModule = /** @class */ (function () {
                 _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__["PropertyListComponent"],
                 _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"],
                 _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__["BuyNowCardComponent"],
-                _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_19__["DetailsCardComponent"]
+                _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_19__["DetailsCardComponent"],
+                _components_search_search_component__WEBPACK_IMPORTED_MODULE_20__["SearchComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioLayoutModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioPaneModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
@@ -430,7 +433,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"1\" [fit]=\"true\">\n            <amexio-layout-columns [fit]=\"true\" [border]=\"true\" [orientation]=\"'vertical'\" [alignment]=\"'start'\">\n              <amexio-layout-item *ngFor=\"let photos of properyDetails.images\">\n                <amexio-image [width]=\"'80px'\" [height]=\"'80px'\" path=\"{{photos}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n          </amexio-column>\n          <amexio-column size=\"5\">\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-image [width]=\"'400px'\" [height]=\"'360px'\" path=\"{{properyDetails.images[0]}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-arrow-left fa-lg'\" [label]=\"'Back'\" [type]=\"'secondary'\" [tooltip]=\"'Back'\"\n                  (onClick)=\"onBack()\">\n                </amexio-button>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\" (onClick)=\"onBuyNowClick(properyDetails)\">\n                </amexio-button>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n              (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n            </amexio-google-map>\n          </amexio-column>\n          <amexio-column size=\"6\" [fit]=\"fit\">\n               <div style=\"cursor: pointer\">\n             \n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n               \n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row> -->\n<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"12\" [fit]=\"true\">\n            <amexio-layout-grid [layout]=\"'Home'\">\n              <amexio-grid-item [name]=\"'gridicon'\">\n                <amexio-image *ngFor=\"let photos of properyDetails.images\" [width]=\"'90px'\" [height]=\"'80px'\" path=\"{{photos}}\" (onClick)=\"onImageClick(photos)\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridimage'\">\n                <amexio-image [width]=\"'420px'\" [height]=\"'420px'\" path=\"{{mainImagePath}}\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'griddescription'\">\n                <app-details-card [data]=\"properyDetails\" [isListCard]=\"false\"></app-details-card>\n                <div style=\"cursor: pointer\">\n\n                  <table>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n\n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridmap'\">\n                <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n                  (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n                </amexio-google-map>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridbutton'\">\n                <amexio-row>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-arrow-left'\" [label]=\"'Back to list'\" [type]=\"'secondary'\"\n                      [tooltip]=\"'Back'\" (onClick)=\"onBack()\">\n                    </amexio-button>\n                  </amexio-column>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\"\n                      (onClick)=\"onBuyNowClick(properyDetails)\">\n                    </amexio-button>\n                  </amexio-column>\n                </amexio-row>\n              </amexio-grid-item>\n            </amexio-layout-grid>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>"
+module.exports = "<!-- <amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"1\" [fit]=\"true\">\n            <amexio-layout-columns [fit]=\"true\" [border]=\"true\" [orientation]=\"'vertical'\" [alignment]=\"'start'\">\n              <amexio-layout-item *ngFor=\"let photos of properyDetails.images\">\n                <amexio-image [width]=\"'80px'\" [height]=\"'80px'\" path=\"{{photos}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n          </amexio-column>\n          <amexio-column size=\"5\">\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-image [width]=\"'400px'\" [height]=\"'360px'\" path=\"{{properyDetails.images[0]}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-arrow-left fa-lg'\" [label]=\"'Back'\" [type]=\"'secondary'\" [tooltip]=\"'Back'\"\n                  (onClick)=\"onBack()\">\n                </amexio-button>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\" (onClick)=\"onBuyNowClick(properyDetails)\">\n                </amexio-button>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n              (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n            </amexio-google-map>\n          </amexio-column>\n          <amexio-column size=\"6\" [fit]=\"fit\">\n               <div style=\"cursor: pointer\">\n             \n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n               \n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row> -->\n\n<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"12\" [fit]=\"true\">\n            <amexio-layout-grid [layout]=\"'Home'\">\n              <amexio-grid-item [name]=\"'gridicon'\">\n                <amexio-image *ngFor=\"let photos of properyDetails.images\" [width]=\"'90px'\" [height]=\"'80px'\" path=\"{{photos}}\" (onClick)=\"onImageClick(photos)\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridimage'\">\n                <amexio-image [width]=\"'420px'\" [height]=\"'420px'\" path=\"{{mainImagePath}}\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'griddescription'\">\n                <app-details-card [data]=\"properyDetails\" [isListCard]=\"false\"></app-details-card>\n                <div style=\"cursor: pointer\">\n\n                  <table>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n\n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridmap'\">\n                <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n                  (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n                </amexio-google-map>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridbutton'\">\n                <amexio-row>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-arrow-left'\" [label]=\"'Back to list'\" [type]=\"'secondary'\"\n                      [tooltip]=\"'Back'\" (onClick)=\"onBack()\">\n                    </amexio-button>\n                  </amexio-column>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\"\n                      (onClick)=\"onBuyNowClick(properyDetails)\">\n                    </amexio-button>\n                  </amexio-column>\n                </amexio-row>\n              </amexio-grid-item>\n            </amexio-layout-grid>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>"
 
 /***/ }),
 
@@ -493,7 +496,7 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
         this.mainImagePath = event;
     };
     BuyPropertyDetailsComponent.prototype.onBack = function () {
-        this.route.navigate(['/app-property-details', this.properyDetails.id]);
+        this.route.navigate(['/app-property-details', this.properyDetails.id, this.properyDetails.category]);
     };
     BuyPropertyDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -528,7 +531,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n<div>\n  <img src=\"assets/images/living-room.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:15%\">\n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n    <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n        <amexio-layout-item>\n          <amexio-label size=\"large-bold\">\n            Properties for Buy\n          </amexio-label>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n    <amexio-layout-item [fit]=\"true\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <app-searchbox [search-model]=\"searchModel\"></app-searchbox>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n</div>\n<!-- </div> -->"
+module.exports = "<!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n<div>\n  <img src=\"assets/images/living-room.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:14%\">\n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n    <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n        <amexio-layout-item>\n          <amexio-label size=\"large-bold\">\n            Properties for Buy\n          </amexio-label>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n    <amexio-layout-item [fit]=\"true\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <app-search [search-model]=\"dtsService.searchModel\"></app-search>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n</div>\n<!-- </div> -->"
 
 /***/ }),
 
@@ -560,8 +563,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BuyComponent = /** @class */ (function () {
     function BuyComponent(dtsService) {
         this.dtsService = dtsService;
-        this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_1__["SearchModel"]();
-        this.searchModel.type = 'buy';
+        // this.searchModel=new SearchModel();
+        this.dtsService.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_1__["SearchModel"]();
+        // this.searchModel.type='buy';
+        this.dtsService.searchType = 'buy';
         this.dtsService.transparentFlag = true;
     }
     BuyComponent.prototype.ngOnInit = function () {
@@ -839,7 +844,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [ngStyle]=\"{'padding-top':65+'px'}\">\n  <amexio-row>\n    <amexio-column size=\"3\" *ngFor=\"let property of propertyDetails.properties\">\n      <amexio-card-ce (click)=\"getPropertyDetails(property)\">\n        <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.images[0]\"></amexio-image>\n        <amexio-body-ce>\n          <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label (onClick)=\"getPropertyDetails(property)\">Photos</amexio-label>\n          </amexio-badge>\n          <!-- <div style=\"cursor: pointer\">\n            <amexio-row>\n              <amexio-column [size]=\"12\">\n                <table>\n                  <tr>\n                    <td>\n                      <p>\n                        <amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> <br>{{property.subtitle}} <br>\n                        <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(property)\"></amexio-image> &nbsp;\n                        <amexio-label>{{property.address}}.</amexio-label>\n                      </p>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                      <amexio-label size=\"medium-bold\">{{property.price}} </amexio-label>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <amexio-rating-input [(ngModel)]=\"property.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                      </amexio-rating-input>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <p>{{property.shortDescription}} </p>\n                    </td>\n                  </tr>\n\n                </table>\n              </amexio-column>\n            </amexio-row>\n          </div> -->\n          <app-details-card [data]=\"property\" [isListCard]=\"true\"></app-details-card>\n        </amexio-body-ce>\n        <amexio-action-ce [align]=\"'end'\" [border-top]=\"true\">\n          <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n          </amexio-button>\n        </amexio-action-ce>\n      </amexio-card-ce>\n\n    </amexio-column>\n\n  </amexio-row>\n\n</div>"
+module.exports = "<div style=\"padding-top:65px\">\n  <amexio-layout-columns [fit]=\"true\" [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\" style=\"background-color:grey;\">\n    <amexio-layout-item>\n      <app-searchbox [search-model]=\"searchModel\"></app-searchbox>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-row>\n    <amexio-column size=\"3\" *ngFor=\"let property of propertyDetails.properties\">\n      <amexio-card-ce (click)=\"getPropertyDetails(property)\">\n        <amexio-image width=\"100%\" height=\"180px\" [path]=\"property.images[0]\"></amexio-image>\n        <amexio-body-ce>\n          <amexio-badge [absolute]=\"true\" [background]=\"'#e74c3c'\" [color]=\"'white'\" [top]=\"'-44px'\" [left]=\"'0px'\">\n            <amexio-label (onClick)=\"getPropertyDetails(property)\">Photos</amexio-label>\n          </amexio-badge>\n          <!-- <div style=\"cursor: pointer\">\n            <amexio-row>\n              <amexio-column [size]=\"12\">\n                <table>\n                  <tr>\n                    <td>\n                      <p>\n                        <amexio-label size=\"medium-bold\">{{property.title}} </amexio-label> <br>{{property.subtitle}} <br>\n                        <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(property)\"></amexio-image> &nbsp;\n                        <amexio-label>{{property.address}}.</amexio-label>\n                      </p>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                      <amexio-label size=\"medium-bold\">{{property.price}} </amexio-label>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <amexio-rating-input [(ngModel)]=\"property.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                      </amexio-rating-input>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                      <p>{{property.shortDescription}} </p>\n                    </td>\n                  </tr>\n\n                </table>\n              </amexio-column>\n            </amexio-row>\n          </div> -->\n          <app-details-card [data]=\"property\" [isListCard]=\"true\"></app-details-card>\n        </amexio-body-ce>\n        <amexio-action-ce [align]=\"'end'\" [border-top]=\"true\">\n          <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\">\n          </amexio-button>\n        </amexio-action-ce>\n      </amexio-card-ce>\n\n    </amexio-column>\n\n  </amexio-row>\n\n</div>"
 
 /***/ }),
 
@@ -856,6 +861,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
+/* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -869,15 +875,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PropertyListComponent = /** @class */ (function () {
     function PropertyListComponent(route, router, dtsService) {
-        var _this = this;
         this.route = route;
         this.router = router;
         this.dtsService = dtsService;
         this.propertyDetails = [];
         this.propertyData = [];
+        debugger;
+        this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_3__["SearchModel"]();
         this.dtsService.transparentFlag = false;
+        this.dtsService.category = this.searchModel.category;
+        this.dtsService.searchType = 'buy';
+        console.log('category', this.dtsService.category);
         this.propertyData = [
             {
                 "id": "1",
@@ -1157,15 +1168,22 @@ var PropertyListComponent = /** @class */ (function () {
                 ]
             }
         ];
-        this.route.params.subscribe(function (params) {
-            _this.id = params.id;
-        });
-        this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; });
     }
     PropertyListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        debugger;
+        this.route.params.subscribe(function (params) {
+            _this.id = params.id;
+            _this.getData(); // reset and set based on new parameter this time
+        });
+    };
+    PropertyListComponent.prototype.getData = function () {
+        var _this = this;
+        this.propertyDetails = this.propertyData.find(function (x) { return x.id === _this.id; });
     };
     PropertyListComponent.prototype.getPropertyDetails = function (property) {
         property.id = this.id;
+        property.category = this.searchModel.category;
         this.dtsService.propertyDetails = property;
         this.router.navigate(['/app-buy-property-details']);
     };
@@ -1255,6 +1273,86 @@ var RentComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/search/search.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/search/search.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/search/search.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/search/search.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = " <amexio-btn-group [size]=\"'default'\" class=\"localsearch\"> \n<amexio-button\n    [label]=\"'Buy'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n     [bg-color]=\"'#660c00'\" \n    (onClick)=\"onBuyClick($event)\">\n</amexio-button>\n<amexio-button\n    [label]=\"'Sell'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onSell()\">\n</amexio-button>\n  </amexio-btn-group> \n<app-searchbox [search-model]=\"searchModel\"></app-searchbox>\n<amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue>"
+
+/***/ }),
+
+/***/ "./src/app/components/search/search.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/search/search.component.ts ***!
+  \*******************************************************/
+/*! exports provided: SearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchComponent", function() { return SearchComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SearchComponent = /** @class */ (function () {
+    function SearchComponent(route) {
+        this.route = route;
+        this.warningdialogue = false;
+        this.warningMsg = '';
+    }
+    SearchComponent.prototype.ngOnInit = function () {
+    };
+    SearchComponent.prototype.onBuyClick = function () {
+        this.route.navigate(['/app-buy']);
+    };
+    SearchComponent.prototype.onSell = function () {
+        this.route.navigate(['/app-sell']);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('search-model'),
+        __metadata("design:type", _models_search_model__WEBPACK_IMPORTED_MODULE_2__["SearchModel"])
+    ], SearchComponent.prototype, "searchModel", void 0);
+    SearchComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-search',
+            template: __webpack_require__(/*! ./search.component.html */ "./src/app/components/search/search.component.html"),
+            styles: [__webpack_require__(/*! ./search.component.css */ "./src/app/components/search/search.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], SearchComponent);
+    return SearchComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/searchbox/searchbox.component.css":
 /*!**************************************************************!*\
   !*** ./src/app/components/searchbox/searchbox.component.css ***!
@@ -1273,7 +1371,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <amexio-btn-group [size]=\"'default'\" class=\"localsearch\"> \n<amexio-button\n    [label]=\"'Buy'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n     [bg-color]=\"'#660c00'\" \n    (onClick)=\"onBuyClick($event)\">\n</amexio-button>\n<amexio-button\n    [label]=\"'Sell'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onSell()\">\n</amexio-button>\n  </amexio-btn-group> \n <div class=\"localsearch\">\n     <amexio-dropdown \n                 [place-holder]=\"'Choose'\"\n                 name=\"name\"\n                 [field-label]=\"''\"\n                 [data]=\"categories\"\n                 [display-field]=\"'name'\"\n                 [value-field]=\"'id'\"\n                 [enable-sort]=\"true\"\n                 [sort]=\"'asc'\" >\n</amexio-dropdown>\n\n<amexio-text-input [field-label]=\"'label'\" name =\"name\"\n[has-label]=\"false\"\n   [place-holder]=\"'Enter Data'\"\n   [(ngModel)]=\"searchModel.searchData\"\n   [icon-feedback]=\"true\" class=\"localsearchtext\">\n</amexio-text-input>\n<amexio-button\n    [label]=\"'Search'\"\n    [type]=\"'theme-color'\"\n    [badge]=\"badge\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    [size]=\"'default'\"\n    [loading]=\"false\"\n    [block]=\"false\"\n    (onClick)=\"onSearchButtonClick($event)\">\n</amexio-button>\n</div> \n<amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue>"
+module.exports = " <!-- <amexio-btn-group [size]=\"'default'\" class=\"localsearch\"> \n<amexio-button\n    [label]=\"'Buy'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n     [bg-color]=\"'#660c00'\" \n    (onClick)=\"onBuyClick($event)\">\n</amexio-button>\n<amexio-button\n    [label]=\"'Sell'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onSell()\">\n</amexio-button>\n  </amexio-btn-group>  -->\n <div class=\"localsearch\">\n     <amexio-dropdown \n                 [(ngModel)]=\"searchModel.category\"\n                 [place-holder]=\"'Choose'\"\n                 name=\"category\"\n                 [field-label]=\"''\"\n                 [data]=\"categories\"\n                 [display-field]=\"'name'\"\n                 [value-field]=\"'id'\"\n                 [enable-sort]=\"true\"\n                 [sort]=\"'asc'\" >\n</amexio-dropdown>\n\n<amexio-text-input [field-label]=\"'label'\" name =\"name\"\n[has-label]=\"false\"\n   [place-holder]=\"'Enter Data'\"\n   [(ngModel)]=\"searchModel.searchData\"\n   [icon-feedback]=\"true\" class=\"localsearchtext\">\n</amexio-text-input>\n<amexio-button\n    [label]=\"'Search'\"\n    [type]=\"'theme-color'\"\n    [badge]=\"badge\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    [size]=\"'default'\"\n    [loading]=\"false\"\n    [block]=\"false\"\n    (onClick)=\"onSearchButtonClick($event)\">\n</amexio-button>\n</div> \n <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue> "
 
 /***/ }),
 
@@ -1290,6 +1388,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
+/* harmony import */ var src_app_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1302,21 +1401,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SearchboxComponent = /** @class */ (function () {
-    function SearchboxComponent(route) {
+    function SearchboxComponent(route, dtsService) {
         this.route = route;
+        this.dtsService = dtsService;
         this.warningdialogue = false;
         this.categories = [];
+        this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_2__["SearchModel"]();
         this.warningMsg = '';
         this.categories = [{
                 id: "1",
-                name: "tv"
+                name: "TV"
+            },
+            {
+                id: "2",
+                name: "Apartment"
             }];
     }
     SearchboxComponent.prototype.ngOnInit = function () {
-    };
-    SearchboxComponent.prototype.onBuyClick = function () {
-        this.route.navigate(['/app-buy']);
+        this.searchModel.type = "buy";
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
         debugger;
@@ -1332,7 +1436,7 @@ var SearchboxComponent = /** @class */ (function () {
             }
             ;
             if (this.id) {
-                this.route.navigate(['/app-property-details', this.id]);
+                this.route.navigate(['/app-property-details', this.id, this.searchModel.category]);
             }
             else {
                 this.warningMsg = 'Data not found';
@@ -1342,9 +1446,6 @@ var SearchboxComponent = /** @class */ (function () {
         else if (this.searchModel.type == 'sell') {
             this.route.navigate(['/app-sell']);
         }
-    };
-    SearchboxComponent.prototype.onSell = function () {
-        this.route.navigate(['/app-sell']);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('search-model'),
@@ -1356,7 +1457,7 @@ var SearchboxComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./searchbox.component.html */ "./src/app/components/searchbox/searchbox.component.html"),
             styles: [__webpack_require__(/*! ./searchbox.component.css */ "./src/app/components/searchbox/searchbox.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_3__["DatatransferService"]])
     ], SearchboxComponent);
     return SearchboxComponent;
 }());
@@ -1383,7 +1484,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n   <div>\n  <img src=\"assets/images/living-room.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:15%\">\n      \n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n           <amexio-label size=\"large-bold\">\n             Properties for Sell \n           </amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n     <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n      <amexio-layout-item [fit]=\"true\" >\n       <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item>\n           <app-searchbox [search-model]=\"searchModel\"></app-searchbox>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n   </div>\n<!-- </div> -->\n"
+module.exports = " <!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n   <div>\n  <img src=\"assets/images/living-room.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:15%\">\n      \n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n      <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n        <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n          <amexio-layout-item>\n           <amexio-label size=\"large-bold\">\n             Properties for Sell \n           </amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n     <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n      <amexio-layout-item [fit]=\"true\" >\n       <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item>\n           <app-search [search-model]=\"searchModel\"></app-search>\n          </amexio-layout-item>\n        </amexio-layout-columns>\n      </amexio-layout-item>\n    </amexio-layout-columns>\n   </div>\n<!-- </div> -->\n"
 
 /***/ }),
 
@@ -1681,6 +1782,7 @@ var SearchModel = /** @class */ (function () {
     function SearchModel() {
         this.type = '';
         this.searchData = '';
+        this.category = '';
     }
     return SearchModel;
 }());
@@ -1760,6 +1862,7 @@ var AuthenticationService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DatatransferService", function() { return DatatransferService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1770,14 +1873,38 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DatatransferService = /** @class */ (function () {
-    function DatatransferService() {
+    function DatatransferService(route) {
+        this.route = route;
     }
+    DatatransferService.prototype.searchCall = function () {
+        if (this.searchModel.type == 'buy') {
+            if (this.searchModel.searchData === "hadapser") {
+                this.id = "1";
+            }
+            else if (this.searchModel.searchData === "viman nagar") {
+                this.id = "2";
+            }
+            else if (this.searchModel.searchData === "tv") {
+                this.id = "3";
+            }
+            ;
+            if (this.id) {
+                this.route.navigate(['/app-property-details', this.id]);
+            }
+            else {
+            }
+        }
+        else if (this.searchModel.type == 'sell') {
+            this.route.navigate(['/app-sell']);
+        }
+    };
     DatatransferService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], DatatransferService);
     return DatatransferService;
 }());
