@@ -1,0 +1,197 @@
+[
+  {
+    "id": "1",
+    "searchKey": "LG",
+    "properties": [
+      {
+        "address": "Swargate,pune",
+        "price": "42,000",
+        "image": "assets/images/LG.jpg",
+        "rating": "3",
+        "title": "LG Plasma",
+        "subtitle": "Smart Android LED TV",
+        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper for sale",
+        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/LG1.jpg",
+          "assets/images/LG.jpg",
+          "assets/images/LG2.jpg"
+        ],
+        "location": {
+          "latitude": "18.496310",
+          "longitude": "73.856210"
+        }
+      },
+       {
+        "address": "Magarpatta city",
+        "price": "41,000",
+        "image": "assets/images/LG.jpg",
+        "rating": "3",
+        "title": "LG Plasma",
+        "subtitle": "Smart Android LED TV",
+        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper for sale",
+        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/LG.jpg",
+          "assets/images/LG1.jpg",
+          "assets/images/LG2.jpg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
+      },
+      {
+        "address": "Magarpatta city",
+        "price": "40,000",
+        "image": "assets/images/LG.jpg",
+        "rating": "3",
+        "title": "LG Plasma",
+        "subtitle": "Smart Android LED TV",
+        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper for sale",
+        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/LG2.jpg",
+          "assets/images/LG1.jpg",
+          "assets/images/LG.jpg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "searchKey": "malaysia",
+    "properties": [
+      {
+        "address": "Magarpatta city",
+        "price": "28,000",
+        "image": "assets/images/Malaysia.jpeg",
+        "rating": "3",
+        "title": "Malaysia sealed box",
+        "subtitle": "55 4k Smart Android LED TV ",
+        "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
+        "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/Malaysia.jpeg",
+          "assets/images/malaysia1.jpeg",
+          "assets/images/LG2.jpg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
+      },
+       {
+        "address": "Pune",
+        "price": "28,000",
+        "image": "assets/images/Malaysia.jpeg",
+        "rating": "3",
+        "title": "Malaysia sealed box",
+        "subtitle": "55 4k Smart Android LED TV ",
+        "shortDescription": "Malaysia sealed box 55 4k Smart Android LED TV for sale",
+        "description": "Brand new Malaysia sealed box 55 4k Smart Android LED TV",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/malaysia1.jpeg",
+          "assets/images/Malaysia.jpeg",
+          "assets/images/LG2.jpg"
+        ],
+         "location": {
+          "latitude": "18.520760",
+          "longitude": "73.855408"
+        }
+      }
+     
+    ]
+  },
+  {
+    "id": "3",
+    "searchKey": "micromax",
+    "properties": [
+      {
+        "address": "Pune",
+        "price": "30,000",
+        "image": "assets/images/micromax.png",
+        "rating": "3",
+        "title": "Micromax 43T8100MHD",
+        "subtitle": "43 inch HD Ready TV",
+        "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
+        "description": "Brand new Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV with 1 year warranty card ",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/malaysia1.jpeg",
+          "assets/images/Malaysia.jpeg",
+          "assets/images/LG2.jpg"
+        ],
+        "location": {
+          "latitude": "18.520760",
+          "longitude": "73.855408"
+        }
+      },
+      {
+        "address": "Swargate,pune",
+        "price": "28,000",
+        "image": "assets/images/micromax.png",
+        "rating": "3",
+        "title": "Micromax 43T8100MHD",
+        "subtitle": "43 inch HD Ready TV",
+        "shortDescription": "Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV",
+        "description": "Brand new Micromax 43T8100MHD / 43T4500MHD 43 inch HD Ready TV with 1 year warranty card ",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/LG2.jpeg",
+          "assets/images/Malaysia.jpeg",
+          "assets/images/malaysia1.jpg"
+        ],
+        "location": {
+          "latitude": "18.496310",
+          "longitude": "73.856210"
+        }
+      }
+     
+    ]
+  }
+  ]

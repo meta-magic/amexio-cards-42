@@ -1,0 +1,257 @@
+[
+  {
+    "id": "1",
+    "searchKey": "hadapser",
+    "properties": [
+      {
+        "address": "south gate,magarapatta",
+        "price": "80 - 90 Lac",
+        "image": "assets/images/apartment1.jpeg",
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "1,150 Sq.ft By Kwality Vrindavan Heights",
+        "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
+        "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 1,150 Sq.ft",
+          "7th floor",
+          "2 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/balcony1.jpeg",
+          "assets/images/kitchen2.jpeg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
+      },
+      {
+        "address": "Handewadi,hadapser",
+        "price": "25 - 30 Lac",
+        "image": "assets/images/apartment2.jpeg",
+        "rating": "3",
+        "title": "1 BHK Apartment",
+        "subtitle": "By Gardenia Residency",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "1BHK Flat avaliable for Sale in Handewadi,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 550 Sq.ft",
+          "7th floor",
+          "2 Balcony",
+          "1 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment2.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.486010",
+          "longitude": "73.931730"
+        }
+      },
+      {
+        "address": "Bhosale Nagar,hadapser",
+        "price": "36 - 45 Lac",
+        "image": "assets/images/apartment3.jpeg",
+        "title": "1 BHK Apartment",
+        "subtitle": "By Royal Enrich",
+        "rating": "3",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "1BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 550 Sq.ft",
+          "2th floor",
+          "2 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment3.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.505660",
+          "longitude": "73.928350"
+        }
+      },
+      {
+        "address": "Sasane Nagar,hadapser",
+        "price": "50 - 55 Lac",
+        "image": "assets/images/apartment4.jpeg",
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "By Sprinkle Enrich",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "2BHK Flat avaliable for Sale in Sasane Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 1150 Sq.ft",
+          "4th floor",
+          "2 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment4.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.493470",
+          "longitude": "73.932910"
+        }
+      },
+      {
+        "address": "Bhosale Nagar,hadapser",
+        "price": "65 - 70 Lac",
+        "image": "assets/images/apartment5.jpeg",
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "By Royal Society",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "2BHK Flat avaliable for Sale in Bhosale Nagar,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 1150 Sq.ft",
+          "8th floor",
+          "3 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment5.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.505660",
+          "longitude": "73.928350"
+        }
+      },
+      {
+        "address": "Amanora ,hadapser",
+        "price": "48 - 55 Lac",
+        "image": "assets/images/apartment6.jpeg",
+        "rating": "3",
+        "title": "1 BHK Apartment",
+        "subtitle": "By Cosmos Apartment",
+        "shortDescription": "It is indeed a perfect dwelling and a wise investment",
+        "description": "1BHK Flat avaliable for Sale in Amanora ,hadapser * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 550 Sq.ft",
+          "6th floor",
+          "1 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment5.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.518960",
+          "longitude": "73.943060"
+        }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "searchkey": "Viman Nagar",
+    "properties": [
+      {
+        "address": "viman nagar",
+        "price": "80 - 85 Lac",
+        "image": "assets/images/apartment1.jpeg",
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "By kumar builders",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "2BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 1100 Sq.ft",
+          "6th floor",
+          "1 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.568860",
+          "longitude": "73.919550"
+        }
+      },
+      {
+        "address": "Near phoenix mall ,viman nagar",
+        "price": "25 - 35 Lac",
+        "image": "assets/images/apartment2.jpeg",
+        "rating": "3",
+        "title": "1 BHK Apartment",
+        "subtitle": "By shreley society.",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 550 Sq.ft",
+          "6th floor",
+          "1 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment2.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.560760",
+          "longitude": "73.917560"
+        }
+      },
+      {
+        "address": "Air force campus",
+        "price": "36 - 45 Lac",
+        "image": "assets/images/apartment3.jpeg",
+        "rating": "3",
+        "title": "1 BHK Apartment",
+        "subtitle": "",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "1BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 550 Sq.ft",
+          "6th floor",
+          "1 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/kitchen2.jpeg",
+          "assets/images/livingroom1.jpeg"
+        ],
+        "location": {
+          "latitude": "18.5713",
+          "longitude": "73.9198"
+        }
+      },
+      {
+        "address": "Viman nagar",
+        "price": "80 - 90 Lac",
+        "image": "assets/images/apartment3.jpeg",
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "",
+        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "",
+        "details": [],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/apartment3.jpeg"
+        ],
+        "location": {
+          "latitude": "18.568860",
+          "longitude": "73.919550"
+        }
+      }
+    ]
+  }]
