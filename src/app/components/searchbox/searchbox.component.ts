@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchModel } from "../../models/search.model";
 import { DatatransferService } from "src/app/service/datatransfer.service";
+import { HttpService } from "src/app/service/shared/http.service";
 @Component({
   selector: 'app-searchbox',
   templateUrl: './searchbox.component.html',
@@ -13,15 +14,15 @@ export class SearchboxComponent implements OnInit {
   warningdialogue:boolean=false;
   warningMsg:any;
   categories:any=[];
-  constructor(public route: Router,public dtsService:DatatransferService) {
+  constructor(public route: Router,public dtsService:DatatransferService,public httpService:HttpService) {
     this.searchModel=new SearchModel();
     this.warningMsg='';
     this.categories=[{
-      id:"1",
+      id:"tv",
       name:"TV"
     },
     {
-      id:"2",
+      id:"apartment",
       name:"Apartment"
     }]
   }
@@ -34,20 +35,15 @@ export class SearchboxComponent implements OnInit {
   onSearchButtonClick() {
     debugger;
     if (this.searchModel.type == 'buy') {
-      if (this.searchModel.searchData === "hadapser") {
-        this.id = "1";
-      } else if (this.searchModel.searchData === "viman nagar") {
-        this.id = "2";
-      } else if (this.searchModel.searchData === "tv") {
-        this.id = "3";
-      };
-      if (this.id) {
-        this.route.navigate(['/app-property-details', this.id,this.searchModel.category]);
+      if (this.searchModel.searchData && this.searchModel.category) {
+        this.route.navigate(['/app-property-details',this.searchModel.category,this.searchModel.searchData]);
       }else{
         this.warningMsg='Data not found';
         this.warningdialogue=true;
       }
 
+  
+  
     } else if (this.searchModel.type == 'sell') {
       this.route.navigate(['/app-sell']);
     }
