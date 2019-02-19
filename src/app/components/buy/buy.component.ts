@@ -10,8 +10,10 @@ import { DatatransferService } from "../../service/datatransfer.service";
 export class BuyComponent implements OnInit {
   searchModel:SearchModel;
   constructor(public dtsService:DatatransferService) { 
-    this.searchModel=new SearchModel();
-    this.searchModel.type='buy';
+    // this.searchModel=new SearchModel();
+    this.dtsService.searchModel= new SearchModel();
+    // this.searchModel.type='buy';
+    this.dtsService.searchType='buy';
     this.dtsService.transparentFlag=true;
   }
 

@@ -19,6 +19,7 @@ import { PropertyListComponent } from './components/property-list/property-list.
 import { BuyPropertyDetailsComponent } from './components/buy-property-details/buy-property-details.component';
 import { BuyNowCardComponent } from './components/buy-now-card/buy-now-card.component';
 import { DetailsCardComponent } from './components/details-card/details-card.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
 
@@ -38,7 +39,7 @@ const routes: Routes = [
     component: RentComponent
   },
   {
-    path:'app-property-details/:id',
+    path:'app-property-details/:id/:category',
     component:PropertyListComponent
   },
   {
@@ -68,7 +69,8 @@ const routes: Routes = [
     PropertyListComponent,
     BuyPropertyDetailsComponent,
     BuyNowCardComponent,
-    DetailsCardComponent
+    DetailsCardComponent,
+    SearchComponent
     ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,AmexioLayoutModule, AmexioPaneModule,BrowserAnimationsModule

@@ -1,0 +1,22 @@
+ <amexio-btn-group [size]="'default'" class="localsearch"> 
+<amexio-button
+    [label]="'Buy'"
+    [type]="'theme-color'"
+    [tooltip]="'toolTip'"
+    [icon]="'icon'"
+    [disabled]="false"
+     [bg-color]="'#660c00'" 
+    (onClick)="onBuyClick($event)">
+</amexio-button>
+<amexio-button
+    [label]="'Sell'"
+    [type]="'theme-color'"
+    [tooltip]="'toolTip'"
+    [icon]="'icon'"
+    [disabled]="false"
+    (onClick)="onSell()">
+</amexio-button>
+  </amexio-btn-group> 
+<app-searchbox [search-model]="searchModel"></app-searchbox>
+<amexio-dialogue [(show)]="warningdialogue" [material-design]="true" [message]="warningMsg" [title]="'Error'" [message-type]="'error'" [type]="'alert'">
+</amexio-dialogue>

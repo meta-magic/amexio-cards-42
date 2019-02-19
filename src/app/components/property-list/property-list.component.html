@@ -1,4 +1,9 @@
-<div [ngStyle]="{'padding-top':65+'px'}">
+<div style="padding-top:65px">
+  <amexio-layout-columns [fit]="true" [border]="false" [orientation]="'horizontal'" [alignment]="'center'" style="background-color:grey;">
+    <amexio-layout-item>
+      <app-searchbox [search-model]="searchModel"></app-searchbox>
+    </amexio-layout-item>
+  </amexio-layout-columns>
   <amexio-row>
     <amexio-column size="3" *ngFor="let property of propertyDetails.properties">
       <amexio-card-ce (click)="getPropertyDetails(property)">
