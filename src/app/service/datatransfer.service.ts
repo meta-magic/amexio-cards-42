@@ -13,8 +13,11 @@ category:string;
 searchModel:SearchModel;
 id:String;
 searchType:string;
+
+appartmentData: any[] = [];
+tvData: any[] = [];
   constructor(public route:Router) {
-    
+
    }
   searchCall(){
      if (this.searchModel.type == 'buy') {
@@ -28,7 +31,7 @@ searchType:string;
       if (this.id) {
         this.route.navigate(['/app-property-details', this.id]);
       }else{
-      
+
       }
 
     } else if (this.searchModel.type == 'sell') {
@@ -36,4 +39,3 @@ searchType:string;
     }
   }
 }
-  

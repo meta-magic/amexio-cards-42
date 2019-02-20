@@ -7,8 +7,7 @@ import { AmexioWidgetModule, AmexioLayoutModule, AmexioPaneModule, } from 'amexi
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { RouterModule, Routes } from '@angular/router';
-import { BuyComponent } from './components/buy/buy.component';
+import { RouterModule } from '@angular/router';
 import { SellComponent } from './components/sell/sell.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
@@ -20,47 +19,17 @@ import { BuyPropertyDetailsComponent } from './components/buy-property-details/b
 import { BuyNowCardComponent } from './components/buy-now-card/buy-now-card.component';
 import { DetailsCardComponent } from './components/details-card/details-card.component';
 import { SearchComponent } from './components/search/search.component';
+import {HttpClientModule} from '@angular/common/http';
+import {HomeComponent} from './components/home/home.component';
+import {routes} from './app.route';
 
-const routes: Routes = [
 
-  {
-    path: '', component: BuyComponent
-  },
-  {
-    path: 'app-buy',
-    component: BuyComponent
-  },
-  {
-    path: 'app-sell',
-    component: SellComponent
-  },
-  {
-    path: 'app-rent',
-    component: RentComponent
-  },
-  {
-    path:'app-property-details/:id/:category',
-    component:PropertyListComponent
-  },
-  {
-    path:'login',
-    component:AuthenticationComponent
-  },
-  {
-    path:'app-buy-property-details',
-    component:BuyPropertyDetailsComponent
-  },{
-    path:'app-buy-now-card',
-    component:BuyNowCardComponent
-  }
-];
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
     LoginComponent,
     SignInComponent,
-    BuyComponent,
     SellComponent,
     OtpVerificationComponent,
     SearchboxComponent,
@@ -70,10 +39,11 @@ const routes: Routes = [
     BuyPropertyDetailsComponent,
     BuyNowCardComponent,
     DetailsCardComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
     ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(routes,{useHash:true}),AmexioWidgetModule,AmexioLayoutModule, AmexioPaneModule,BrowserAnimationsModule
+    BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {useHash: true}), AmexioWidgetModule, AmexioLayoutModule, AmexioPaneModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

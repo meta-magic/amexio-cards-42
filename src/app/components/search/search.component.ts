@@ -8,21 +8,15 @@ import { SearchModel } from "../../models/search.model";
 })
 export class SearchComponent implements OnInit {
  @Input('search-model') searchModel: SearchModel;
-  warningdialogue:boolean=false;
-  warningMsg:any;
-   constructor(public route: Router) {
-    this.warningMsg='';
-  
-  }
+  warningdialogue = false;
+  warningMsg = '';
+   constructor(public route: Router) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onBuyClick() {
     this.route.navigate(['/app-buy']);
   }
- 
   onSell() {
     this.route.navigate(['/app-sell']);
   }
