@@ -22,6 +22,7 @@ import { SearchComponent } from './components/search/search.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './components/home/home.component';
 import {routes} from './app.route';
+import {PropertyResolver} from "./service/property.resolver";
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import {routes} from './app.route';
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {useHash: true}), AmexioWidgetModule, AmexioLayoutModule, AmexioPaneModule, BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [PropertyResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,10 +15,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {}
 
   onBuyClick() {
-    this.route.navigate(['/app-buy']);
+    this.route.navigate(['/home']);
   }
   onSell() {
-    this.route.navigate(['/app-sell']);
+    this.route.navigate(['/sell']);
   }
 
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { ActivatedRoute, Params } from "@angular/router";
-import { DatatransferService } from "../../service/datatransfer.service";
-import { SearchModel } from "../../models/search.model";
-import { HttpService } from "src/app/service/shared/http.service";
+import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { DatatransferService } from '../../service/datatransfer.service';
+import { SearchModel } from '../../models/search.model';
 
 @Component({
   selector: 'app-property-details',
@@ -11,55 +10,30 @@ import { HttpService } from "src/app/service/shared/http.service";
   styleUrls: ['./property-list.component.css']
 })
 export class PropertyListComponent implements OnInit {
-  propertyDetails: any[] = [];
+  propertyDetails: any;
   id: any;
-  searchKey:string;
+  searchKey: string;
   category: any;
   propertyData: any[] = [];
   searchModel: SearchModel;
-  constructor(private route: ActivatedRoute,
-    private router: Router,
-    public dtsService: DatatransferService,
-  public httpService:HttpService) {
-    debugger;
+  constructor(private route: ActivatedRoute, private router: Router, public dtsService: DatatransferService) {
     this.searchModel = new SearchModel();
     this.dtsService.transparentFlag = false;
     this.dtsService.searchType = 'buy';
-   
-     this.propertyData=[];
+
+     this.propertyData = [];
   }
 
   ngOnInit() {
+    this.propertyDetails =  this.route.snapshot.data.propertyMetadata;
     this.route.params.subscribe((params: Params) => {
-      this.searchKey = params.searchData;
-      this.category=params.category;
-      this.getData(); // reset and set based on new parameter this time
-
+      this.searchModel.category = params.id;
+      this.searchModel.searchData = params.category;
     });
-
-
-  }
-  getData() {
-    debugger;
-    if(this.category=="apartment"){
-        this.httpService.fetchdata("assets/json/apartment.json").subscribe((resp: any) => {
-    this.propertyDetails=resp.find(x => x.searchKey === this.searchKey);
-    console.log('propertylist',this.propertyData);
-    });
-  // this.propertyDetails = this.propertyData.find(x => x.searchKey === this.searchKey);
-    }else if(this.category=="tv"){
-       this.httpService.fetchdata("assets/json/tv.json").subscribe((resp: any) => {
-   this.propertyDetails=resp.find(x => x.searchKey === this.searchKey);
-      });
-  // this.propertyDetails = this.propertyData.find(x => x.searchKey === this.searchKey);
-
-    }
-     
-    
   }
   getPropertyDetails(property: any) {
     property.id = this.id;
-    property.category=this.searchModel.category;
+    property.category = this.searchModel.category;
     this.dtsService.propertyDetails = property;
     this.router.navigate(['/app-buy-property-details']);
   }

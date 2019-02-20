@@ -1,11 +1,12 @@
-import {Routes} from "@angular/router";
-import {HomeComponent} from "./components/home/home.component";
-import {SellComponent} from "./components/sell/sell.component";
-import {RentComponent} from "./components/rent/rent.component";
-import {PropertyListComponent} from "./components/property-list/property-list.component";
-import {AuthenticationComponent} from "./components/authentication/authentication.component";
-import {BuyPropertyDetailsComponent} from "./components/buy-property-details/buy-property-details.component";
-import {BuyNowCardComponent} from "./components/buy-now-card/buy-now-card.component";
+import {Routes} from '@angular/router';
+import {HomeComponent} from './components/home/home.component';
+import {SellComponent} from './components/sell/sell.component';
+import {RentComponent} from './components/rent/rent.component';
+import {PropertyListComponent} from './components/property-list/property-list.component';
+import {AuthenticationComponent} from './components/authentication/authentication.component';
+import {BuyPropertyDetailsComponent} from './components/buy-property-details/buy-property-details.component';
+import {BuyNowCardComponent} from './components/buy-now-card/buy-now-card.component';
+import {PropertyResolver} from './service/property.resolver';
 /**
  * Created by dattaram on 20/2/19.
  */
@@ -19,7 +20,7 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'app-sell',
+    path: 'sell',
     component: SellComponent
   },
   {
@@ -27,18 +28,19 @@ export const routes: Routes = [
     component: RentComponent
   },
   {
-    path:'app-property-details/:id/:category',
-    component:PropertyListComponent
+    path: 'app-property-details/:id/:category',
+    component: PropertyListComponent,
+    resolve: { propertyMetadata: PropertyResolver}
   },
   {
-    path:'login',
-    component:AuthenticationComponent
+    path: 'login',
+    component: AuthenticationComponent
   },
   {
-    path:'app-buy-property-details',
-    component:BuyPropertyDetailsComponent
-  },{
-    path:'app-buy-now-card',
-    component:BuyNowCardComponent
+    path: 'app-buy-property-details',
+    component: BuyPropertyDetailsComponent
+  }, {
+    path: 'app-buy-now-card',
+    component: BuyNowCardComponent
   }
 ];
