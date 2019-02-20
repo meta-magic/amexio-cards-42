@@ -11,10 +11,9 @@
                  [enable-sort]="true"
                  [sort]="'asc'" >
 </amexio-dropdown>
-
 <amexio-text-input [field-label]="'label'" name ="name"
 [has-label]="false"
-   [place-holder]="'Enter Data'"
+   [place-holder]="'Enter Product Name'"
    [(ngModel)]="searchModel.searchData"
    [icon-feedback]="true" class="localsearchtext">
 </amexio-text-input>
@@ -28,6 +27,7 @@
     [size]="'default'"
     [loading]="false"
     [block]="false"
+    [bg-color]="'red'"
     (onClick)="onSearchButtonClick($event)">
 </amexio-button>
 </div>

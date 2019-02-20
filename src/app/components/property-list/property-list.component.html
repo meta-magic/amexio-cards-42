@@ -6,55 +6,42 @@
   </amexio-layout-columns>
   <amexio-row>
     <amexio-column size="3" *ngFor="let property of propertyDetails.properties">
-      <amexio-card-ce (click)="getPropertyDetails(property)">
-        <amexio-image width="100%" height="180px" [path]="property.images[0]"></amexio-image>
-        <amexio-body-ce>
-          <amexio-badge [absolute]="true" [background]="'#e74c3c'" [color]="'white'" [top]="'-44px'" [left]="'0px'">
-            <amexio-label (onClick)="getPropertyDetails(property)">Photos</amexio-label>
-          </amexio-badge>
-          <!-- <div style="cursor: pointer">
-            <amexio-row>
-              <amexio-column [size]="12">
-                <table>
-                  <tr>
-                    <td>
-                      <p>
-                        <amexio-label size="medium-bold">{{property.title}} </amexio-label> <br>{{property.subtitle}} <br>
-                        <amexio-image [icon-class]="'fa fa-map-marker fa-lg'" (onClick)="getLocation(property)"></amexio-image> &nbsp;
-                        <amexio-label>{{property.address}}.</amexio-label>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <amexio-image [icon-class]="'fa fa-inr fa-lg'"></amexio-image> &nbsp;
-                      <amexio-label size="medium-bold">{{property.price}} </amexio-label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <amexio-rating-input [(ngModel)]="property.rating" [max]="'5'" [read-only]="true">
-                      </amexio-rating-input>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>{{property.shortDescription}} </p>
-                    </td>
-                  </tr>
+      <ng-container *ngIf="category==='apartment'">
+        <amexio-card-ce (click)="getPropertyDetails(property)">
+          <amexio-image width="100%" height="180px" [path]="property.images[0]"></amexio-image>
+          <amexio-body-ce>
+            <amexio-badge [absolute]="true" [background]="'#e74c3c'" [color]="'white'" [top]="'-44px'" [left]="'0px'">
+              <amexio-label (onClick)="getPropertyDetails(property)">Photos</amexio-label>
+            </amexio-badge>
+            <app-details-card [data]="property" [isListCard]="true"></app-details-card>
+          </amexio-body-ce>
+          <amexio-action-ce [align]="'end'" [border-top]="true">
+            <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Buy Now'" [type]="'primary'" [tooltip]="'Buy Now'">
+            </amexio-button>
+          </amexio-action-ce>
+        </amexio-card-ce>
+      </ng-container>
+      <ng-container *ngIf="category==='tv'">
+      <amexio-card-ce  (click)="getPropertyDetails(property)">
+        <amexio-header-ce>
+         &nbsp;&nbsp;  <amexio-image  [icon-class]="'fa fa-television fa-2x'"></amexio-image>
+          <!-- <amexio-label size="medium-bold">{{property.title}}
+          </amexio-label> -->
+        </amexio-header-ce>
+       <amexio-image width="100%" height="180px" [path]="property.images[0]"></amexio-image>
+        <amexio-badge [absolute]="true" [background]="'#e74c3c'" [color]="'white'" [top]="'6%'" [right]="'5%'">
+          <amexio-label>Photos</amexio-label>
+        </amexio-badge>
 
-                </table>
-              </amexio-column>
-            </amexio-row>
-          </div> -->
-          <app-details-card [data]="property" [isListCard]="true"></app-details-card>
+        <amexio-body-ce>
+        <app-details-card [data]="property" [isListCard]="true"></app-details-card>
         </amexio-body-ce>
-        <amexio-action-ce [align]="'end'" [border-top]="true">
-          <amexio-button [size]="'default'" [icon]="'fa fa-money'" [label]="'Buy Now'" [type]="'primary'" [tooltip]="'Buy Now'">
+        <amexio-action-ce  [align]="'end'" [border-top]="true">
+          <amexio-button [label]="'BUY NOW'" [type]="'transparent'" [tooltip]="'BUY'">
           </amexio-button>
         </amexio-action-ce>
       </amexio-card-ce>
-
+     </ng-container>
     </amexio-column>
 
   </amexio-row>

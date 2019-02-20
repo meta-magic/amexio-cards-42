@@ -33,18 +33,22 @@ export class SearchboxComponent implements OnInit {
   }
 
   onSearchButtonClick() {
+    debugger;
     if (this.searchModel.category === 'apartment') {
       if (this._dtsService.appartmentData .length > 0) {
         this.navigateToPropertyDetails();
       } else {
-        this.getPropertyDetails();
+        this.getApartmentPropertyDetails();
       }
-    } else {
+    } else if (this.searchModel.category === 'tv') {
       if (this._dtsService.tvData .length > 0) {
         this.navigateToPropertyDetails();
       } else {
-        this.getPropertyDetails();
+        this.getTVPropertyDetails();
       }
+    }else{
+      this.warningMsg='Data not found';
+      this.warningdialogue=true;
     }
   }
 
@@ -52,10 +56,18 @@ export class SearchboxComponent implements OnInit {
     this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
   }
 
-  getPropertyDetails() {
+  getApartmentPropertyDetails() {
     this._httpService.fetchdata('assets/json/apartment.json').subscribe(
       (res: any) => {
         this._dtsService.appartmentData = res;
+        this.navigateToPropertyDetails();
+      });
+  }
+
+  getTVPropertyDetails() {
+    this._httpService.fetchdata('assets/json/tv.json').subscribe(
+      (res: any) => {
+        this._dtsService.tvData = res;
         this.navigateToPropertyDetails();
       });
   }

@@ -1,12 +1,23 @@
-
-
-<amexio-row>
-  <amexio-column size="12" style="padding-top:5%">
+<amexio-row >
+  <amexio-column size ="12"
+          [fit]="true" style="padding-top:65px;background-color:grey;">
+      <amexio-layout-columns [fit]="true" [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+                  <amexio-layout-item>
+                    <app-searchbox [search-model]="searchModel"></app-searchbox>
+                  </amexio-layout-item>
+                </amexio-layout-columns>
+  </amexio-column>
+<!-- </amexio-row>
+<amexio-row> -->
+  <amexio-column size="12" >
     <amexio-card [header]="false" [footer]="false">
       <amexio-body>
         <amexio-row>
           <amexio-column size="12" [fit]="true">
             <amexio-layout-grid [layout]="'Home'">
+              <!-- <amexio-grid-item [name]="'searchBox'">
+              
+              </amexio-grid-item> -->
               <amexio-grid-item [name]="'gridicon'">
                 <amexio-image *ngFor="let photos of properyDetails.images" [width]="'90px'" [height]="'80px'" path="{{photos}}" (onClick)="onImageClick(photos)">
                 </amexio-image>

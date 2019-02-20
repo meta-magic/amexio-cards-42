@@ -3,6 +3,7 @@ import { DatatransferService } from "../../service/datatransfer.service";
 import { GoogleMapOverlays } from 'amexio-ng-extensions';
 import { Router } from '@angular/router';
 import { AmexioGridLayoutService, GridConfig, GridConstants } from "amexio-ng-extensions";
+import { SearchModel } from '../../models/search.model';
 
 @Component({
   selector: 'app-buy-property-details',
@@ -10,12 +11,15 @@ import { AmexioGridLayoutService, GridConfig, GridConstants } from "amexio-ng-ex
   styleUrls: ['./buy-property-details.component.css']
 })
 export class BuyPropertyDetailsComponent implements OnInit {
+ 
   gridDesktop: GridConfig;
   properyDetails: any = [];
   data: GoogleMapOverlays[];
   markerdata: GoogleMapOverlays;
   mainImagePath: any;
+  searchModel: SearchModel;
   constructor(public dtsService: DatatransferService, public route: Router, private _gridlayoutService: AmexioGridLayoutService) {
+    this.searchModel=new SearchModel();
     this.data = [];
     this.createLayouts();
     this._gridlayoutService.createLayout(this.gridDesktop);
@@ -24,6 +28,7 @@ export class BuyPropertyDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.properyDetails = this.dtsService.propertyDetails;
+    console.log('propertyDetails',this.properyDetails);
     this.mainImagePath = this.properyDetails.images[0]
     this.data.push(new GoogleMapOverlays(Number(this.properyDetails.location.latitude), Number(this.properyDetails.location.longitude), this.properyDetails.address, true, null, { city: 'pune' }))
 
