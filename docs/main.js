@@ -78,14 +78,11 @@ var AppComponent = /** @class */ (function () {
         this.route = route;
         this.dtsService = dtsService;
     }
-    AppComponent.prototype.ngOnInit = function () {
-    };
     AppComponent.prototype.onCardsclick = function () {
-        this.route.navigate(['/app-buy']);
+        this.route.navigate(['/home']);
     };
     AppComponent.prototype.onLoginLinkClick = function () {
-        //  this.auth_Service.showWindow=true;
-        this.route.navigate(['login']);
+        this.route.navigate(['/login']);
         this.auth_Service.showLogin = true;
         this.auth_Service.showOTPWindow = false;
         this.auth_Service.showregisterWindow = false;
@@ -125,18 +122,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/sign-in/sign-in.component */ "./src/app/components/sign-in/sign-in.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_buy_buy_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/buy/buy.component */ "./src/app/components/buy/buy.component.ts");
-/* harmony import */ var _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/sell/sell.component */ "./src/app/components/sell/sell.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _components_otp_verification_otp_verification_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/otp-verification/otp-verification.component */ "./src/app/components/otp-verification/otp-verification.component.ts");
-/* harmony import */ var _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/searchbox/searchbox.component */ "./src/app/components/searchbox/searchbox.component.ts");
-/* harmony import */ var _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/rent/rent.component */ "./src/app/components/rent/rent.component.ts");
-/* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
-/* harmony import */ var _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/property-list/property-list.component */ "./src/app/components/property-list/property-list.component.ts");
-/* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
-/* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
-/* harmony import */ var _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/details-card/details-card.component */ "./src/app/components/details-card/details-card.component.ts");
-/* harmony import */ var _components_search_search_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/search/search.component */ "./src/app/components/search/search.component.ts");
+/* harmony import */ var _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/sell/sell.component */ "./src/app/components/sell/sell.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _components_otp_verification_otp_verification_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/otp-verification/otp-verification.component */ "./src/app/components/otp-verification/otp-verification.component.ts");
+/* harmony import */ var _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/searchbox/searchbox.component */ "./src/app/components/searchbox/searchbox.component.ts");
+/* harmony import */ var _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/rent/rent.component */ "./src/app/components/rent/rent.component.ts");
+/* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
+/* harmony import */ var _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/property-list/property-list.component */ "./src/app/components/property-list/property-list.component.ts");
+/* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
+/* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
+/* harmony import */ var _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/details-card/details-card.component */ "./src/app/components/details-card/details-card.component.ts");
+/* harmony import */ var _components_search_search_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/search/search.component */ "./src/app/components/search/search.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _app_route__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./app.route */ "./src/app/app.route.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -165,38 +164,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var routes = [
-    {
-        path: '', component: _components_buy_buy_component__WEBPACK_IMPORTED_MODULE_9__["BuyComponent"]
-    },
-    {
-        path: 'app-buy',
-        component: _components_buy_buy_component__WEBPACK_IMPORTED_MODULE_9__["BuyComponent"]
-    },
-    {
-        path: 'app-sell',
-        component: _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_10__["SellComponent"]
-    },
-    {
-        path: 'app-rent',
-        component: _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__["RentComponent"]
-    },
-    {
-        path: 'app-property-details/:id/:category',
-        component: _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__["PropertyListComponent"]
-    },
-    {
-        path: 'login',
-        component: _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__["AuthenticationComponent"]
-    },
-    {
-        path: 'app-buy-property-details',
-        component: _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"]
-    }, {
-        path: 'app-buy-now-card',
-        component: _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__["BuyNowCardComponent"]
-    }
-];
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -207,20 +176,20 @@ var AppModule = /** @class */ (function () {
                 _components_user_registration_user_registration_component__WEBPACK_IMPORTED_MODULE_5__["UserRegistrationComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"],
                 _components_sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_7__["SignInComponent"],
-                _components_buy_buy_component__WEBPACK_IMPORTED_MODULE_9__["BuyComponent"],
-                _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_10__["SellComponent"],
-                _components_otp_verification_otp_verification_component__WEBPACK_IMPORTED_MODULE_12__["OtpVerificationComponent"],
-                _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_13__["SearchboxComponent"],
-                _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_14__["RentComponent"],
-                _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_15__["AuthenticationComponent"],
-                _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_16__["PropertyListComponent"],
-                _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_17__["BuyPropertyDetailsComponent"],
-                _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_18__["BuyNowCardComponent"],
-                _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_19__["DetailsCardComponent"],
-                _components_search_search_component__WEBPACK_IMPORTED_MODULE_20__["SearchComponent"]
+                _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_9__["SellComponent"],
+                _components_otp_verification_otp_verification_component__WEBPACK_IMPORTED_MODULE_11__["OtpVerificationComponent"],
+                _components_searchbox_searchbox_component__WEBPACK_IMPORTED_MODULE_12__["SearchboxComponent"],
+                _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_13__["RentComponent"],
+                _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_14__["AuthenticationComponent"],
+                _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_15__["PropertyListComponent"],
+                _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_16__["BuyPropertyDetailsComponent"],
+                _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_17__["BuyNowCardComponent"],
+                _components_details_card_details_card_component__WEBPACK_IMPORTED_MODULE_18__["DetailsCardComponent"],
+                _components_search_search_component__WEBPACK_IMPORTED_MODULE_19__["SearchComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__["HomeComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes, { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioLayoutModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioPaneModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_20__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(_app_route__WEBPACK_IMPORTED_MODULE_22__["routes"], { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioLayoutModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioPaneModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -229,6 +198,69 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/app.route.ts":
+/*!******************************!*\
+  !*** ./src/app/app.route.ts ***!
+  \******************************/
+/*! exports provided: routes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/sell/sell.component */ "./src/app/components/sell/sell.component.ts");
+/* harmony import */ var _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/rent/rent.component */ "./src/app/components/rent/rent.component.ts");
+/* harmony import */ var _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/property-list/property-list.component */ "./src/app/components/property-list/property-list.component.ts");
+/* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
+/* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
+/* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
+
+
+
+
+
+
+
+/**
+ * Created by dattaram on 20/2/19.
+ */
+var routes = [
+    {
+        path: '', redirectTo: 'home', pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"]
+    },
+    {
+        path: 'app-sell',
+        component: _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_1__["SellComponent"]
+    },
+    {
+        path: 'app-rent',
+        component: _components_rent_rent_component__WEBPACK_IMPORTED_MODULE_2__["RentComponent"]
+    },
+    {
+        path: 'app-property-details/:id/:category',
+        component: _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_3__["PropertyListComponent"]
+    },
+    {
+        path: 'login',
+        component: _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_4__["AuthenticationComponent"]
+    },
+    {
+        path: 'app-buy-property-details',
+        component: _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_5__["BuyPropertyDetailsComponent"]
+    }, {
+        path: 'app-buy-now-card',
+        component: _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_6__["BuyNowCardComponent"]
+    }
+];
 
 
 /***/ }),
@@ -513,79 +545,6 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/buy/buy.component.css":
-/*!**************************************************!*\
-  !*** ./src/app/components/buy/buy.component.css ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/components/buy/buy.component.html":
-/*!***************************************************!*\
-  !*** ./src/app/components/buy/buy.component.html ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n<div>\n  <img src=\"assets/images/living-room.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:14%\">\n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n    <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n        <amexio-layout-item>\n          <amexio-label size=\"large-bold\">\n            Properties for Buy\n          </amexio-label>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n    <amexio-layout-item [fit]=\"true\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <app-search [search-model]=\"dtsService.searchModel\"></app-search>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n</div>\n<!-- </div> -->"
-
-/***/ }),
-
-/***/ "./src/app/components/buy/buy.component.ts":
-/*!*************************************************!*\
-  !*** ./src/app/components/buy/buy.component.ts ***!
-  \*************************************************/
-/*! exports provided: BuyComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyComponent", function() { return BuyComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
-/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var BuyComponent = /** @class */ (function () {
-    function BuyComponent(dtsService) {
-        this.dtsService = dtsService;
-        // this.searchModel=new SearchModel();
-        this.dtsService.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_1__["SearchModel"]();
-        // this.searchModel.type='buy';
-        this.dtsService.searchType = 'buy';
-        this.dtsService.transparentFlag = true;
-    }
-    BuyComponent.prototype.ngOnInit = function () {
-    };
-    BuyComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-buy',
-            template: __webpack_require__(/*! ./buy.component.html */ "./src/app/components/buy/buy.component.html"),
-            styles: [__webpack_require__(/*! ./buy.component.css */ "./src/app/components/buy/buy.component.css")]
-        }),
-        __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
-    ], BuyComponent);
-    return BuyComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/components/details-card/details-card.component.css":
 /*!********************************************************************!*\
   !*** ./src/app/components/details-card/details-card.component.css ***!
@@ -655,6 +614,70 @@ var DetailsCardComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__["DatatransferService"]])
     ], DetailsCardComponent);
     return DetailsCardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/home/home.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/home/home.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n<div>\n  <img src=\"assets/images/living-room.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:14%\">\n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n    <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n        <amexio-layout-item>\n          <amexio-label size=\"large-bold\">\n            Properties for Buy\n          </amexio-label>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n    <amexio-layout-item [fit]=\"true\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <app-search [search-model]=\"dtsService.searchModel\"></app-search>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n</div>\n<!-- </div> -->\n"
+
+/***/ }),
+
+/***/ "./src/app/components/home/home.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/home/home.component.ts ***!
+  \***************************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
+/* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/**
+ * Created by dattaram on 20/2/19.
+ */
+
+
+
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent(dtsService) {
+        this.dtsService = dtsService;
+        // this.searchModel=new SearchModel();
+        this.dtsService.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_2__["SearchModel"]();
+        // this.searchModel.type='buy';
+        this.dtsService.searchType = 'buy';
+        this.dtsService.transparentFlag = true;
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'home',
+            template: __webpack_require__(/*! ./home.component.html */ "./src/app/components/home/home.component.html")
+        }),
+        __metadata("design:paramtypes", [_service_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__["DatatransferService"]])
+    ], HomeComponent);
+    return HomeComponent;
 }());
 
 
@@ -1063,8 +1086,7 @@ var SearchComponent = /** @class */ (function () {
         this.warningdialogue = false;
         this.warningMsg = '';
     }
-    SearchComponent.prototype.ngOnInit = function () {
-    };
+    SearchComponent.prototype.ngOnInit = function () { };
     SearchComponent.prototype.onBuyClick = function () {
         this.route.navigate(['/app-buy']);
     };
@@ -1108,7 +1130,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <!-- <amexio-btn-group [size]=\"'default'\" class=\"localsearch\"> \n<amexio-button\n    [label]=\"'Buy'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n     [bg-color]=\"'#660c00'\" \n    (onClick)=\"onBuyClick($event)\">\n</amexio-button>\n<amexio-button\n    [label]=\"'Sell'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onSell()\">\n</amexio-button>\n  </amexio-btn-group>  -->\n <div class=\"localsearch\">\n     <amexio-dropdown \n                 [(ngModel)]=\"searchModel.category\"\n                 [place-holder]=\"'Choose'\"\n                 name=\"category\"\n                 [field-label]=\"''\"\n                 [data]=\"categories\"\n                 [display-field]=\"'name'\"\n                 [value-field]=\"'id'\"\n                 [enable-sort]=\"true\"\n                 [sort]=\"'asc'\" >\n</amexio-dropdown>\n\n<amexio-text-input [field-label]=\"'label'\" name =\"name\"\n[has-label]=\"false\"\n   [place-holder]=\"'Enter Data'\"\n   [(ngModel)]=\"searchModel.searchData\"\n   [icon-feedback]=\"true\" class=\"localsearchtext\">\n</amexio-text-input>\n<amexio-button\n    [label]=\"'Search'\"\n    [type]=\"'theme-color'\"\n    [badge]=\"badge\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    [size]=\"'default'\"\n    [loading]=\"false\"\n    [block]=\"false\"\n    (onClick)=\"onSearchButtonClick($event)\">\n</amexio-button>\n</div> \n <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue> "
+module.exports = "\n <div class=\"localsearch\">\n     <amexio-dropdown\n                 [(ngModel)]=\"searchModel.category\"\n                 [place-holder]=\"'Choose'\"\n                 name=\"category\"\n                 [field-label]=\"''\"\n                 [data]=\"categories\"\n                 [display-field]=\"'name'\"\n                 [value-field]=\"'id'\"\n                 [enable-sort]=\"true\"\n                 [sort]=\"'asc'\" >\n</amexio-dropdown>\n\n<amexio-text-input [field-label]=\"'label'\" name =\"name\"\n[has-label]=\"false\"\n   [place-holder]=\"'Enter Data'\"\n   [(ngModel)]=\"searchModel.searchData\"\n   [icon-feedback]=\"true\" class=\"localsearchtext\">\n</amexio-text-input>\n<amexio-button\n    [label]=\"'Search'\"\n    [type]=\"'theme-color'\"\n    [badge]=\"badge\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    [size]=\"'default'\"\n    [loading]=\"false\"\n    [block]=\"false\"\n    (onClick)=\"onSearchButtonClick($event)\">\n</amexio-button>\n</div>\n <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue>\n"
 
 /***/ }),
 
@@ -1607,6 +1629,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DatatransferService = /** @class */ (function () {
     function DatatransferService(route) {
         this.route = route;
+        this.appartmentData = [];
+        this.tvData = [];
     }
     DatatransferService.prototype.searchCall = function () {
         if (this.searchModel.type == 'buy') {
