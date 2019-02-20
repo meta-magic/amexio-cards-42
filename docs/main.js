@@ -136,12 +136,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
 /* harmony import */ var _app_route__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./app.route */ "./src/app/app.route.ts");
+/* harmony import */ var _service_property_resolver__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./service/property.resolver */ "./src/app/service/property.resolver.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -191,7 +193,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_20__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(_app_route__WEBPACK_IMPORTED_MODULE_22__["routes"], { useHash: true }), amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioWidgetModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioLayoutModule"], amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_4__["AmexioPaneModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"]
             ],
-            providers: [],
+            providers: [_service_property_resolver__WEBPACK_IMPORTED_MODULE_23__["PropertyResolver"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
@@ -219,6 +221,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/authentication/authentication.component */ "./src/app/components/authentication/authentication.component.ts");
 /* harmony import */ var _components_buy_property_details_buy_property_details_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/buy-property-details/buy-property-details.component */ "./src/app/components/buy-property-details/buy-property-details.component.ts");
 /* harmony import */ var _components_buy_now_card_buy_now_card_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/buy-now-card/buy-now-card.component */ "./src/app/components/buy-now-card/buy-now-card.component.ts");
+/* harmony import */ var _service_property_resolver__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./service/property.resolver */ "./src/app/service/property.resolver.ts");
+
 
 
 
@@ -238,7 +242,7 @@ var routes = [
         component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"]
     },
     {
-        path: 'app-sell',
+        path: 'sell',
         component: _components_sell_sell_component__WEBPACK_IMPORTED_MODULE_1__["SellComponent"]
     },
     {
@@ -247,7 +251,8 @@ var routes = [
     },
     {
         path: 'app-property-details/:id/:category',
-        component: _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_3__["PropertyListComponent"]
+        component: _components_property_list_property_list_component__WEBPACK_IMPORTED_MODULE_3__["PropertyListComponent"],
+        resolve: { propertyMetadata: _service_property_resolver__WEBPACK_IMPORTED_MODULE_7__["PropertyResolver"] }
     },
     {
         path: 'login',
@@ -885,7 +890,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/datatransfer.service */ "./src/app/service/datatransfer.service.ts");
 /* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
-/* harmony import */ var src_app_service_shared_http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/shared/http.service */ "./src/app/service/shared/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -900,16 +904,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var PropertyListComponent = /** @class */ (function () {
-    function PropertyListComponent(route, router, dtsService, httpService) {
+    function PropertyListComponent(route, router, dtsService) {
         this.route = route;
         this.router = router;
         this.dtsService = dtsService;
-        this.httpService = httpService;
-        this.propertyDetails = [];
         this.propertyData = [];
-        debugger;
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_3__["SearchModel"]();
         this.dtsService.transparentFlag = false;
         this.dtsService.searchType = 'buy';
@@ -917,28 +917,11 @@ var PropertyListComponent = /** @class */ (function () {
     }
     PropertyListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.propertyDetails = this.route.snapshot.data.propertyMetadata;
         this.route.params.subscribe(function (params) {
-            _this.searchKey = params.searchData;
-            _this.category = params.category;
-            _this.getData(); // reset and set based on new parameter this time
+            _this.searchModel.category = params.id;
+            _this.searchModel.searchData = params.category;
         });
-    };
-    PropertyListComponent.prototype.getData = function () {
-        var _this = this;
-        debugger;
-        if (this.category == "apartment") {
-            this.httpService.fetchdata("assets/json/apartment.json").subscribe(function (resp) {
-                _this.propertyDetails = resp.find(function (x) { return x.searchKey === _this.searchKey; });
-                console.log('propertylist', _this.propertyData);
-            });
-            // this.propertyDetails = this.propertyData.find(x => x.searchKey === this.searchKey);
-        }
-        else if (this.category == "tv") {
-            this.httpService.fetchdata("assets/json/tv.json").subscribe(function (resp) {
-                _this.propertyDetails = resp.find(function (x) { return x.searchKey === _this.searchKey; });
-            });
-            // this.propertyDetails = this.propertyData.find(x => x.searchKey === this.searchKey);
-        }
     };
     PropertyListComponent.prototype.getPropertyDetails = function (property) {
         property.id = this.id;
@@ -954,10 +937,7 @@ var PropertyListComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./property-list.component.html */ "./src/app/components/property-list/property-list.component.html"),
             styles: [__webpack_require__(/*! ./property-list.component.css */ "./src/app/components/property-list/property-list.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"],
-            src_app_service_shared_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _service_datatransfer_service__WEBPACK_IMPORTED_MODULE_2__["DatatransferService"]])
     ], PropertyListComponent);
     return PropertyListComponent;
 }());
@@ -1088,10 +1068,10 @@ var SearchComponent = /** @class */ (function () {
     }
     SearchComponent.prototype.ngOnInit = function () { };
     SearchComponent.prototype.onBuyClick = function () {
-        this.route.navigate(['/app-buy']);
+        this.route.navigate(['/home']);
     };
     SearchComponent.prototype.onSell = function () {
-        this.route.navigate(['/app-sell']);
+        this.route.navigate(['/sell']);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('search-model'),
@@ -1164,40 +1144,65 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var SearchboxComponent = /** @class */ (function () {
-    function SearchboxComponent(route, dtsService, httpService) {
+    function SearchboxComponent(route, _dtsService, _httpService) {
         this.route = route;
-        this.dtsService = dtsService;
-        this.httpService = httpService;
+        this._dtsService = _dtsService;
+        this._httpService = _httpService;
         this.warningdialogue = false;
         this.categories = [];
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_2__["SearchModel"]();
         this.warningMsg = '';
         this.categories = [{
-                id: "tv",
-                name: "TV"
+                id: 'tv',
+                name: 'TV'
             },
             {
-                id: "apartment",
-                name: "Apartment"
+                id: 'apartment',
+                name: 'Apartment'
             }];
     }
     SearchboxComponent.prototype.ngOnInit = function () {
-        this.searchModel.type = "buy";
+        this.searchModel.type = 'buy';
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
         debugger;
-        if (this.searchModel.type == 'buy') {
-            if (this.searchModel.searchData && this.searchModel.category) {
-                this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
+        if (this.searchModel.category === 'apartment') {
+            if (this._dtsService.appartmentData.length > 0) {
+                this.navigateToPropertyDetails();
             }
             else {
-                this.warningMsg = 'Data not found';
-                this.warningdialogue = true;
+                this.getPropertyDetails();
             }
         }
-        else if (this.searchModel.type == 'sell') {
-            this.route.navigate(['/app-sell']);
+        else {
+            if (this._dtsService.tvData.length > 0) {
+                this.navigateToPropertyDetails();
+            }
+            else {
+                this.getPropertyDetails();
+            }
         }
+        /*   if (this.searchModel.type == 'buy') {
+             if (this.searchModel.searchData && this.searchModel.category) {
+               this.navigateToPropertyDetails();
+             } else {
+               this.warningMsg = 'Data not found';
+               this.warningdialogue = true;
+             }
+       
+           } else if (this.searchModel.type == 'sell') {
+             this.route.navigate(['/app-sell']);
+           }*/
+    };
+    SearchboxComponent.prototype.navigateToPropertyDetails = function () {
+        this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
+    };
+    SearchboxComponent.prototype.getPropertyDetails = function () {
+        var _this = this;
+        this._httpService.fetchdata('assets/json/apartment.json').subscribe(function (res) {
+            _this._dtsService.appartmentData = res;
+            _this.navigateToPropertyDetails();
+        });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('search-model'),
@@ -1661,6 +1666,57 @@ var DatatransferService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], DatatransferService);
     return DatatransferService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/property.resolver.ts":
+/*!**********************************************!*\
+  !*** ./src/app/service/property.resolver.ts ***!
+  \**********************************************/
+/*! exports provided: PropertyResolver */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PropertyResolver", function() { return PropertyResolver; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _datatransfer_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./datatransfer.service */ "./src/app/service/datatransfer.service.ts");
+/**
+ * Created by dattaram on 20/2/19.
+ */
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PropertyResolver = /** @class */ (function () {
+    function PropertyResolver(_dtsService) {
+        this._dtsService = _dtsService;
+    }
+    PropertyResolver.prototype.resolve = function (route) {
+        var data;
+        if (route.paramMap.get('id') === 'apartment') {
+            data = this._dtsService.appartmentData.find(function (x) { return x.searchKey === route.paramMap.get('category'); });
+        }
+        else {
+            data = this._dtsService.tvData.find(function (x) { return x.searchKey === route.paramMap.get('category'); });
+        }
+        return data;
+    };
+    PropertyResolver = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_datatransfer_service__WEBPACK_IMPORTED_MODULE_1__["DatatransferService"]])
+    ], PropertyResolver);
+    return PropertyResolver;
 }());
 
 
