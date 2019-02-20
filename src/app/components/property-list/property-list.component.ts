@@ -16,25 +16,27 @@ export class PropertyListComponent implements OnInit {
   category: any;
   propertyData: any[] = [];
   searchModel: SearchModel;
-  constructor(private route: ActivatedRoute, private router: Router, public dtsService: DatatransferService) {
+  constructor(private route: ActivatedRoute, private router: Router, public _dtsService: DatatransferService) {
     this.searchModel = new SearchModel();
-    this.dtsService.transparentFlag = false;
-    this.dtsService.searchType = 'buy';
+    this._dtsService.transparentFlag = false;
+    this._dtsService.searchType = 'buy';
 
      this.propertyData = [];
   }
 
   ngOnInit() {
+    debugger;
     this.propertyDetails =  this.route.snapshot.data.propertyMetadata;
     this.route.params.subscribe((params: Params) => {
+      debugger;
       this.searchModel.category = params.id;
       this.searchModel.searchData = params.category;
     });
   }
   getPropertyDetails(property: any) {
-    property.id = this.id;
+    property.id = this.searchModel.searchData;
     property.category = this.searchModel.category;
-    this.dtsService.propertyDetails = property;
+    this._dtsService.propertyDetails = property;
     this.router.navigate(['/app-buy-property-details']);
   }
   getLocation(property) {

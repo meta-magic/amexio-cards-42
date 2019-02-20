@@ -12,6 +12,7 @@ export class PropertyResolver implements Resolve<any> {
   }
   resolve(route: ActivatedRouteSnapshot): any {
     let data: any;
+    debugger;
     if (route.paramMap.get('id') === 'apartment') {
       data = this._dtsService.appartmentData.find(x => x.searchKey === route.paramMap.get('category'));
     } else {

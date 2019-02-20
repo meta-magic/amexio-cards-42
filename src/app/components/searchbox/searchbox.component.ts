@@ -33,7 +33,6 @@ export class SearchboxComponent implements OnInit {
   }
 
   onSearchButtonClick() {
-    debugger;
     if (this.searchModel.category === 'apartment') {
       if (this._dtsService.appartmentData .length > 0) {
         this.navigateToPropertyDetails();
@@ -47,20 +46,6 @@ export class SearchboxComponent implements OnInit {
         this.getPropertyDetails();
       }
     }
-
-
- /*   if (this.searchModel.type == 'buy') {
-      if (this.searchModel.searchData && this.searchModel.category) {
-        this.navigateToPropertyDetails();
-      } else {
-        this.warningMsg = 'Data not found';
-        this.warningdialogue = true;
-      }
-
-    } else if (this.searchModel.type == 'sell') {
-      this.route.navigate(['/app-sell']);
-    }*/
-
   }
 
   navigateToPropertyDetails() {

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class DatatransferService {
 transparentFlag:boolean;
 navItemcolor:string;
-propertyDetails:any[];
+propertyDetails:any;
 category:string;
 searchModel:SearchModel;
 id:String;
