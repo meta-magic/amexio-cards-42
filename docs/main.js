@@ -470,7 +470,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"1\" [fit]=\"true\">\n            <amexio-layout-columns [fit]=\"true\" [border]=\"true\" [orientation]=\"'vertical'\" [alignment]=\"'start'\">\n              <amexio-layout-item *ngFor=\"let photos of properyDetails.images\">\n                <amexio-image [width]=\"'80px'\" [height]=\"'80px'\" path=\"{{photos}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n          </amexio-column>\n          <amexio-column size=\"5\">\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-image [width]=\"'400px'\" [height]=\"'360px'\" path=\"{{properyDetails.images[0]}}\">\n                </amexio-image>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n              <amexio-layout-item>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-arrow-left fa-lg'\" [label]=\"'Back'\" [type]=\"'secondary'\" [tooltip]=\"'Back'\"\n                  (onClick)=\"onBack()\">\n                </amexio-button>\n                <amexio-button [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\" (onClick)=\"onBuyNowClick(properyDetails)\">\n                </amexio-button>\n              </amexio-layout-item>\n            </amexio-layout-columns>\n            <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n              (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n            </amexio-google-map>\n          </amexio-column>\n          <amexio-column size=\"6\" [fit]=\"fit\">\n               <div style=\"cursor: pointer\">\n             \n                  <table>\n                    <tr>\n                      <td>\n                        <p>\n                          <amexio-label size=\"medium-bold\">{{properyDetails.title}} </amexio-label> <br>{{properyDetails.subtitle}} <br>\n                          <amexio-image [icon-class]=\"'fa fa-map-marker fa-lg'\" (onClick)=\"getLocation(properyDetails)\"></amexio-image> &nbsp;\n                          <amexio-label>{{properyDetails.address}}.</amexio-label>\n                        </p>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-image [icon-class]=\"'fa fa-inr fa-lg'\"></amexio-image> &nbsp;\n                        <amexio-label size=\"medium-bold\">{{properyDetails.price}} </amexio-label>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <amexio-rating-input [(ngModel)]=\"properyDetails.rating\" [max]=\"'5'\" [read-only]=\"true\">\n                        </amexio-rating-input>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n               \n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row> -->\n\n<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"12\" [fit]=\"true\">\n            <amexio-layout-grid [layout]=\"'Home'\">\n              <amexio-grid-item [name]=\"'gridicon'\">\n                <amexio-image *ngFor=\"let photos of properyDetails.images\" [width]=\"'90px'\" [height]=\"'80px'\" path=\"{{photos}}\" (onClick)=\"onImageClick(photos)\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridimage'\">\n                <amexio-image [width]=\"'420px'\" [height]=\"'420px'\" path=\"{{mainImagePath}}\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'griddescription'\">\n                <app-details-card [data]=\"properyDetails\" [isListCard]=\"false\"></app-details-card>\n                <div style=\"cursor: pointer\">\n\n                  <table>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n\n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridmap'\">\n                <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n                  (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n                </amexio-google-map>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridbutton'\">\n                <amexio-row>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-arrow-left'\" [label]=\"'Back to list'\" [type]=\"'secondary'\"\n                      [tooltip]=\"'Back'\" (onClick)=\"onBack()\">\n                    </amexio-button>\n                  </amexio-column>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\"\n                      (onClick)=\"onBuyNowClick(properyDetails)\">\n                    </amexio-button>\n                  </amexio-column>\n                </amexio-row>\n              </amexio-grid-item>\n            </amexio-layout-grid>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>"
+module.exports = "\n\n<amexio-row>\n  <amexio-column size=\"12\" style=\"padding-top:5%\">\n    <amexio-card [header]=\"false\" [footer]=\"false\">\n      <amexio-body>\n        <amexio-row>\n          <amexio-column size=\"12\" [fit]=\"true\">\n            <amexio-layout-grid [layout]=\"'Home'\">\n              <amexio-grid-item [name]=\"'gridicon'\">\n                <amexio-image *ngFor=\"let photos of properyDetails.images\" [width]=\"'90px'\" [height]=\"'80px'\" path=\"{{photos}}\" (onClick)=\"onImageClick(photos)\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridimage'\">\n                <amexio-image [width]=\"'420px'\" [height]=\"'420px'\" path=\"{{mainImagePath}}\">\n                </amexio-image>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'griddescription'\">\n                <app-details-card [data]=\"properyDetails\" [isListCard]=\"false\"></app-details-card>\n                <div style=\"cursor: pointer\">\n\n                  <table>\n                    <tr>\n                      <td>\n                        <p>{{properyDetails.description}} </p>\n                      </td>\n                    </tr>\n\n                  </table>\n\n                </div>\n\n                <ul *ngFor=\"let details of properyDetails.details\">\n                  <li>{{details}}</li>\n                </ul>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridmap'\">\n                <amexio-google-map [initial-zoom-level]=\"12\" [height]=\"'500px'\" [initial-lat]=\"18.512840\" [initial-lng]=\"73.926220\" [data]=\"data\"\n                  (onMarkerClick)=\"onMarkerClick($event)\" [google-map-key]=\"'AIzaSyDKSPX97z-ndeh_Mgq3xkaML2Kp9AwHA9s'\">\n                </amexio-google-map>\n              </amexio-grid-item>\n              <amexio-grid-item [name]=\"'gridbutton'\">\n                <amexio-row>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-arrow-left'\" [label]=\"'Back to list'\" [type]=\"'secondary'\"\n                      [tooltip]=\"'Back'\" (onClick)=\"onBack()\">\n                    </amexio-button>\n                  </amexio-column>\n                  <amexio-column size=\"6\" [fit]=\"true\">\n                    <amexio-button [block]=\"true\" [size]=\"'default'\" [icon]=\"'fa fa-money'\" [label]=\"'Buy Now'\" [type]=\"'primary'\" [tooltip]=\"'Buy Now'\"\n                      (onClick)=\"onBuyNowClick(properyDetails)\">\n                    </amexio-button>\n                  </amexio-column>\n                </amexio-row>\n              </amexio-grid-item>\n            </amexio-layout-grid>\n          </amexio-column>\n        </amexio-row>\n      </amexio-body>\n    </amexio-card>\n  </amexio-column>\n</amexio-row>\n"
 
 /***/ }),
 
@@ -533,7 +533,8 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
         this.mainImagePath = event;
     };
     BuyPropertyDetailsComponent.prototype.onBack = function () {
-        this.route.navigate(['/app-property-details', this.properyDetails.id, this.properyDetails.category]);
+        debugger;
+        this.route.navigate(['/app-property-details', this.properyDetails.category, this.properyDetails.id]);
     };
     BuyPropertyDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -905,28 +906,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var PropertyListComponent = /** @class */ (function () {
-    function PropertyListComponent(route, router, dtsService) {
+    function PropertyListComponent(route, router, _dtsService) {
         this.route = route;
         this.router = router;
-        this.dtsService = dtsService;
+        this._dtsService = _dtsService;
         this.propertyData = [];
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_3__["SearchModel"]();
-        this.dtsService.transparentFlag = false;
-        this.dtsService.searchType = 'buy';
+        this._dtsService.transparentFlag = false;
+        this._dtsService.searchType = 'buy';
         this.propertyData = [];
     }
     PropertyListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        debugger;
         this.propertyDetails = this.route.snapshot.data.propertyMetadata;
         this.route.params.subscribe(function (params) {
+            debugger;
             _this.searchModel.category = params.id;
             _this.searchModel.searchData = params.category;
         });
     };
     PropertyListComponent.prototype.getPropertyDetails = function (property) {
-        property.id = this.id;
+        property.id = this.searchModel.searchData;
         property.category = this.searchModel.category;
-        this.dtsService.propertyDetails = property;
+        this._dtsService.propertyDetails = property;
         this.router.navigate(['/app-buy-property-details']);
     };
     PropertyListComponent.prototype.getLocation = function (property) {
@@ -1071,7 +1074,7 @@ var SearchComponent = /** @class */ (function () {
         this.route.navigate(['/home']);
     };
     SearchComponent.prototype.onSell = function () {
-        this.route.navigate(['/sell']);
+        //this.route.navigate(['/sell']);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('search-model'),
@@ -1165,7 +1168,6 @@ var SearchboxComponent = /** @class */ (function () {
         this.searchModel.type = 'buy';
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
-        debugger;
         if (this.searchModel.category === 'apartment') {
             if (this._dtsService.appartmentData.length > 0) {
                 this.navigateToPropertyDetails();
@@ -1182,17 +1184,6 @@ var SearchboxComponent = /** @class */ (function () {
                 this.getPropertyDetails();
             }
         }
-        /*   if (this.searchModel.type == 'buy') {
-             if (this.searchModel.searchData && this.searchModel.category) {
-               this.navigateToPropertyDetails();
-             } else {
-               this.warningMsg = 'Data not found';
-               this.warningdialogue = true;
-             }
-       
-           } else if (this.searchModel.type == 'sell') {
-             this.route.navigate(['/app-sell']);
-           }*/
     };
     SearchboxComponent.prototype.navigateToPropertyDetails = function () {
         this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
@@ -1704,6 +1695,7 @@ var PropertyResolver = /** @class */ (function () {
     }
     PropertyResolver.prototype.resolve = function (route) {
         var data;
+        debugger;
         if (route.paramMap.get('id') === 'apartment') {
             data = this._dtsService.appartmentData.find(function (x) { return x.searchKey === route.paramMap.get('category'); });
         }
