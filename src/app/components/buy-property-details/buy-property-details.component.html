@@ -13,17 +13,21 @@
     <amexio-card [header]="false" [footer]="false">
       <amexio-body>
         <amexio-row>
+          <amexio-column size ="12"
+                  [fit]="true">
+            <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
+          </amexio-column>
           <amexio-column size="12" [fit]="true">
             <amexio-layout-grid [layout]="'Home'">
               <!-- <amexio-grid-item [name]="'searchBox'">
               
               </amexio-grid-item> -->
               <amexio-grid-item [name]="'gridicon'">
-                <amexio-image *ngFor="let photos of properyDetails.images" [width]="'90px'" [height]="'80px'" path="{{photos}}" (onClick)="onImageClick(photos)">
+                <amexio-image class="cardIconImage" *ngFor="let photos of properyDetails.images"  path="{{photos}}" (onClick)="onImageClick(photos)">
                 </amexio-image>
               </amexio-grid-item>
               <amexio-grid-item [name]="'gridimage'">
-                <amexio-image [width]="'420px'" [height]="'420px'" path="{{mainImagePath}}">
+                <amexio-image class="maincardImage" path="{{mainImagePath}}">
                 </amexio-image>
               </amexio-grid-item>
               <amexio-grid-item [name]="'griddescription'">

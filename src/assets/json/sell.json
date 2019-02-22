@@ -1,0 +1,79 @@
+{
+  "id":"1",
+  "properties":[
+     {
+        "address": "Swargate,pune",
+        "price": "42,000",
+        "image": "assets/images/LG.jpg",
+        "rating": "3",
+        "title": "LG Plasma",
+        "subtitle": "Smart Android LED TV",
+        "shortDescription": "LG Plasma tv 43Inch with 2 Year Warranty by Zopper for sale",
+        "description": "Brand new LG Plasma tv 43Inch Smart Android LED TV",
+        "details": [
+          " Best sound and sound clarity",
+          "Social Media Enabled, facebook/whatsapp and other apps.",
+          "3 HDMI, 2 USB, 2 AV, 1 VGA PORT Audio out put",
+          "1 year standard manufacturer warranty"
+        ],
+        "images": [
+          "assets/images/micromax1.jpeg",
+          "assets/images/LG.jpg",
+          "assets/images/LG2.jpg"
+        ],
+        "location": {
+          "latitude": "18.496310",
+          "longitude": "73.856210"
+        }
+      },
+     {
+        "address": "south gate,magarapatta",
+        "price": "80 - 90 Lac",
+        "image": "assets/images/apartment1.jpeg",
+        "rating": "3",
+        "title": "2 BHK Apartment",
+        "subtitle": "1,150 Sq.ft By Kwality Vrindavan Heights",
+        "shortDescription": "2BHK Flat avaliable for Sale near south gate,magarapatta",
+        "description": "2BHK Flat avaliable for Sale near south gate,magarapatta * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Shopping Centre, Market, Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 1,150 Sq.ft",
+          "7th floor",
+          "2 Balcony",
+          "2 Bathroom"
+        ],
+        "images": [
+          "assets/images/apartment1.jpeg",
+          "assets/images/balcony1.jpeg",
+          "assets/images/kitchen2.jpeg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
+      },
+            {
+        "address": "south gate,magarapatta",
+        "price": "36,000",
+        "image": "assets/images/bike1.jpeg",
+        "rating": "4",
+        "title": "Bajaj Discover ",
+        "subtitle": "Bajaj Discover  125M – 2014 model",
+        "shortDescription": "his 2014 Bajaj Discover 125M is in excellent condition and has been driven around 24675 KMs",
+        "description": "This 2014 Bajaj Discover 125M is in excellent condition and has been driven around 24675 KMs.We offer Hassle-free Paper Transfer & RTO Services on every Quikr Assured bike. We can also offer great EMI options to keep the bike pocket-friendly.You can also avail for 6 months warranty on this bike for a very nominal rate for complete peace of mind.",
+        "details": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "images": [
+          "assets/images/bike1.jpeg",
+          "assets/images/bike2.jpeg"
+        ],
+        "location": {
+          "latitude": "18.512840",
+          "longitude": "73.926220"
+        }
+      }
+  ]
+}

@@ -14,10 +14,10 @@ oTP:string='';
   ngOnInit() {
   }
   onVerify(){
-this.route.navigate(['/app-buy']);
+this.route.navigate(['/home']);
   }
   onCancel(){
-    this.route.navigate(['/app-buy']);
+    this.route.navigate(['/home']);
     
   }
 }

@@ -100,3 +100,18 @@
     font-size: 2em;
     font-weight: normal;
 }
+.authImage .image-round{
+    height:100px!important;
+    width: 100px!important;
+}
+.maincardImage .ng-star-inserted{
+     height:400px!important;
+    width: 420px!important;
+}
+
+.cardIconImage .ng-star-inserted{
+     height:80px!important;
+    width: 90px!important;
+}
+
+  

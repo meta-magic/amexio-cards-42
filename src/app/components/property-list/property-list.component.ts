@@ -34,6 +34,7 @@ export class PropertyListComponent implements OnInit {
       this.category=params.id;
      this._dtsService.propertyListData = this.route.snapshot.data.propertyMetadata;
        this.propertyDetails =  this._dtsService.getPropertyListCardData(this.searchModel.category,this.searchModel.searchData);
+       console.log('proooo',this.propertyDetails);
     });
   }
   getPropertyDetails(property: any) {

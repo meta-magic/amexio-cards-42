@@ -9,5 +9,7 @@ export class AuthenticationService {
   showregisterWindow: boolean;
   showSignInWindow: boolean;
   showOTPWindow: boolean;
+  loginFlag:boolean=false;
+
   constructor() { }
 }

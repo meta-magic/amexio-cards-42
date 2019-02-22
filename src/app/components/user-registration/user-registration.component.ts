@@ -39,7 +39,7 @@ export class UserRegistrationComponent implements OnInit {
   }
 onCancel(){
 
- this.route.navigate(['/app-buy']);
+ this.route.navigate(['/home']);
 }
 
 onBack(){

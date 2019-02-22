@@ -28,10 +28,11 @@ signInGroup:FormGroup;
       });
   }
   onSignInClick(){
-     this.route.navigate(['/app-buy']);
+     this.route.navigate(['/home']);
+     this.auth_Service.loginFlag=true;
   }
   onCancel(){
-  this.route.navigate(['/app-buy']);
+  this.route.navigate(['/home']);
 
 }
 

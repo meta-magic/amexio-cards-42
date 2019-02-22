@@ -54,7 +54,6 @@ export class BuyPropertyDetailsComponent implements OnInit {
   }
 
   onBack() {
-    debugger;
     this.route.navigate(['/app-property-details', this.properyDetails.category, this.properyDetails.id]);
   }
 }
