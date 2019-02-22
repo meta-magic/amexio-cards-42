@@ -1,21 +1,94 @@
- <!-- <div [ngStyle]="{'padding-top':250+'px'}">  -->
-   <div>
-  <img src="assets/images/living-room.jpg" class="bg">
+<div style="padding-top:5%">
   <amexio-row>
-    <amexio-column size="12" style="padding-top:15%">
-      
+    <amexio-column size="6">
+      <div [formGroup]="sellFormGroup">
+        <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'right'">
+          <amexio-body>
+            <!-- <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'left'">
+          <amexio-layout-item>
+            <amexio-image style="cursor: pointer;" [icon-class]="'fa fa-arrow-left fa-lg'" [tooltip]="'Back'" (onClick)="onBack()"></amexio-image>
+          </amexio-layout-item>
+        </amexio-layout-columns> -->
+            <amexio-badge [absolute]="true" [background]="'black'" [color]="'white'" [top]="'0px'" [right]="'0px'">
+              Post Ads here
+            </amexio-badge>
+            <amexio-row>
+              <amexio-column size="6">
+                <amexio-text-input [(ngModel)]="sellModel.title" formControlName="Title" field-label="Title" place-holder="Enter Title">
+                </amexio-text-input>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-text-input [(ngModel)]="sellModel.subtitle" formControlName="SubTitle" field-label="Sub Title" place-holder="Enter Sub Title">
+                </amexio-text-input>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="sellModel.category" formControlName="Category" [place-holder]="'Choose'" name="category" [field-label]="'Category'"
+                  [data]="categories" [display-field]="'name'" [value-field]="'id'">
+                </amexio-dropdown>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-text-input [(ngModel)]="sellModel.tag" formControlName="Tag" [field-label]="'Tag'">
+                </amexio-text-input>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-text-input [(ngModel)]="sellModel.price" formControlName="Price" field-label="Price" place-holder="Enter Price">
+                </amexio-text-input>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-text-input [(ngModel)]="sellModel.city" formControlName="City" field-label="City" place-holder="Enter Price">
+                </amexio-text-input>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-text-input [(ngModel)]="sellModel.locality" formControlName="Locality" field-label="Locality" place-holder="Enter Price">
+                </amexio-text-input>
+              </amexio-column>
+              <amexio-column size="6">
+                <amexio-fileupload [http-url]="'/upload'" [http-method]="'POST'" [file-type]="'image/*'" [multiple-file]="'*'" [field-label]="'Photo Upload'"
+                  (onFileUpload)="onPhotoUpload($event)" formControlName="Photo" [(ngModel)]="sellModel.image" (onRemove)="onPhotoRemoveClick($event)">
+                </amexio-fileupload>
+              </amexio-column>
+              <amexio-column size="12">
+                <amexio-image *ngFor="let photos of sellModel.images"  path="/{{photos}}">
+                </amexio-image>
+                &nbsp; &nbsp;
+              </amexio-column>
+              <amexio-column size="12">
+                <amexio-textarea-input [(ngModel)]="sellModel.description" formControlName="Description" [enable-popover]="true" [field-label]="'Description'"
+                  [place-holder]="'Enter Description'" [allow-blank]="false" [error-msg]="'Please enter description'" [icon-feedback]="true"
+                  [rows]="'2'" [columns]="'2'">
+                </amexio-textarea-input>
+              </amexio-column>
+            </amexio-row>
+          </amexio-body>
+          <amexio-action>
+            <amexio-button [disabled]="!sellFormGroup.valid" [size]="'default'" [type]="'secondary'" [icon]="'fa fa-floppy-o'" (onClick)="onAddClick()"
+              label="Post"></amexio-button>
+          </amexio-action>
+        </amexio-card>
+      </div>
+    </amexio-column>
+    <amexio-column size="6" [fit]="true">
+      <amexio-row>
+        <amexio-column size="6" [fit]="true" *ngFor="let property of data.properties">
+          <amexio-card-ce>
+            <amexio-header-ce>
+              <amexio-label size="medium-bold">
+                {{property.title }}
+              </amexio-label>
+            </amexio-header-ce>
+            <amexio-image width="100%" height="130px" path="/{{property.images[0]}}"></amexio-image>
+            <amexio-body-ce>
+              <amexio-label size="smalls">
+                {{property.subtitle }}
+              </amexio-label>
+              <br>
+              <amexio-label size="medium-bold">
+                {{property.price }}
+              </amexio-label>
+            </amexio-body-ce>
+          </amexio-card-ce>
+        </amexio-column>
+      </amexio-row>
     </amexio-column>
   </amexio-row>
-  <amexio-layout-columns [orientation]="'vertical'" [border]="false">
-      <amexio-layout-item [fit]="true" *ngFor="let alignment of ['center']">
-        <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="alignment">
-          <amexio-layout-item>
-           <amexio-label size="large-bold">
-             Properties for Sell 
-           </amexio-label>
-          </amexio-layout-item>
-        </amexio-layout-columns>
-      </amexio-layout-item>
-    </amexio-layout-columns>
-   </div>
-<!-- </div> -->
+</div>
