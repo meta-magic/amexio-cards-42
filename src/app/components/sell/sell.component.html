@@ -48,7 +48,7 @@
                 </amexio-fileupload>
               </amexio-column>
               <amexio-column size="12">
-                <amexio-image *ngFor="let photos of sellModel.images"  [path]="photos">
+                <amexio-image class="sellImage" *ngFor="let photos of sellModel.images"  [path]="photos">
                 </amexio-image>
                 &nbsp; &nbsp;
               </amexio-column>
@@ -68,7 +68,16 @@
       </div>
     </amexio-column>
     <amexio-column size="6" [fit]="true">
+         
       <amexio-row>
+        <!-- <amexio-column size ="12"
+                [fit]="true">
+           <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+          <amexio-layout-item>
+            <amexio-label [size]="'large-bold'"> Product for sell</amexio-label>
+          </amexio-layout-item>
+        </amexio-layout-columns> 
+        </amexio-column> -->
         <amexio-column size="6" [fit]="true" *ngFor="let property of data.properties">
           <amexio-card-ce>
             <amexio-header-ce>
