@@ -517,7 +517,6 @@ var BuyPropertyDetailsComponent = /** @class */ (function () {
     }
     BuyPropertyDetailsComponent.prototype.ngOnInit = function () {
         this.properyDetails = this.dtsService.propertyDetails;
-        console.log('propertyDetails', this.properyDetails);
         this.mainImagePath = this.properyDetails.images[0];
         this.data.push(new amexio_ng_extensions__WEBPACK_IMPORTED_MODULE_2__["GoogleMapOverlays"](Number(this.properyDetails.location.latitude), Number(this.properyDetails.location.longitude), this.properyDetails.address, true, null, { city: 'pune' }));
     };
@@ -914,7 +913,6 @@ var PropertyListComponent = /** @class */ (function () {
         this.router = router;
         this._dtsService = _dtsService;
         this.propertyData = [];
-        debugger;
         this.searchModel = new _models_search_model__WEBPACK_IMPORTED_MODULE_3__["SearchModel"]();
         this._dtsService.transparentFlag = false;
         this._dtsService.searchType = 'buy';
@@ -922,15 +920,12 @@ var PropertyListComponent = /** @class */ (function () {
     }
     PropertyListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        debugger;
         this.route.params.subscribe(function (params) {
-            debugger;
             _this.searchModel.category = params.id;
             _this.searchModel.searchData = params.category;
             _this.category = params.id;
             _this._dtsService.propertyListData = _this.route.snapshot.data.propertyMetadata;
             _this.propertyDetails = _this._dtsService.getPropertyListCardData(_this.searchModel.category, _this.searchModel.searchData);
-            console.log('proooo', _this.propertyDetails);
         });
     };
     PropertyListComponent.prototype.getPropertyDetails = function (property) {
@@ -1175,7 +1170,6 @@ var SearchboxComponent = /** @class */ (function () {
         this.searchModel.type = 'buy';
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
-        debugger;
         if (this.searchModel.category === 'apartment') {
             if (this._dtsService.appartmentData.length > 0) {
                 this.navigateToPropertyDetails();
@@ -1251,7 +1245,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"padding-top:5%\">\n  <amexio-row>\n    <amexio-column size=\"6\">\n      <div [formGroup]=\"sellFormGroup\">\n        <amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'right'\">\n          <amexio-body>\n            <!-- <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'left'\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\" [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns> -->\n            <amexio-badge [absolute]=\"true\" [background]=\"'black'\" [color]=\"'white'\" [top]=\"'0px'\" [right]=\"'0px'\">\n              Post Ads here\n            </amexio-badge>\n            <amexio-row>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.title\" formControlName=\"Title\" field-label=\"Title\" place-holder=\"Enter Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.subtitle\" formControlName=\"SubTitle\" field-label=\"Sub Title\" place-holder=\"Enter Sub Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-dropdown [(ngModel)]=\"sellModel.category\" formControlName=\"Category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"'Category'\"\n                  [data]=\"categories\" [display-field]=\"'name'\" [value-field]=\"'id'\">\n                </amexio-dropdown>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.tag\" formControlName=\"Tag\" [field-label]=\"'Tag'\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.price\" formControlName=\"Price\" field-label=\"Price\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.city\" formControlName=\"City\" field-label=\"City\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.locality\" formControlName=\"Locality\" field-label=\"Locality\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-fileupload [http-url]=\"'/upload'\" [http-method]=\"'POST'\" [file-type]=\"'image/*'\" [multiple-file]=\"'*'\" [field-label]=\"'Photo Upload'\"\n                  (onFileUpload)=\"onPhotoUpload($event)\" formControlName=\"Photo\" [(ngModel)]=\"sellModel.image\" (onRemove)=\"onPhotoRemoveClick($event)\">\n                </amexio-fileupload>\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-image *ngFor=\"let photos of sellModel.images\"  path=\"/{{photos}}\">\n                </amexio-image>\n                &nbsp; &nbsp;\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-textarea-input [(ngModel)]=\"sellModel.description\" formControlName=\"Description\" [enable-popover]=\"true\" [field-label]=\"'Description'\"\n                  [place-holder]=\"'Enter Description'\" [allow-blank]=\"false\" [error-msg]=\"'Please enter description'\" [icon-feedback]=\"true\"\n                  [rows]=\"'2'\" [columns]=\"'2'\">\n                </amexio-textarea-input>\n              </amexio-column>\n            </amexio-row>\n          </amexio-body>\n          <amexio-action>\n            <amexio-button [disabled]=\"!sellFormGroup.valid\" [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-floppy-o'\" (onClick)=\"onAddClick()\"\n              label=\"Post\"></amexio-button>\n          </amexio-action>\n        </amexio-card>\n      </div>\n    </amexio-column>\n    <amexio-column size=\"6\" [fit]=\"true\">\n      <amexio-row>\n        <amexio-column size=\"6\" [fit]=\"true\" *ngFor=\"let property of data.properties\">\n          <amexio-card-ce>\n            <amexio-header-ce>\n              <amexio-label size=\"medium-bold\">\n                {{property.title }}\n              </amexio-label>\n            </amexio-header-ce>\n            <amexio-image width=\"100%\" height=\"130px\" path=\"/{{property.images[0]}}\"></amexio-image>\n            <amexio-body-ce>\n              <amexio-label size=\"smalls\">\n                {{property.subtitle }}\n              </amexio-label>\n              <br>\n              <amexio-label size=\"medium-bold\">\n                {{property.price }}\n              </amexio-label>\n            </amexio-body-ce>\n          </amexio-card-ce>\n        </amexio-column>\n      </amexio-row>\n    </amexio-column>\n  </amexio-row>\n</div>"
+module.exports = "<div style=\"padding-top:5%\">\n  <amexio-row>\n    <amexio-column size=\"6\">\n      <div [formGroup]=\"sellFormGroup\">\n        <amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'right'\">\n          <amexio-body>\n            <!-- <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'left'\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\" [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns> -->\n            <amexio-badge [absolute]=\"true\" [background]=\"'black'\" [color]=\"'white'\" [top]=\"'0px'\" [right]=\"'0px'\">\n              Post Ads here\n            </amexio-badge>\n            <amexio-row>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.title\" formControlName=\"Title\" field-label=\"Title\" place-holder=\"Enter Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.subtitle\" formControlName=\"SubTitle\" field-label=\"Sub Title\" place-holder=\"Enter Sub Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-dropdown [(ngModel)]=\"sellModel.category\" formControlName=\"Category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"'Category'\"\n                  [data]=\"categories\" [display-field]=\"'name'\" [value-field]=\"'id'\">\n                </amexio-dropdown>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.tag\" formControlName=\"Tag\" [field-label]=\"'Tag'\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.price\" formControlName=\"Price\" field-label=\"Price\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.city\" formControlName=\"City\" field-label=\"City\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.locality\" formControlName=\"Locality\" field-label=\"Locality\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-fileupload [http-url]=\"'/upload'\" [http-method]=\"'POST'\" [file-type]=\"'image/*'\" [multiple-file]=\"'*'\" [field-label]=\"'Photo Upload'\"\n                  (onFileUpload)=\"onPhotoUpload($event)\" formControlName=\"Photo\" [(ngModel)]=\"sellModel.image\" (onRemove)=\"onPhotoRemoveClick($event)\">\n                </amexio-fileupload>\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-image *ngFor=\"let photos of sellModel.images\"  path=\"{{photos}}\">\n                </amexio-image>\n                &nbsp; &nbsp;\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-textarea-input [(ngModel)]=\"sellModel.description\" formControlName=\"Description\" [enable-popover]=\"true\" [field-label]=\"'Description'\"\n                  [place-holder]=\"'Enter Description'\" [allow-blank]=\"false\" [error-msg]=\"'Please enter description'\" [icon-feedback]=\"true\"\n                  [rows]=\"'2'\" [columns]=\"'2'\">\n                </amexio-textarea-input>\n              </amexio-column>\n            </amexio-row>\n          </amexio-body>\n          <amexio-action>\n            <amexio-button [disabled]=\"!sellFormGroup.valid\" [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-floppy-o'\" (onClick)=\"onAddClick()\"\n              label=\"Post\"></amexio-button>\n          </amexio-action>\n        </amexio-card>\n      </div>\n    </amexio-column>\n    <amexio-column size=\"6\" [fit]=\"true\">\n      <amexio-row>\n        <amexio-column size=\"6\" [fit]=\"true\" *ngFor=\"let property of data.properties\">\n          <amexio-card-ce>\n            <amexio-header-ce>\n              <amexio-label size=\"medium-bold\">\n                {{property.title }}\n              </amexio-label>\n            </amexio-header-ce>\n            <amexio-image width=\"100%\" height=\"130px\" path=\"{{property.images[0]}}\"></amexio-image>\n            <amexio-body-ce>\n              <amexio-label size=\"smalls\">\n                {{property.subtitle }}\n              </amexio-label>\n              <br>\n              <amexio-label size=\"medium-bold\">\n                {{property.price }}\n              </amexio-label>\n            </amexio-body-ce>\n          </amexio-card-ce>\n        </amexio-column>\n      </amexio-row>\n    </amexio-column>\n  </amexio-row>\n</div>"
 
 /***/ }),
 
@@ -1339,33 +1333,25 @@ var SellComponent = /** @class */ (function () {
     SellComponent.prototype.onPhotoUpload = function (event) {
         var _this = this;
         this.sellModel.images = [];
-        console.log('photoUpload', event);
         this.sellModel.image = this.constImgaePath + event[0].name;
-        console.log('img', this.sellModel.image);
         // this.sellModel.images=event;
         event.forEach(function (obj) {
             _this.sellModel.images.push(_this.constImgaePath + obj.name);
         });
-        console.log('imgess', this.sellModel.images);
     };
     SellComponent.prototype.onPhotoRemoveClick = function (event) {
         var _this = this;
-        debugger;
-        console.log('remove', event);
         this.sellModel.images.forEach(function (obj, index) {
             if (obj == _this.constImgaePath + event.fileData.name) {
                 _this.sellModel.images.splice(index, 1);
             }
         });
-        console.log('imgess1111', this.sellModel.images);
     };
     SellComponent.prototype.onBack = function () {
         this._route.navigate(['/home']);
     };
     SellComponent.prototype.onAddClick = function () {
         this.data.properties.push(this.sellModel);
-        console.log('data', this.data);
-        console.log('model', this.sellModel);
     };
     SellComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1781,7 +1767,6 @@ var DatatransferService = /** @class */ (function () {
     //     });
     // }
     DatatransferService.prototype.getPropertyListCardData = function (id, data) {
-        debugger;
         if (id === 'apartment') {
             return this.propertyListData.find(function (x) { return x.searchKey === data; });
         }
@@ -1836,7 +1821,6 @@ var PropertyResolver = /** @class */ (function () {
         this._httpService = _httpService;
     }
     PropertyResolver.prototype.resolve = function (route) {
-        debugger;
         return this._httpService.fetchdata('assets/json/' + route.paramMap.get('id') + '.json');
     };
     PropertyResolver = __decorate([
