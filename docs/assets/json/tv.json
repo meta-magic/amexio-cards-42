@@ -19,9 +19,9 @@
           "1 year standard manufacturer warranty"
         ],
         "images": [
-          "assets/images/LG1.jpg",
+          "assets/images/LG1.jpeg",
           "assets/images/LG.jpg",
-          "assets/images/LG2.jpg"
+          "assets/images/LG2.jpeg"
         ],
         "location": {
           "latitude": "18.496310",
@@ -45,8 +45,8 @@
         ],
         "images": [
           "assets/images/LG.jpg",
-          "assets/images/LG1.jpg",
-          "assets/images/LG2.jpg"
+          "assets/images/LG1.jpeg",
+          "assets/images/LG2.jpeg"
         ],
         "location": {
           "latitude": "18.512840",
@@ -69,8 +69,8 @@
           "1 year standard manufacturer warranty"
         ],
         "images": [
-          "assets/images/LG2.jpg",
-          "assets/images/LG1.jpg",
+          "assets/images/LG2.jpeg",
+          "assets/images/LG1.jpeg",
           "assets/images/LG.jpg"
         ],
         "location": {
@@ -102,7 +102,7 @@
         "images": [
           "assets/images/Malaysia.jpeg",
           "assets/images/malaysia1.jpeg",
-          "assets/images/LG2.jpg"
+          "assets/images/LG2.jpeg"
         ],
         "location": {
           "latitude": "18.512840",
@@ -125,9 +125,9 @@
           "1 year standard manufacturer warranty"
         ],
         "images": [
-          "assets/images/malaysia1.jpeg",
+          "assets/images/malaysia.jpeg",
           "assets/images/Malaysia.jpeg",
-          "assets/images/LG2.jpg"
+          "assets/images/LG2.jpeg"
         ],
          "location": {
           "latitude": "18.520760",
@@ -144,7 +144,7 @@
       {
         "address": "Pune",
         "price": "30,000",
-        "image": "assets/images/micromax.png",
+        "image": "assets/images/micromax1.png",
         "rating": "3",
         "title": "Micromax 43T8100MHD",
         "subtitle": "43 inch HD Ready TV",
@@ -157,9 +157,9 @@
           "1 year standard manufacturer warranty"
         ],
         "images": [
-          "assets/images/malaysia1.jpeg",
-          "assets/images/Malaysia.jpeg",
-          "assets/images/LG2.jpg"
+          "assets/images/micromax1.jpeg",
+          "assets/images/micromax.jpeg",
+          "assets/images/LG2.jpeg"
         ],
         "location": {
           "latitude": "18.520760",
@@ -169,7 +169,7 @@
       {
         "address": "Swargate,pune",
         "price": "28,000",
-        "image": "assets/images/micromax.png",
+        "image": "assets/images/micromax1.png",
         "rating": "3",
         "title": "Micromax 43T8100MHD",
         "subtitle": "43 inch HD Ready TV",
@@ -182,7 +182,7 @@
           "1 year standard manufacturer warranty"
         ],
         "images": [
-          "assets/images/LG2.jpg",
+          "assets/images/LG2.jpeg",
           "assets/images/Malaysia.jpeg",
           "assets/images/malaysia1.jpeg"
         ],
