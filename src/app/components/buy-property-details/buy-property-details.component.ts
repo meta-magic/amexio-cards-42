@@ -28,7 +28,6 @@ export class BuyPropertyDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.properyDetails = this.dtsService.propertyDetails;
-    console.log('propertyDetails',this.properyDetails);
     this.mainImagePath = this.properyDetails.images[0]
     this.data.push(new GoogleMapOverlays(Number(this.properyDetails.location.latitude), Number(this.properyDetails.location.longitude), this.properyDetails.address, true, null, { city: 'pune' }))
 

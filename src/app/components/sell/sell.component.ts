@@ -67,33 +67,26 @@ export class SellComponent implements OnInit {
   }
   onPhotoUpload(event: any) {
     this.sellModel.images=[];
-    console.log('photoUpload', event);
     this.sellModel.image=this.constImgaePath+event[0].name;
-    console.log('img', this.sellModel.image)
     // this.sellModel.images=event;
     event.forEach((obj:any) => {
     this.sellModel.images.push(this.constImgaePath+obj.name);
     });
-    console.log('imgess',this.sellModel.images);
   
   }
   onPhotoRemoveClick(event:any){
-    debugger;
-   console.log('remove', event);
      this.sellModel.images.forEach((obj,index) => {
        if(obj==this.constImgaePath+event.fileData.name){
             this.sellModel.images.splice(index,1);
        }
     });
-    console.log('imgess1111',this.sellModel.images);
   }
   onBack() {
     this._route.navigate(['/home'])
   }
   onAddClick(){
     this.data.properties.push(this.sellModel);
-    console.log('data',this.data);
-    console.log('model',this.sellModel);
+ 
     
   }
 }

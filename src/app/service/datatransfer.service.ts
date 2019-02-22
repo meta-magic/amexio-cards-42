@@ -43,7 +43,6 @@ tvData: any[] = [];
   // }
 
   getPropertyListCardData(id:any,data:any){
-    debugger;
    if (id === 'apartment') {
     return  this.propertyListData.find(x => x.searchKey === data);
     } else if (id === 'tv') {

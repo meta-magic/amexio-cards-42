@@ -48,7 +48,7 @@
                 </amexio-fileupload>
               </amexio-column>
               <amexio-column size="12">
-                <amexio-image *ngFor="let photos of sellModel.images"  path="/{{photos}}">
+                <amexio-image *ngFor="let photos of sellModel.images"  path="{{photos}}">
                 </amexio-image>
                 &nbsp; &nbsp;
               </amexio-column>
@@ -76,7 +76,7 @@
                 {{property.title }}
               </amexio-label>
             </amexio-header-ce>
-            <amexio-image width="100%" height="130px" path="/{{property.images[0]}}"></amexio-image>
+            <amexio-image width="100%" height="130px" path="{{property.images[0]}}"></amexio-image>
             <amexio-body-ce>
               <amexio-label size="smalls">
                 {{property.subtitle }}

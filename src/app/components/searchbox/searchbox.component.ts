@@ -33,7 +33,6 @@ export class SearchboxComponent implements OnInit {
   }
 
   onSearchButtonClick() {
-    debugger;
     if (this.searchModel.category === 'apartment') {
       if (this._dtsService.appartmentData .length > 0) {
         this.navigateToPropertyDetails();

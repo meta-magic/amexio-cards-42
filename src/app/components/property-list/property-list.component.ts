@@ -17,7 +17,6 @@ export class PropertyListComponent implements OnInit {
   propertyData: any[] = [];
   searchModel: SearchModel;
   constructor(private route: ActivatedRoute, private router: Router, public _dtsService: DatatransferService) {
-   debugger;
     this.searchModel = new SearchModel();
     this._dtsService.transparentFlag = false;
     this._dtsService.searchType = 'buy';
@@ -26,15 +25,12 @@ export class PropertyListComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
     this.route.params.subscribe((params: Params) => {
-      debugger;
       this.searchModel.category = params.id;
       this.searchModel.searchData = params.category;
       this.category=params.id;
      this._dtsService.propertyListData = this.route.snapshot.data.propertyMetadata;
        this.propertyDetails =  this._dtsService.getPropertyListCardData(this.searchModel.category,this.searchModel.searchData);
-       console.log('proooo',this.propertyDetails);
     });
   }
   getPropertyDetails(property: any) {

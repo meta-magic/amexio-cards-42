@@ -12,7 +12,6 @@ export class PropertyResolver implements Resolve<any> {
   constructor(public _dtsService: DatatransferService, public _httpService: HttpService) {
   }
   resolve(route: ActivatedRouteSnapshot): any {
-    debugger;
    return this._httpService.fetchdata('assets/json/'+route.paramMap.get('id')+'.json');
   }
 }
