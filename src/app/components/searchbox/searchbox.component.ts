@@ -14,6 +14,7 @@ export class SearchboxComponent implements OnInit {
   warningdialogue = false;
   warningMsg: any;
   categories: any = [];
+  validSearchKey:boolean;
   constructor(public route: Router, public _dtsService: DatatransferService, public _httpService: HttpService) {
     this.searchModel = new SearchModel();
     this.warningMsg = '';
@@ -33,6 +34,8 @@ export class SearchboxComponent implements OnInit {
   }
 
   onSearchButtonClick() {
+    debugger;
+    this.validSearchKey=false;
     if (this.searchModel.category === 'apartment') {
       if (this._dtsService.appartmentData .length > 0) {
         this.navigateToPropertyDetails();
@@ -46,13 +49,36 @@ export class SearchboxComponent implements OnInit {
         this.getTVPropertyDetails();
       }
     }else{
-      this.warningMsg='Data not found';
+      this.warningMsg='Data not found, enter valid search data.';
       this.warningdialogue=true;
     }
   }
-
+  checkSearchData(data:any){
+    debugger;
+    if(data==='apartment'){
+      this._dtsService.appartmentData.forEach(obj => {
+      if(obj.searchKey === this.searchModel.searchData){
+        this.validSearchKey=true;
+      }
+    });
+    }else if(data==='tv') {
+      this._dtsService.tvData.forEach(obj => {
+      if(obj.searchKey === this.searchModel.searchData){
+        this.validSearchKey=true;
+      }
+    });
+    }
+   
+  }
   navigateToPropertyDetails() {
-    this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
+    this.checkSearchData(this.searchModel.category);
+    if(this.validSearchKey){
+     this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
+    }else{
+      this.warningMsg='Data not found, enter valid search data.'
+      this.warningdialogue=true;
+    }
+          
   }
 
   getApartmentPropertyDetails() {
@@ -64,6 +90,7 @@ export class SearchboxComponent implements OnInit {
   }
 
   getTVPropertyDetails() {
+    debugger;
     this._httpService.fetchdata('assets/json/tv.json').subscribe(
       (res: any) => {
         this._dtsService.tvData = res;

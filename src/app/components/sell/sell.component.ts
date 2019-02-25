@@ -85,8 +85,6 @@ export class SellComponent implements OnInit {
     this._route.navigate(['/home'])
   }
   onAddClick(){
-    this.data.properties.push(this.sellModel);
- 
-    
+    this.data.properties.push(this.sellModel);  
   }
 }

@@ -1,35 +1,24 @@
-
- <div class="localsearch">
-     <amexio-dropdown
-                 [(ngModel)]="searchModel.category"
-                 [place-holder]="'Choose'"
-                 name="category"
-                 [field-label]="''"
-                 [data]="categories"
-                 [display-field]="'name'"
-                 [value-field]="'id'"
-                 [enable-sort]="true"
-                 [sort]="'asc'" >
-</amexio-dropdown>
-<amexio-text-input [field-label]="'label'" name ="name"
-[has-label]="false"
-   [place-holder]="'Search'"
-   [(ngModel)]="searchModel.searchData"
-   [icon-feedback]="true" class="localsearchtext">
-</amexio-text-input>
-<amexio-button
-    [label]="'Search'"
-    [type]="'theme-color'"
-    [badge]="badge"
-    [tooltip]="'toolTip'"
-    [icon]="'icon'"
-    [disabled]="false"
-    [size]="'default'"
-    [loading]="false"
-    [block]="false"
-    [bg-color]="'red'"
-    (onClick)="onSearchButtonClick($event)">
-</amexio-button>
+<div class="localsearch">
+    <amexio-dropdown [(ngModel)]="searchModel.category" [place-holder]="'Choose'" name="category" [field-label]="''" [data]="categories"
+        [display-field]="'name'" [value-field]="'id'" [enable-sort]="true" [sort]="'asc'">
+    </amexio-dropdown>
+    <amexio-text-input [field-label]="'label'" name="name" [has-label]="false" [place-holder]="'Search'" [(ngModel)]="searchModel.searchData"
+        [icon-feedback]="true" class="localsearchtext">
+    </amexio-text-input>
+    <amexio-button [label]="'Search'" [type]="'theme-color'" [badge]="badge" [tooltip]="'toolTip'" [icon]="'icon'" [disabled]="false"
+        [size]="'default'" [loading]="false" [block]="false" [bg-color]="'red'" (onClick)="onSearchButtonClick($event)">
+    </amexio-button>
 </div>
- <amexio-dialogue [(show)]="warningdialogue" [material-design]="true" [message]="warningMsg" [title]="'Error'" [message-type]="'error'" [type]="'alert'">
-</amexio-dialogue>
+<amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
+    <amexio-layout-item>
+        <ng-container *ngIf="warningdialogue">
+            <amexio-label size="medium-bold" font-color="white">
+                {{warningMsg}}
+            </amexio-label>
+        </ng-container>
+    </amexio-layout-item>
+</amexio-layout-columns>
+
+
+<!-- <amexio-dialogue [(show)]="warningdialogue" [material-design]="true" [message]="warningMsg" [title]="'Error'" [message-type]="'error'" [type]="'alert'">
+</amexio-dialogue> -->

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchModel } from "../../models/search.model";
+import { AuthenticationService } from "src/app/service/authentication.service";
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -10,7 +11,9 @@ export class SearchComponent implements OnInit {
  @Input('search-model') searchModel: SearchModel;
   warningdialogue = false;
   warningMsg = '';
-   constructor(public route: Router) {}
+   constructor(public route: Router,public _authService:AuthenticationService) {
+
+   }
 
   ngOnInit() {}
 
@@ -18,7 +21,14 @@ export class SearchComponent implements OnInit {
     this.route.navigate(['/home']);
   }
   onSell() {
-    this.route.navigate(['/sell']);
+    if(this._authService.loginFlag){
+     this.route.navigate(['/sell']);
+    }else{
+     this.route.navigate(['/login']);
+    }
+    
   }
+
+
 
 }

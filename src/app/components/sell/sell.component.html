@@ -2,7 +2,7 @@
   <amexio-row>
     <amexio-column size="6">
       <div [formGroup]="sellFormGroup">
-        <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'right'">
+        <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'right'" height="650">
           <amexio-body>
             <!-- <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'left'">
           <amexio-layout-item>
@@ -67,19 +67,19 @@
         </amexio-card>
       </div>
     </amexio-column>
-    <amexio-column size="6" [fit]="true">
-         
-      <amexio-row>
-        <!-- <amexio-column size ="12"
-                [fit]="true">
-           <amexio-layout-columns [border]="false" [orientation]="'horizontal'" [alignment]="'center'">
-          <amexio-layout-item>
-            <amexio-label [size]="'large-bold'"> Product for sell</amexio-label>
-          </amexio-layout-item>
-        </amexio-layout-columns> 
-        </amexio-column> -->
-        <amexio-column size="6" [fit]="true" *ngFor="let property of data.properties">
-          <amexio-card-ce>
+    <amexio-column size="6" [fit]="true">    
+         <amexio-card
+           [header]="false"
+           [footer]="false"
+           height="650">
+             <amexio-body>
+               <amexio-row>
+               <amexio-column size="6" [fit]="true" *ngFor="let property of data.properties">
+               <amexio-badge [absolute]="true" [background]="'black'" [color]="'white'" [top]="'0px'" [right]="'0px'">
+              Existing Ads
+            </amexio-badge>
+            <br>
+                <amexio-card-ce>
             <amexio-header-ce>
               <amexio-label size="medium-bold">
                 {{property.title }}
@@ -96,8 +96,10 @@
               </amexio-label>
             </amexio-body-ce>
           </amexio-card-ce>
+               </amexio-column>
+               </amexio-row>
+             </amexio-body>
+         </amexio-card>
         </amexio-column>
-      </amexio-row>
-    </amexio-column>
   </amexio-row>
 </div>
