@@ -635,7 +635,7 @@ var DetailsCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n<div>\n  <img src=\"assets/images/living-room1.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:14%\">\n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n    <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n        <amexio-layout-item>\n          <amexio-label size=\"large-bold\">\n            What do you wanna buy today?\n          </amexio-label>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n    <amexio-layout-item [fit]=\"true\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <app-search [search-model]=\"dtsService.searchModel\"></app-search>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n</div>\n<!-- </div> -->\n"
+module.exports = "<!-- <div [ngStyle]=\"{'padding-top':250+'px'}\">  -->\n<div>\n  <img src=\"assets/images/living-room1.jpg\" class=\"bg\">\n  <amexio-row>\n    <amexio-column size=\"12\" style=\"padding-top:14%\">\n    </amexio-column>\n  </amexio-row>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\">\n    <amexio-layout-item [fit]=\"true\" *ngFor=\"let alignment of ['center']\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"alignment\">\n        <amexio-layout-item>\n          <amexio-label size=\"large-bold\" font-color=\"white\">\n            What do you wanna buy today?\n          </amexio-label>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n  <amexio-layout-columns [orientation]=\"'vertical'\" [border]=\"false\" [alignment]=\"'center'\">\n    <amexio-layout-item [fit]=\"true\">\n      <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n        <amexio-layout-item>\n          <app-search [search-model]=\"dtsService.searchModel\"></app-search>\n        </amexio-layout-item>\n      </amexio-layout-columns>\n    </amexio-layout-item>\n  </amexio-layout-columns>\n</div>\n<!-- </div> -->\n"
 
 /***/ }),
 
@@ -1036,7 +1036,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <!-- <amexio-btn-group [size]=\"'default'\" >  -->\n<amexio-button \n    [label]=\"'Buy'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onBuyClick($event)\" class=\"localsearch\">\n</amexio-button>\n<amexio-button\n    [label]=\"'Sell'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onSell()\" class=\"localsearch\"> \n</amexio-button>\n  <!-- </amexio-btn-group>  -->\n<app-searchbox [search-model]=\"searchModel\"></app-searchbox>\n<amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue>"
+module.exports = " <!-- <amexio-btn-group [size]=\"'default'\" >  -->\n<amexio-button \n    [label]=\"'Buy'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onBuyClick($event)\" class=\"localsearch\">\n</amexio-button>\n<amexio-button\n    [label]=\"'Sell'\"\n    [type]=\"'theme-color'\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    (onClick)=\"onSell()\" class=\"localsearch\"> \n</amexio-button>\n  <!-- </amexio-btn-group>  -->\n<app-searchbox [search-model]=\"searchModel\"></app-searchbox>\n<amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Warning'\" [message-type]=\"'warning'\" [type]=\"'alert'\">\n</amexio-dialogue>"
 
 /***/ }),
 
@@ -1053,6 +1053,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/search.model */ "./src/app/models/search.model.ts");
+/* harmony import */ var src_app_service_authentication_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/authentication.service */ "./src/app/service/authentication.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1065,9 +1066,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(route) {
+    function SearchComponent(route, _authService) {
         this.route = route;
+        this._authService = _authService;
         this.warningdialogue = false;
         this.warningMsg = '';
     }
@@ -1076,7 +1079,12 @@ var SearchComponent = /** @class */ (function () {
         this.route.navigate(['/home']);
     };
     SearchComponent.prototype.onSell = function () {
-        this.route.navigate(['/sell']);
+        if (this._authService.loginFlag) {
+            this.route.navigate(['/sell']);
+        }
+        else {
+            this.route.navigate(['/login']);
+        }
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('search-model'),
@@ -1088,7 +1096,7 @@ var SearchComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./search.component.html */ "./src/app/components/search/search.component.html"),
             styles: [__webpack_require__(/*! ./search.component.css */ "./src/app/components/search/search.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_service_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"]])
     ], SearchComponent);
     return SearchComponent;
 }());
@@ -1115,7 +1123,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n <div class=\"localsearch\">\n     <amexio-dropdown\n                 [(ngModel)]=\"searchModel.category\"\n                 [place-holder]=\"'Choose'\"\n                 name=\"category\"\n                 [field-label]=\"''\"\n                 [data]=\"categories\"\n                 [display-field]=\"'name'\"\n                 [value-field]=\"'id'\"\n                 [enable-sort]=\"true\"\n                 [sort]=\"'asc'\" >\n</amexio-dropdown>\n<amexio-text-input [field-label]=\"'label'\" name =\"name\"\n[has-label]=\"false\"\n   [place-holder]=\"'Search'\"\n   [(ngModel)]=\"searchModel.searchData\"\n   [icon-feedback]=\"true\" class=\"localsearchtext\">\n</amexio-text-input>\n<amexio-button\n    [label]=\"'Search'\"\n    [type]=\"'theme-color'\"\n    [badge]=\"badge\"\n    [tooltip]=\"'toolTip'\"\n    [icon]=\"'icon'\"\n    [disabled]=\"false\"\n    [size]=\"'default'\"\n    [loading]=\"false\"\n    [block]=\"false\"\n    [bg-color]=\"'red'\"\n    (onClick)=\"onSearchButtonClick($event)\">\n</amexio-button>\n</div>\n <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue>\n"
+module.exports = "<div class=\"localsearch\">\n    <amexio-dropdown [(ngModel)]=\"searchModel.category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"''\" [data]=\"categories\"\n        [display-field]=\"'name'\" [value-field]=\"'id'\" [enable-sort]=\"true\" [sort]=\"'asc'\">\n    </amexio-dropdown>\n    <amexio-text-input [field-label]=\"'label'\" name=\"name\" [has-label]=\"false\" [place-holder]=\"'Search'\" [(ngModel)]=\"searchModel.searchData\"\n        [icon-feedback]=\"true\" class=\"localsearchtext\">\n    </amexio-text-input>\n    <amexio-button [label]=\"'Search'\" [type]=\"'theme-color'\" [badge]=\"badge\" [tooltip]=\"'toolTip'\" [icon]=\"'icon'\" [disabled]=\"false\"\n        [size]=\"'default'\" [loading]=\"false\" [block]=\"false\" [bg-color]=\"'red'\" (onClick)=\"onSearchButtonClick($event)\">\n    </amexio-button>\n</div>\n<amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n    <amexio-layout-item>\n        <ng-container *ngIf=\"warningdialogue\">\n            <amexio-label size=\"medium-bold\" font-color=\"white\">\n                {{warningMsg}}\n            </amexio-label>\n        </ng-container>\n    </amexio-layout-item>\n</amexio-layout-columns>\n\n\n<!-- <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue> -->"
 
 /***/ }),
 
@@ -1170,6 +1178,8 @@ var SearchboxComponent = /** @class */ (function () {
         this.searchModel.type = 'buy';
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
+        debugger;
+        this.validSearchKey = false;
         if (this.searchModel.category === 'apartment') {
             if (this._dtsService.appartmentData.length > 0) {
                 this.navigateToPropertyDetails();
@@ -1187,12 +1197,37 @@ var SearchboxComponent = /** @class */ (function () {
             }
         }
         else {
-            this.warningMsg = 'Data not found';
+            this.warningMsg = 'Data not found, enter valid search data.';
             this.warningdialogue = true;
         }
     };
+    SearchboxComponent.prototype.checkSearchData = function (data) {
+        var _this = this;
+        debugger;
+        if (data === 'apartment') {
+            this._dtsService.appartmentData.forEach(function (obj) {
+                if (obj.searchKey === _this.searchModel.searchData) {
+                    _this.validSearchKey = true;
+                }
+            });
+        }
+        else if (data === 'tv') {
+            this._dtsService.tvData.forEach(function (obj) {
+                if (obj.searchKey === _this.searchModel.searchData) {
+                    _this.validSearchKey = true;
+                }
+            });
+        }
+    };
     SearchboxComponent.prototype.navigateToPropertyDetails = function () {
-        this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
+        this.checkSearchData(this.searchModel.category);
+        if (this.validSearchKey) {
+            this.route.navigate(['/app-property-details', this.searchModel.category, this.searchModel.searchData]);
+        }
+        else {
+            this.warningMsg = 'Data not found, enter valid search data.';
+            this.warningdialogue = true;
+        }
     };
     SearchboxComponent.prototype.getApartmentPropertyDetails = function () {
         var _this = this;
@@ -1203,6 +1238,7 @@ var SearchboxComponent = /** @class */ (function () {
     };
     SearchboxComponent.prototype.getTVPropertyDetails = function () {
         var _this = this;
+        debugger;
         this._httpService.fetchdata('assets/json/tv.json').subscribe(function (res) {
             _this._dtsService.tvData = res;
             _this.navigateToPropertyDetails();
@@ -1245,7 +1281,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"padding-top:5%\">\n  <amexio-row>\n    <amexio-column size=\"6\">\n      <div [formGroup]=\"sellFormGroup\">\n        <amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'right'\">\n          <amexio-body>\n            <!-- <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'left'\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\" [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns> -->\n            <amexio-badge [absolute]=\"true\" [background]=\"'black'\" [color]=\"'white'\" [top]=\"'0px'\" [right]=\"'0px'\">\n              Post Ads here\n            </amexio-badge>\n            <amexio-row>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.title\" formControlName=\"Title\" field-label=\"Title\" place-holder=\"Enter Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.subtitle\" formControlName=\"SubTitle\" field-label=\"Sub Title\" place-holder=\"Enter Sub Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-dropdown [(ngModel)]=\"sellModel.category\" formControlName=\"Category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"'Category'\"\n                  [data]=\"categories\" [display-field]=\"'name'\" [value-field]=\"'id'\">\n                </amexio-dropdown>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.tag\" formControlName=\"Tag\" [field-label]=\"'Tag'\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.price\" formControlName=\"Price\" field-label=\"Price\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.city\" formControlName=\"City\" field-label=\"City\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.locality\" formControlName=\"Locality\" field-label=\"Locality\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-fileupload [http-url]=\"'/upload'\" [http-method]=\"'POST'\" [file-type]=\"'image/*'\" [multiple-file]=\"'*'\" [field-label]=\"'Photo Upload'\"\n                  (onFileUpload)=\"onPhotoUpload($event)\" formControlName=\"Photo\" [(ngModel)]=\"sellModel.image\" (onRemove)=\"onPhotoRemoveClick($event)\">\n                </amexio-fileupload>\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-image class=\"sellImage\" *ngFor=\"let photos of sellModel.images\"  [path]=\"photos\">\n                </amexio-image>\n                &nbsp; &nbsp;\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-textarea-input [(ngModel)]=\"sellModel.description\" formControlName=\"Description\" [enable-popover]=\"true\" [field-label]=\"'Description'\"\n                  [place-holder]=\"'Enter Description'\" [allow-blank]=\"false\" [error-msg]=\"'Please enter description'\" [icon-feedback]=\"true\"\n                  [rows]=\"'2'\" [columns]=\"'2'\">\n                </amexio-textarea-input>\n              </amexio-column>\n            </amexio-row>\n          </amexio-body>\n          <amexio-action>\n            <amexio-button [disabled]=\"!sellFormGroup.valid\" [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-floppy-o'\" (onClick)=\"onAddClick()\"\n              label=\"Post\"></amexio-button>\n          </amexio-action>\n        </amexio-card>\n      </div>\n    </amexio-column>\n    <amexio-column size=\"6\" [fit]=\"true\">\n         \n      <amexio-row>\n        <!-- <amexio-column size =\"12\"\n                [fit]=\"true\">\n           <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n          <amexio-layout-item>\n            <amexio-label [size]=\"'large-bold'\"> Product for sell</amexio-label>\n          </amexio-layout-item>\n        </amexio-layout-columns> \n        </amexio-column> -->\n        <amexio-column size=\"6\" [fit]=\"true\" *ngFor=\"let property of data.properties\">\n          <amexio-card-ce>\n            <amexio-header-ce>\n              <amexio-label size=\"medium-bold\">\n                {{property.title }}\n              </amexio-label>\n            </amexio-header-ce> \n            <amexio-image width=\"100%\" height=\"130px\" [path]=\"property.images[0]\"></amexio-image>\n            <amexio-body-ce>\n              <amexio-label size=\"smalls\">\n                {{property.subtitle }}\n              </amexio-label>\n              <br>\n              <amexio-label size=\"medium-bold\">\n                {{property.price }}\n              </amexio-label>\n            </amexio-body-ce>\n          </amexio-card-ce>\n        </amexio-column>\n      </amexio-row>\n    </amexio-column>\n  </amexio-row>\n</div>"
+module.exports = "<div style=\"padding-top:5%\">\n  <amexio-row>\n    <amexio-column size=\"6\">\n      <div [formGroup]=\"sellFormGroup\">\n        <amexio-card [header]=\"false\" [header-align]=\"'left'\" [footer]=\"true\" [footer-align]=\"'right'\" height=\"650\">\n          <amexio-body>\n            <!-- <amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'left'\">\n          <amexio-layout-item>\n            <amexio-image style=\"cursor: pointer;\" [icon-class]=\"'fa fa-arrow-left fa-lg'\" [tooltip]=\"'Back'\" (onClick)=\"onBack()\"></amexio-image>\n          </amexio-layout-item>\n        </amexio-layout-columns> -->\n            <amexio-badge [absolute]=\"true\" [background]=\"'black'\" [color]=\"'white'\" [top]=\"'0px'\" [right]=\"'0px'\">\n              Post Ads here\n            </amexio-badge>\n            <amexio-row>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.title\" formControlName=\"Title\" field-label=\"Title\" place-holder=\"Enter Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.subtitle\" formControlName=\"SubTitle\" field-label=\"Sub Title\" place-holder=\"Enter Sub Title\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-dropdown [(ngModel)]=\"sellModel.category\" formControlName=\"Category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"'Category'\"\n                  [data]=\"categories\" [display-field]=\"'name'\" [value-field]=\"'id'\">\n                </amexio-dropdown>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.tag\" formControlName=\"Tag\" [field-label]=\"'Tag'\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.price\" formControlName=\"Price\" field-label=\"Price\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.city\" formControlName=\"City\" field-label=\"City\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-text-input [(ngModel)]=\"sellModel.locality\" formControlName=\"Locality\" field-label=\"Locality\" place-holder=\"Enter Price\">\n                </amexio-text-input>\n              </amexio-column>\n              <amexio-column size=\"6\">\n                <amexio-fileupload [http-url]=\"'/upload'\" [http-method]=\"'POST'\" [file-type]=\"'image/*'\" [multiple-file]=\"'*'\" [field-label]=\"'Photo Upload'\"\n                  (onFileUpload)=\"onPhotoUpload($event)\" formControlName=\"Photo\" [(ngModel)]=\"sellModel.image\" (onRemove)=\"onPhotoRemoveClick($event)\">\n                </amexio-fileupload>\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-image class=\"sellImage\" *ngFor=\"let photos of sellModel.images\"  [path]=\"photos\">\n                </amexio-image>\n                &nbsp; &nbsp;\n              </amexio-column>\n              <amexio-column size=\"12\">\n                <amexio-textarea-input [(ngModel)]=\"sellModel.description\" formControlName=\"Description\" [enable-popover]=\"true\" [field-label]=\"'Description'\"\n                  [place-holder]=\"'Enter Description'\" [allow-blank]=\"false\" [error-msg]=\"'Please enter description'\" [icon-feedback]=\"true\"\n                  [rows]=\"'2'\" [columns]=\"'2'\">\n                </amexio-textarea-input>\n              </amexio-column>\n            </amexio-row>\n          </amexio-body>\n          <amexio-action>\n            <amexio-button [disabled]=\"!sellFormGroup.valid\" [size]=\"'default'\" [type]=\"'secondary'\" [icon]=\"'fa fa-floppy-o'\" (onClick)=\"onAddClick()\"\n              label=\"Post\"></amexio-button>\n          </amexio-action>\n        </amexio-card>\n      </div>\n    </amexio-column>\n    <amexio-column size=\"6\" [fit]=\"true\">    \n         <amexio-card\n           [header]=\"false\"\n           [footer]=\"false\"\n           height=\"650\">\n             <amexio-body>\n               <amexio-row>\n               <amexio-column size=\"6\" [fit]=\"true\" *ngFor=\"let property of data.properties\">\n               <amexio-badge [absolute]=\"true\" [background]=\"'black'\" [color]=\"'white'\" [top]=\"'0px'\" [right]=\"'0px'\">\n              Existing Ads\n            </amexio-badge>\n            <br>\n                <amexio-card-ce>\n            <amexio-header-ce>\n              <amexio-label size=\"medium-bold\">\n                {{property.title }}\n              </amexio-label>\n            </amexio-header-ce> \n            <amexio-image width=\"100%\" height=\"130px\" [path]=\"property.images[0]\"></amexio-image>\n            <amexio-body-ce>\n              <amexio-label size=\"smalls\">\n                {{property.subtitle }}\n              </amexio-label>\n              <br>\n              <amexio-label size=\"medium-bold\">\n                {{property.price }}\n              </amexio-label>\n            </amexio-body-ce>\n          </amexio-card-ce>\n               </amexio-column>\n               </amexio-row>\n             </amexio-body>\n         </amexio-card>\n        </amexio-column>\n  </amexio-row>\n</div>"
 
 /***/ }),
 

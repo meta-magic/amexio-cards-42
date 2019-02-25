@@ -240,10 +240,15 @@
         "image": "assets/images/apartment3.jpeg",
         "rating": "3",
         "title": "2 BHK Apartment",
-        "subtitle": "",
-        "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
-        "description": "",
-        "details": [],
+        "subtitle": "By Kumar builders ",
+         "shortDescription": "It is a magnanimous residency, comprising of well planned homes",
+        "description": "2BHK Flat avaliable for Sale in viman nagar * Society/ Building Features :- Internet/wi-fi connectivity, Water Storage, Piped-gas, Visitor Parking, Swimming Pool, Park, Maintenance Staff ,Club house , GYM, Rain Water Harvesting, Waste Disposal * Home Features:- Power Back-up, Security, Fire Alarm, Intercom Facility, Lift, Reserved Parking, * Bus stop, School, Hospitals, Medicals near by Society.",
+        "details": [
+          "Built-Up Area 550 Sq.ft",
+          "8th floor",
+          "3 Balcony",
+          "2 Bathroom"
+        ],
         "images": [
           "assets/images/apartment1.jpeg",
           "assets/images/apartment3.jpeg"
