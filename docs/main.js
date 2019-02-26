@@ -1084,6 +1084,10 @@ var SearchComponent = /** @class */ (function () {
         }
         else {
             this.route.navigate(['/login']);
+            this._authService.showLogin = true;
+            this._authService.showOTPWindow = false;
+            this._authService.showregisterWindow = false;
+            this._authService.showSignInWindow = false;
         }
     };
     __decorate([
