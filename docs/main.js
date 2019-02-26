@@ -331,6 +331,9 @@ var AuthenticationComponent = /** @class */ (function () {
     }
     AuthenticationComponent.prototype.ngOnInit = function () {
         this.auth_Service.showLogin = true;
+        this.auth_Service.showSignInWindow = false;
+        this.auth_Service.showOTPWindow = false;
+        this.auth_Service.showregisterWindow = false;
     };
     AuthenticationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1084,10 +1087,6 @@ var SearchComponent = /** @class */ (function () {
         }
         else {
             this.route.navigate(['/login']);
-            this._authService.showLogin = true;
-            this._authService.showOTPWindow = false;
-            this._authService.showregisterWindow = false;
-            this._authService.showSignInWindow = false;
         }
     };
     __decorate([
