@@ -25,6 +25,10 @@ export class SearchComponent implements OnInit {
      this.route.navigate(['/sell']);
     }else{
      this.route.navigate(['/login']);
+      this._authService.showLogin = true;
+     this._authService.showOTPWindow = false;
+     this._authService.showregisterWindow = false;
+     this._authService.showSignInWindow = false;
     }
     
   }
