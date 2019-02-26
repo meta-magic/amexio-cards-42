@@ -1,14 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* 
- body{
-    background-image: url("/assets/images/living-room.jpg")!important;
-    background-size: cover!important;
-    min-height: auto !important; 
-    height: 250px !important;
-    position: relative !important;
-    background-position: center!important;   
-     
-}  */
+
 .navlogo .navbar-logo{
     padding-right: 5px !important;
 }
@@ -33,8 +24,6 @@
      border-radius: 0px!important;
 }
 
-
-
 .localsearch  .button-primary{
      height: 43px!important;
       border-radius: 0px!important;
@@ -49,17 +38,6 @@
      padding: 0px!important;
 
 }  
-/* .modal-window-content{
-   width:auto!important; 
-}  */
-
-/*  .login-window .modal-window-content{
-   width:30%!important; 
-} 
-
-.login-window .window-center{
-       width:30%!important; 
-} */
 
 .full-page {
     position: absolute;
@@ -79,10 +57,7 @@
 
     text-align: -webkit-center;
 }
-.ok {
-    box-shadow: none !important;
-    background-color: transparent !important; 
-}
+
 
 .pic-style {
 
@@ -101,21 +76,21 @@
     font-weight: normal;
 }
 .authImage .image-round{
-    height:100px!important;
-    width: 100px!important;
+     height:100px!important;
+     width: 100px!important;
 }
 .maincardImage .ng-star-inserted{
      height:400px!important;
-    width: 420px!important;
+     width: 420px!important;
 }
 
 .cardIconImage .ng-star-inserted{
      height:80px!important;
-    width: 90px!important;
+     width: 90px!important;
 }
 .sellImage .img-fluid{
      height:80px!important;
-      width: 90px!important;
+     width: 90px!important;
 }
 
   
