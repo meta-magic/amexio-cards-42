@@ -21,7 +21,8 @@
         "images": [
           "assets/images/apartment1.jpeg",
           "assets/images/balcony1.jpeg",
-          "assets/images/kitchen2.jpeg"
+          "assets/images/kitchen1.jpeg",
+          "assets/images/bedroom1.jpeg"
         ],
         "location": {
           "latitude": "18.512840",
@@ -46,7 +47,8 @@
         "images": [
           "assets/images/apartment2.jpeg",
           "assets/images/kitchen2.jpeg",
-          "assets/images/livingroom1.jpeg"
+          "assets/images/livingroom1.jpeg",
+          "assets/images/bedroom2.jpeg"
         ],
         "location": {
           "latitude": "18.486010",
@@ -70,8 +72,8 @@
         ],
         "images": [
           "assets/images/apartment3.jpeg",
-          "assets/images/kitchen2.jpeg",
-          "assets/images/livingroom1.jpeg"
+          "assets/images/kitchen3.jpeg",
+          "assets/images/livingroom2.jpeg"
         ],
         "location": {
           "latitude": "18.505660",
@@ -95,8 +97,8 @@
         ],
         "images": [
           "assets/images/apartment4.jpeg",
-          "assets/images/kitchen2.jpeg",
-          "assets/images/livingroom1.jpeg"
+          "assets/images/kitchen3.jpeg",
+          "assets/images/livingroom3.jpeg"
         ],
         "location": {
           "latitude": "18.493470",
@@ -145,8 +147,9 @@
         ],
         "images": [
           "assets/images/apartment5.jpeg",
-          "assets/images/kitchen2.jpeg",
-          "assets/images/livingroom1.jpeg"
+          "assets/images/kitchen3.jpeg",
+          "assets/images/livingroom2.jpeg",
+          "assets/images/bedroom3.jpeg"
         ],
         "location": {
           "latitude": "18.518960",
@@ -200,9 +203,10 @@
           "2 Bathroom"
         ],
         "images": [
-          "assets/images/apartment2.jpeg",
-          "assets/images/kitchen2.jpeg",
-          "assets/images/livingroom1.jpeg"
+          "assets/images/apartment6.jpeg",
+          "assets/images/kitchen3.jpeg",
+          "assets/images/livingroom2.jpeg",
+          "assets/images/bedroom1.jpeg"
         ],
         "location": {
           "latitude": "18.560760",
@@ -226,8 +230,8 @@
         ],
         "images": [
           "assets/images/apartment1.jpeg",
-          "assets/images/kitchen2.jpeg",
-          "assets/images/livingroom1.jpeg"
+          "assets/images/kitchen1.jpeg",
+          "assets/images/livingroom2.jpeg"
         ],
         "location": {
           "latitude": "18.5713",
@@ -251,7 +255,9 @@
         ],
         "images": [
           "assets/images/apartment1.jpeg",
-          "assets/images/apartment3.jpeg"
+          "assets/images/kitchen3.jpeg",
+          "assets/images/livingroom3.jpeg",
+          "assets/images/bedroom3.jpeg"
         ],
         "location": {
           "latitude": "18.568860",
