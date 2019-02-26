@@ -34,7 +34,6 @@ export class SearchboxComponent implements OnInit {
   }
 
   onSearchButtonClick() {
-    debugger;
     this.validSearchKey=false;
     if (this.searchModel.category === 'apartment') {
       if (this._dtsService.appartmentData .length > 0) {
@@ -54,7 +53,6 @@ export class SearchboxComponent implements OnInit {
     }
   }
   checkSearchData(data:any){
-    debugger;
     if(data==='apartment'){
       this._dtsService.appartmentData.forEach(obj => {
       if(obj.searchKey === this.searchModel.searchData){
@@ -90,7 +88,6 @@ export class SearchboxComponent implements OnInit {
   }
 
   getTVPropertyDetails() {
-    debugger;
     this._httpService.fetchdata('assets/json/tv.json').subscribe(
       (res: any) => {
         this._dtsService.tvData = res;
