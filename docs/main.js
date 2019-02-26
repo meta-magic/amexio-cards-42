@@ -1123,7 +1123,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"localsearch\">\n    <amexio-dropdown [(ngModel)]=\"searchModel.category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"''\" [data]=\"categories\"\n        [display-field]=\"'name'\" [value-field]=\"'id'\" [enable-sort]=\"true\" [sort]=\"'asc'\">\n    </amexio-dropdown>\n    <amexio-text-input [field-label]=\"'label'\" name=\"name\" [has-label]=\"false\" [place-holder]=\"'Search'\" [(ngModel)]=\"searchModel.searchData\"\n        [icon-feedback]=\"true\" class=\"localsearchtext\">\n    </amexio-text-input>\n    <amexio-button [label]=\"'Search'\" [type]=\"'theme-color'\" [badge]=\"badge\" [tooltip]=\"'toolTip'\" [icon]=\"'icon'\" [disabled]=\"false\"\n        [size]=\"'default'\" [loading]=\"false\" [block]=\"false\" [bg-color]=\"'red'\" (onClick)=\"onSearchButtonClick($event)\">\n    </amexio-button>\n</div>\n<amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'center'\">\n    <amexio-layout-item>\n        <ng-container *ngIf=\"warningdialogue\">\n            <amexio-label size=\"medium-bold\" font-color=\"white\">\n                {{warningMsg}}\n            </amexio-label>\n        </ng-container>\n    </amexio-layout-item>\n</amexio-layout-columns>\n\n\n<!-- <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue> -->"
+module.exports = "<div class=\"localsearch\">\n    <amexio-dropdown [(ngModel)]=\"searchModel.category\" [place-holder]=\"'Choose'\" name=\"category\" [field-label]=\"''\" [data]=\"categories\"\n        [display-field]=\"'name'\" [value-field]=\"'id'\" [enable-sort]=\"true\" [sort]=\"'asc'\">\n    </amexio-dropdown>\n    <amexio-text-input [field-label]=\"'label'\" name=\"name\" [has-label]=\"false\" [place-holder]=\"'Search'\" [(ngModel)]=\"searchModel.searchData\"\n        [icon-feedback]=\"true\" class=\"localsearchtext\">\n    </amexio-text-input>\n    <amexio-button [label]=\"'Search'\" [type]=\"'theme-color'\" [badge]=\"badge\" [tooltip]=\"'toolTip'\" [icon]=\"'icon'\" [disabled]=\"false\"\n        [size]=\"'default'\" [loading]=\"false\" [block]=\"false\" [bg-color]=\"'red'\" (onClick)=\"onSearchButtonClick($event)\">\n    </amexio-button>\n</div>\n<amexio-layout-columns [border]=\"false\" [orientation]=\"'horizontal'\" [alignment]=\"'start'\">\n    <amexio-layout-item>\n        <ng-container *ngIf=\"warningdialogue\">\n            <amexio-label size=\"medium-bold\" font-color=\"white\">\n                {{warningMsg}}\n            </amexio-label>\n        </ng-container>\n    </amexio-layout-item>\n</amexio-layout-columns>\n\n\n<!-- <amexio-dialogue [(show)]=\"warningdialogue\" [material-design]=\"true\" [message]=\"warningMsg\" [title]=\"'Error'\" [message-type]=\"'error'\" [type]=\"'alert'\">\n</amexio-dialogue> -->"
 
 /***/ }),
 
@@ -1178,7 +1178,6 @@ var SearchboxComponent = /** @class */ (function () {
         this.searchModel.type = 'buy';
     };
     SearchboxComponent.prototype.onSearchButtonClick = function () {
-        debugger;
         this.validSearchKey = false;
         if (this.searchModel.category === 'apartment') {
             if (this._dtsService.appartmentData.length > 0) {
@@ -1203,7 +1202,6 @@ var SearchboxComponent = /** @class */ (function () {
     };
     SearchboxComponent.prototype.checkSearchData = function (data) {
         var _this = this;
-        debugger;
         if (data === 'apartment') {
             this._dtsService.appartmentData.forEach(function (obj) {
                 if (obj.searchKey === _this.searchModel.searchData) {
@@ -1238,7 +1236,6 @@ var SearchboxComponent = /** @class */ (function () {
     };
     SearchboxComponent.prototype.getTVPropertyDetails = function () {
         var _this = this;
-        debugger;
         this._httpService.fetchdata('assets/json/tv.json').subscribe(function (res) {
             _this._dtsService.tvData = res;
             _this.navigateToPropertyDetails();
@@ -1782,26 +1779,6 @@ var DatatransferService = /** @class */ (function () {
         this.appartmentData = [];
         this.tvData = [];
     }
-    //  getPropertyList(data): any{
-    //    debugger;
-    //    if (data === 'apartment') {
-    //      return this.getApartmentPropertyDetails();
-    //   } else if(data === 'tv'){    
-    //      return this.getTVPropertyDetails();
-    //     }
-    //   }
-    //   getApartmentPropertyDetails() {
-    //   this._httpService.fetchdata('assets/json/apartment.json').subscribe(
-    //     (res: any) => {
-    //      return this.appartmentData = res;
-    //     });
-    // }
-    // getTVPropertyDetails() {
-    //   this._httpService.fetchdata('assets/json/tv.json').subscribe(
-    //     (res: any) => {
-    //      return this.tvData = res;
-    //     });
-    // }
     DatatransferService.prototype.getPropertyListCardData = function (id, data) {
         if (id === 'apartment') {
             return this.propertyListData.find(function (x) { return x.searchKey === data; });
