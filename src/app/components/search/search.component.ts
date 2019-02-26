@@ -8,31 +8,23 @@ import { AuthenticationService } from "src/app/service/authentication.service";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
- @Input('search-model') searchModel: SearchModel;
+  @Input('search-model') searchModel: SearchModel;
   warningdialogue = false;
   warningMsg = '';
-   constructor(public route: Router,public _authService:AuthenticationService) {
+  constructor(public route: Router, public _authService: AuthenticationService) {
 
-   }
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onBuyClick() {
     this.route.navigate(['/home']);
   }
   onSell() {
-    if(this._authService.loginFlag){
-     this.route.navigate(['/sell']);
-    }else{
-     this.route.navigate(['/login']);
-      this._authService.showLogin = true;
-     this._authService.showOTPWindow = false;
-     this._authService.showregisterWindow = false;
-     this._authService.showSignInWindow = false;
+    if (this._authService.loginFlag) {
+      this.route.navigate(['/sell']);
+    } else {
+      this.route.navigate(['/login']);
     }
-    
   }
-
-
-
 }
