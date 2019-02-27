@@ -22,8 +22,8 @@ export class AuthenticationComponent implements OnInit {
   ngOnInit(
   
   ) {
-    this.auth_Service.showLogin=true;
-     this.auth_Service.showSignInWindow = false;
+    // this.auth_Service.showLogin=false;
+     this.auth_Service.showSignInWindow = true;
      this.auth_Service.showOTPWindow = false;
      this.auth_Service.showregisterWindow = false;
   }

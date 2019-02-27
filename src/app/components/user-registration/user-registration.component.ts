@@ -33,7 +33,7 @@ export class UserRegistrationComponent implements OnInit {
   onRegister(){
    this.auth_Service.showOTPWindow=true;
   this.auth_Service.showregisterWindow=false;
-  this.auth_Service.showLogin=false;
+  // this.auth_Service.showLogin=false;
   this.auth_Service.showSignInWindow=false;
   
   }
@@ -45,7 +45,6 @@ onCancel(){
 onBack(){
 this.auth_Service.showOTPWindow=false;
   this.auth_Service.showregisterWindow=false;
-  this.auth_Service.showLogin=true;
-  this.auth_Service.showSignInWindow=false;
+  this.auth_Service.showSignInWindow=true;
 }
 }

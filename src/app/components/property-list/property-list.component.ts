@@ -19,6 +19,7 @@ export class PropertyListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, public _dtsService: DatatransferService) {
     this.searchModel = new SearchModel();
     this._dtsService.transparentFlag = false;
+    this._dtsService.sellFlag=true;
     this._dtsService.searchType = 'buy';
 
      this.propertyData = [];

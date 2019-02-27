@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthenticationService {
   showWindow:boolean;
-  showLogin: boolean;
+  // showLogin: boolean;
   showregisterWindow: boolean;
   showSignInWindow: boolean;
   showOTPWindow: boolean;

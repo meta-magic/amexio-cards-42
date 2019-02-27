@@ -16,9 +16,15 @@ showWindow: boolean;
   }
   onLoginLinkClick() {
      this.route.navigate(['/login']);
-     this.auth_Service.showLogin = true;
      this.auth_Service.showOTPWindow = false;
      this.auth_Service.showregisterWindow = false;
-     this.auth_Service.showSignInWindow = false;
+     this.auth_Service.showSignInWindow = true;
+  }
+  onSellClick(){
+    if (this.auth_Service.loginFlag) {
+      this.route.navigate(['/sell']);
+    } else {
+      this.route.navigate(['/login']);
+    }
   }
 }

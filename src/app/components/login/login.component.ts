@@ -7,7 +7,7 @@ import { AuthenticationService } from '../../service/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Input() showLogin: boolean;
+  // @Input() showLogin: boolean;
   showregisterWindow: boolean;
   showSignInWindow: boolean;
   constructor(public auth_Service: AuthenticationService) {
@@ -19,13 +19,13 @@ export class LoginComponent implements OnInit {
 onSignInClick(event: any) {
 this.auth_Service.showOTPWindow = false;
   this.auth_Service.showregisterWindow = false;
-  this.auth_Service.showLogin = false;
+  // this.auth_Service.showLogin = false;
   this.auth_Service.showSignInWindow = true;
 }
 onRegisterClick(event: any) {
 this.auth_Service.showOTPWindow = false;
   this.auth_Service.showregisterWindow = true;
-  this.auth_Service.showLogin = false;
+  // this.auth_Service.showLogin = false;
   this.auth_Service.showSignInWindow = false;
 }
 onLoginClick() {

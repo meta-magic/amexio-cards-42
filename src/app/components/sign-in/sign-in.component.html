@@ -1,5 +1,48 @@
-<div [formGroup]="signInGroup">
-<amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showSignInWindow">
+<div [formGroup]="signInGroup" *ngIf="showSignInWindow">
+  <amexio-card-ce>
+   <amexio-body-ce>
+        <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
+        <amexio-layout-item>
+          <amexio-image class="authImage" [path]="'assets/images/building.png'" [filter]="'round'">
+          </amexio-image>
+        </amexio-layout-item>
+      </amexio-layout-columns>
+      <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'center'" [orientation]="'horizontal'">
+      <amexio-layout-item>
+          <amexio-label size="medium-bold">Login to your Account</amexio-label>
+        </amexio-layout-item>
+      </amexio-layout-columns>  
+      <amexio-layout-columns style="font-size:2em;" [border]="false" [fit]="true" [alignment]="'start'" [orientation]="'vertical'">
+     <amexio-layout-item>
+      <amexio-number-input formControlName="Phone" name="name" field-label="Phone" place-holder="Enter Name" [(ngModel)]="loginModel.phone">
+      </amexio-number-input>
+      <amexio-password-input formControlName="Password" [enable-popover]="true" [field-label]="'Password '" name="password" [place-holder]="'Enter Password'"
+        [allow-blank]="false"   [icon-feedback]="true" [(ngModel)]="loginModel.password">
+      </amexio-password-input>
+      </amexio-layout-item>
+      <amexio-layout-item>
+        <amexio-button [disabled]="!signInGroup.valid" [label]="'Login'" [type]="'theme-color'" [tooltip]="'Get Started'" [block]="true"
+          (onClick)="onSignInClick()">
+        </amexio-button>
+      </amexio-layout-item>
+      </amexio-layout-columns>
+    </amexio-body-ce>
+
+    <amexio-action-ce [border-top]="true" [align]="'center'" class="floatingBtn">
+      <amexio-login-social [style-type]="'circle'" [api-key]="'743009515877-3rfp9u0b2iq95m2o2921kc3hecaamc3e'" [type]="'google'"
+        (onLogin)="onGoogleClick($event)">
+      </amexio-login-social>
+      <amexio-login-social [style-type]="'circle'" [api-key]="'320512778592240'" [type]="'facebook'" (onLogin)="onFacebookClick($event)">
+      </amexio-login-social>
+      <amexio-login-social [style-type]="'circle'" [api-key]="'81wzvqnx8wtvmg'" [type]="'linkedin'" (onLogin)="onLinkedinClick($event)">
+      </amexio-login-social>
+      <amexio-floating-button [relative]="true" [icon]="'fa fa-user-plus'" (onClick)="onRegisterClick($event)" [type]="'theme-color'"></amexio-floating-button>
+    </amexio-action-ce>
+  </amexio-card-ce>
+</div>
+
+
+  <!-- <amexio-card [header]="false" [header-align]="'left'" [footer]="true" [footer-align]="'center'" [show]="showSignInWindow">
   <amexio-body>
      <amexio-row>
       <amexio-column size="12">
@@ -23,20 +66,13 @@
      </amexio-row>
     <amexio-row>
       <amexio-column [size]="12">
-        <amexio-number-input formControlName="Phone" name="name"  field-label="Phone" place-holder="Enter Name" [(ngModel)]="loginModel.phone" [enable-popover]="true" [error-msg]="'Please enter valid phone number'">
-        </amexio-number-input>
-        <amexio-password-input formControlName="Password" [enable-popover]="true" [field-label]="'Password '" name="password" [place-holder]="'Enter Password'"
-          [allow-blank]="false" [error-msg]="'Please enter password'" [min-length]="6" [min-error-msg]="'Minimum 6 char required'"
-          [max-length]="32" [max-error-msg]="'Maximum 32 char allowed'" [icon-feedback]="true" [(ngModel)]="loginModel.password">
-        </amexio-password-input>
+        
       </amexio-column>
     </amexio-row>
   </amexio-body>
   <amexio-action>
   
-  <!-- <amexio-button  [size]="'medium'" [type]="'primary'" (onClick)="onBack()" label="Back"></amexio-button> -->
     <amexio-button   [size]="'default'" [type]="'secondary'" [icon]="'fa fa-times'" (onClick)="onCancel()" label="Cancel"></amexio-button>
     <amexio-button [disabled]="!signInGroup.valid"  [size]="'default'" [icon]="'fa fa-sign-in'" [type]="'primary'" (onClick)="onSignInClick()" label="Login"></amexio-button>
   </amexio-action>
-</amexio-card>
-</div>
+</amexio-card> -->

@@ -1,11 +1,10 @@
 <div class="navlogo">
-<amexio-nav [logo]="'assets/images/logos/cardslogo.jpg'" [title]="'Cards.com'" 
- [transparent]="dtsService.transparentFlag"  [enable-side-nav-position]="false" (onNavTitleClick)="onCardsclick($event)">
-    <!-- <amexio-nav-item position-left [type]="'link'" [icon]="'fa fa-angle-double-up'" [title]="'Cards.com'" (onNavItemClick)="onCardsclick($event)">
-    </amexio-nav-item> -->
-    <amexio-nav-item position-right [type]="'link'" [icon]="'fa fa-user'" [title]="'Login'" (onNavItemClick)="onLoginLinkClick($event)">
-    </amexio-nav-item>
-</amexio-nav>
+    <amexio-nav [logo]="'assets/images/logos/cardslogo.jpg'" [title]="'Cards.com'" [transparent]="dtsService.transparentFlag"
+        [enable-side-nav-position]="false" (onNavTitleClick)="onCardsclick($event)">
+         <amexio-nav-item *ngIf="dtsService.sellFlag" position-right [icon]="'fa fa-cart-arrow-down '" [type]="'link'"  [title]="'Sell'" (onNavItemClick)="onSellClick($event)">
+    </amexio-nav-item> 
+        <amexio-nav-item *ngIf="dtsService.loginNavFlag" position-right [type]="'link'" [icon]="'fa fa-user'" [title]="'Login'" (onNavItemClick)="onLoginLinkClick($event)">
+        </amexio-nav-item>
+    </amexio-nav>
 </div>
-<!-- <app-authentication [showWindow]="auth_Service.showWindow"></app-authentication> -->
 <router-outlet></router-outlet>

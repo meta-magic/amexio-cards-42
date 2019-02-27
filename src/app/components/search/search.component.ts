@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit {
       this.route.navigate(['/sell']);
     } else {
       this.route.navigate(['/login']);
+
     }
   }
 }

@@ -23,11 +23,12 @@ export class SellComponent implements OnInit {
     this.sellModel = new SellDataModel();
     this.searchModel.type = 'sell';
     this._dtsService.transparentFlag = false;
-
+    this._dtsService.sellFlag=false;
 
   }
 
   ngOnInit() {
+
     this._httpService.fetchdata('assets/json/sell.json').subscribe(
       (res: any) => {
         this.data = res;

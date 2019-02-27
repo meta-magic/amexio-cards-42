@@ -22,28 +22,26 @@
         </amexio-card-ce>
       </ng-container>
       <ng-container *ngIf="category==='tv'">
-      <amexio-card-ce  (click)="getPropertyDetails(property)">
-        <amexio-header-ce>
-         &nbsp;&nbsp;  <amexio-image  [icon-class]="'fa fa-television fa-2x'"></amexio-image>
-          <!-- <amexio-label size="medium-bold">{{property.title}}
+        <amexio-card-ce (click)="getPropertyDetails(property)">
+          <amexio-header-ce>
+            &nbsp;&nbsp;
+            <amexio-image [icon-class]="'fa fa-television fa-2x'"></amexio-image>
+            <!-- <amexio-label size="medium-bold">{{property.title}}
           </amexio-label> -->
-        </amexio-header-ce>
-       <amexio-image width="100%" height="180px" [path]="property.images[0]"></amexio-image>
-        <amexio-badge [absolute]="true" [background]="'#e74c3c'" [color]="'white'" [top]="'6%'" [right]="'5%'">
-          <amexio-label>Photos</amexio-label>
-        </amexio-badge>
-
-        <amexio-body-ce>
-        <app-details-card [data]="property" [isListCard]="true"></app-details-card>
-        </amexio-body-ce>
-        <amexio-action-ce  [align]="'end'" [border-top]="true">
-          <amexio-button [label]="'BUY NOW'" [type]="'transparent'" [tooltip]="'BUY'">
-          </amexio-button>
-        </amexio-action-ce>
-      </amexio-card-ce>
-     </ng-container>
+          </amexio-header-ce>
+          <amexio-image width="100%" height="180px" [path]="property.images[0]"></amexio-image>
+          <amexio-badge [absolute]="true" [background]="'#e74c3c'" [color]="'white'" [top]="'6%'" [right]="'5%'">
+            <amexio-label>Photos</amexio-label>
+          </amexio-badge>
+          <amexio-body-ce>
+            <app-details-card [data]="property" [isListCard]="true"></app-details-card>
+          </amexio-body-ce>
+          <amexio-action-ce [align]="'end'" [border-top]="true">
+            <amexio-button [label]="'BUY NOW'" [type]="'transparent'" [tooltip]="'BUY'">
+            </amexio-button>
+          </amexio-action-ce>
+        </amexio-card-ce>
+      </ng-container>
     </amexio-column>
-
   </amexio-row>
-
 </div>

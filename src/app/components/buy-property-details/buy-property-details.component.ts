@@ -23,7 +23,7 @@ export class BuyPropertyDetailsComponent implements OnInit {
     this.data = [];
     this.createLayouts();
     this._gridlayoutService.createLayout(this.gridDesktop);
-
+     this.dtsService.sellFlag=true;
   }
 
   ngOnInit() {

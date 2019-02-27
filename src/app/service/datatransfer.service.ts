@@ -17,6 +17,8 @@ searchType:string;
 propertyListData:any;
 appartmentData: any[] = [];
 tvData: any[] = [];
+sellFlag:boolean;
+loginNavFlag:boolean;
   constructor(public route:Router,public _httpService: HttpService) {
 
    }
