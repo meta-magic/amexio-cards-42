@@ -29,11 +29,18 @@
       border-radius: 0px!important;
 }
 
+.localdropdown .input-control{
+    padding-left: 5px!important
+
+}
 
 .localsearchtext .input-control {
     width: 520px!important;
+    padding-left: 5px!important
 }
- 
+.localsearchtext .input-control-feedback{
+    bottom: 2px!important;
+}
 .login-window .modal-window-middle{
      padding: 0px!important;
 

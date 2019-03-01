@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AmexioWidgetModule, AmexioLayoutModule, AmexioPaneModule, } from 'amexio-ng-extensions';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
-import { LoginComponent } from './components/login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { RouterModule } from '@angular/router';
 import { SellComponent } from './components/sell/sell.component';
@@ -29,7 +28,6 @@ import {PropertyResolver} from "./service/property.resolver";
   declarations: [
     AppComponent,
     UserRegistrationComponent,
-    LoginComponent,
     SignInComponent,
     SellComponent,
     OtpVerificationComponent,
