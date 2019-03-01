@@ -14,6 +14,11 @@
 /* You can add global styles to this file, and also import other style files */
 .localsearch .inputgroup {
     display: inline-block!important;
+
+    background: white;
+     /* border-bottom: 1px solid rgba(0, 0, 0, 0.42);  */
+    padding-left: 5px;
+
 };
 
 .localsearch .inputgroup ::placeholder{
@@ -29,14 +34,17 @@
       border-radius: 0px!important;
 }
 
-.localdropdown .input-control{
-    padding-left: 5px!important
+.localsearch .input-control{
+        border-bottom: none!important;
+
 
 }
 
 .localsearchtext .input-control {
     width: 520px!important;
-    padding-left: 5px!important
+    padding-left: 5px!important;
+    border-bottom: none!important;
+
 }
 .localsearchtext .input-control-feedback{
     bottom: 2px!important;
