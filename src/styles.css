@@ -28,10 +28,14 @@
      height: 43px!important;
      border-radius: 0px!important;
 }
-
+.searchBtn .button-default{
+    border: none!important;
+}
 .localsearch  .button-primary{
-     height: 43px!important;
+     height: 41.5px!important;
       border-radius: 0px!important;
+      border:none!important;
+      box-shadow: none!important;
 }
 
 .localsearch .input-control{
